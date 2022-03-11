@@ -20,15 +20,15 @@ int main(void)
     for (int i = 0; i < h; i++)
     {
         //For loop to print spaces
-        for (int s = (h - i); s >= 2; s--)
+        for (s = (h - i); s >= 2; s--)
         {
             // Print a space
             printf(" ");
         }
         //For Loop to print bricks
-        for (int b = 0; b < h; b++)
+        for (b = 0; b < h; b++)
         {
-            printf("#")
+            printf("#");
         }
         //Move to next row
         printf("\n");
