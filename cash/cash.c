@@ -85,10 +85,10 @@ int calculate_pennies(int cents)
 {
     int pennies = 0;
 
-    while (pennies >=1)
+    while (pennies >= 1)
     {
         pennies++;
-        cents = cents -1;
+        cents = cents - 1;
     }
     return pennies;
 }
