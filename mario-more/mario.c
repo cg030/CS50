@@ -25,15 +25,20 @@ int main(void)
             // Print a space
             printf(" ");
         }
-        //For Loop to print bricks
+        //For Loop to print left pyramid
         for (b = 0; b < (i+1); b++)
         {
             printf("#");
         }
         //For loop to print gap
-        for (s=0; s <= 3; s++)
+        for (s=0; s < 2; s++)
         {
-            printf("*");
+            printf(" ");
+        }
+        //For loop to print right pyramid
+        for (b = 0; b < (i+1); b++)
+        {
+            printf("#");
         }
         //Move to next row
         printf("\n");
