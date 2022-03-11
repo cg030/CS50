@@ -9,7 +9,7 @@ int main(void)
     int s;
     //Variable Bricks
     int b;
-    
+
     do
     {
         h = get_int("Height: ");
@@ -19,13 +19,18 @@ int main(void)
 // For each row
     for (int i = 0; i < h; i++)
     {
-        //For each column
-        for (int j = 0; j < n; j++)
+        //For loop to print spaces
+        for (int s = h - 1;s < n; s++)
         {
             // Print a brick
-            printf("#");
+            printf(" ");
         }
+        //For Loop to print bricks
+        for ()
         //Move to next row
         printf("\n");
     }
 }
+// Input 8
+// .......#
+//
