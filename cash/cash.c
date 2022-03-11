@@ -35,7 +35,7 @@ int main(void)
     printf("%i\n", coins);
 }
 
-//Get cents from the user
+// Ask how many cents the customer is owed
 int get_cents(void)
 
 {
