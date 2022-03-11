@@ -26,17 +26,17 @@ int main(void)
             printf(" ");
         }
         //For Loop to print left pyramid
-        for (b = 0; b < (i+1); b++)
+        for (b = 0; b < (i + 1); b++)
         {
             printf("#");
         }
         //For loop to print gap
-        for (s=0; s < 2; s++)
+        for (s = 0; s < 2; s++)
         {
             printf(" ");
         }
         //For loop to print right pyramid
-        for (b = 0; b < (i+1); b++)
+        for (b = 0; b < (i + 1); b++)
         {
             printf("#");
         }
