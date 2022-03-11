@@ -35,13 +35,17 @@ int main(void)
     printf("%i\n", coins);
 }
 
+//Get cents from the user
 int get_cents(void)
+
 {
+    int cents;
     do
     {
-        get_cents = get_int("Cents: ");
+        cents = get_int("Cents Owed: ");
     }
     while (cents < 0);
+    return cents;
 
 }
 
