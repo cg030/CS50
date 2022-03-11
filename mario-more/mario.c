@@ -9,8 +9,6 @@ int main(void)
     int s;
     //Variable Bricks
     int b;
-    //Variable Gap
-    int g;
 
     do
     {
@@ -33,9 +31,9 @@ int main(void)
             printf("#");
         }
         //For loop to print gap
-        for (g=2; g < h; g++)
+        for (s=0; s <= 3; s++)
         {
-            printf(" ")
+            printf("*");
         }
         //Move to next row
         printf("\n");
