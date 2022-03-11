@@ -26,7 +26,7 @@ int main(void)
             printf(" ");
         }
         //For Loop to print bricks
-        for (b = 0; b < h; b++)
+        for (b = 0; b < (i+1); b++)
         {
             printf("#");
         }
