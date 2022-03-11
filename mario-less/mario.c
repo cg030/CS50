@@ -9,7 +9,7 @@ int main(void)
     int s;
     //Variable Bricks
     int b;
-
+    
     do
     {
         h = get_int("Height: ");
