@@ -20,7 +20,7 @@ int main(void)
     for (int i = 0; i < h; i++)
     {
         //For loop to print spaces
-        for (int s = (h - i); s < h; s--)
+        for (int s = (h - i); s >= 2; s--)
         {
             // Print a space
             printf(" ");
