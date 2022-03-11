@@ -1,3 +1,4 @@
 # include <stdio.h>
-int number;
-number = 7;
+int main(void);
+    int number;
+    int number = 7;
