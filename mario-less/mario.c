@@ -3,15 +3,21 @@
 
 int main(void)
 {
-    int n;
+    //Variable Height
+    int h;
+    //Variable Spaces
+    int s;
+    //Variable Bricks
+    int b;
+    
     do
     {
-        n = get_int("Height: ");
+        h = get_int("Height: ");
     }
-    while (n < 1 || n > 8);
+    while (h < 1 || h > 8);
 
 // For each row
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < h; i++)
     {
         //For each column
         for (int j = 0; j < n; j++)
