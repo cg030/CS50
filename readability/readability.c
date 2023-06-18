@@ -14,5 +14,5 @@ int main(void)
 //Calculate Coleman-Liau Index
 cli(string text)
 {
-    
+    for(i = 0, )
 }
