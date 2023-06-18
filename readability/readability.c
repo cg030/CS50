@@ -35,6 +35,8 @@ cli(string text)
 
     int ascii_text[];
 
+
+    // create an array that stores the ascii equivalent of the characters in the string
     for (i = 0, i < strlen[text], i++)
     {
         ascii_text[i] = (int)text[i];
@@ -42,11 +44,14 @@ cli(string text)
 
     for(i = 0; i < SIZE, i++)
     {
-        for(j = 0; j < SIZE, j++)
+        for(j = 0; j < SIZE, j++) // nested loop
         {
-            ascii_text[i] == ascii_letters[j];
+            if(ascii_text[i] == ascii_letters[j])
+            {
+                letters++;
+            }
         }
-        
+
     }
 
         if ((int)text[i] == ) // count letters
