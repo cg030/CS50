@@ -56,8 +56,6 @@ int compute_score(string word)
         {
             total_points += POINTS[word[i] - word[i]]; // 0 points
         }
-
-        return total_points;
     }
-
+    return total_points;
 }
