@@ -33,13 +33,15 @@ for(i = 0; i < 26; i++) // lower case letters
 
 space_ascii = 32;
 
-int
+int ascii_text[];
 
-    for (i = 0, i < text[\0], i++)
+    for (i = 0, i < strlen[text], i++)
     {
-        ascii[i] = text[i];
-        
-        if (text[i] == ) // count letters
+        ascii_text[i] = (int)text[i];
+    }
+
+
+        if ((int)text[i] == ) // count letters
         {
             letters++;
         }
