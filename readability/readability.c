@@ -25,7 +25,12 @@ for(i = 0; i < 25; i++)
     ascii_letters[i] = 65 + i
 }
 
-int 
+for(i = 0; i < 25; i++)
+{
+    ascii_letters[i] = 65 + i
+}
+
+int
 
     for (i = 0, i < text[\0], i++)
     {
