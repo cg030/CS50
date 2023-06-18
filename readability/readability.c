@@ -20,10 +20,12 @@ cli(string text)
 
 int ascii_letters[];
 
-for(i = 0; i < 35; i++)
+for(i = 0; i < 25; i++)
 {
-    ascii_letter[i] = 65 + i
+    ascii_letters[i] = 65 + i
 }
+
+int 
 
     for (i = 0, i < text[\0], i++)
     {
