@@ -18,7 +18,9 @@ cli(string text)
     int words = 0;
     int sentences = 0;
 
-ascii_letters = [65 - 90]
+int ascii_letters[];
+
+for(i = 0; i < )
 
     for (i = 0, i < text[\0], i++)
     {
