@@ -10,3 +10,9 @@ int main(void)
     printf("%c\n", text[0]);
 
 }
+
+//Calculate Coleman-Liau Index
+cli(string text)
+{
+    
+}
