@@ -18,17 +18,20 @@ cli(string text)
     int words = 0;
     int sentences = 0;
 
+// create an array of numbers of the respective ascii letters
 int ascii_letters[];
 
-for(i = 0; i < 25; i++)
+for(i = 0; i < 26; i++) // upper case letters
 {
     ascii_letters[i] = 65 + i
 }
 
-for(i = 0; i < 25; i++)
+for(i = 0; i < 26; i++) // lower case letters
 {
-    ascii_letters[i] = 65 + i
+    ascii_letters[i] = 97 + i;
 }
+
+space_ascii = 32;
 
 int
 
