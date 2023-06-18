@@ -27,7 +27,8 @@ int main(void)
 // TODO: complete the calc_hours function
 float calc_hours(int hours[], int weeks, char output)
 {
-    if (output == 'T'){
+    if (output == 'T')
+    {
         
     }
 }
