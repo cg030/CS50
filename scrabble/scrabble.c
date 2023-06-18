@@ -23,5 +23,12 @@ int main(void)
 
 int compute_score(string word)
 {
-    
+    // have to use indexes of the array
+
+    // loop to iterate over the string of the word moving one index at a time
+
+    for(i = 0; i = length of word, i++)
+    {
+        //
+    }
 }
