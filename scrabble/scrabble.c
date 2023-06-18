@@ -44,7 +44,7 @@ int compute_score(string word)
 
     for(int i = 0, len = strlen(word); i < len; i++)
     {
-        if( isupper(word[i]) == 1)
+        if( isupper(word[i]))
         {
             total_points += POINTS[word[i] - 'A']; //// ASCII Number -> to the respective index of the array POINTS[]; A -> 65 -> POINTS[0] --> 65 - 65 = 0
         }
