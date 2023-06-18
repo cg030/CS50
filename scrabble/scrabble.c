@@ -40,9 +40,11 @@ int compute_score(string word)
             total_points += POINTS[word[i] - 'A']
         }
         else
+        {
+            print = 
+        }
 
-
-        int total_points += points;
+        return total_points;
     }
 
 }
