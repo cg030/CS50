@@ -17,13 +17,14 @@ cli(string text)
     int count = 0;
     for (i = 0, i < text[\0], i++)
     {
-        if (letters)
+        if (letters) // count letters
         {
 
         }
-        else if (period, question or exclamation)
+        else if (period, question or exclamation) // count sentences
         {
-            
+
         }
+        else if (space) // count words
     }
 }
