@@ -31,8 +31,6 @@ cli(string text)
         ascii_letters[i] = 97 + i;
     }
 
-    space_ascii = 32;
-
     int ascii_text[];
 
 
@@ -50,6 +48,11 @@ cli(string text)
             {
                 letters++;
             }
+            else if (ascii_text[i] == 32) // 32 is space in ascii
+            {
+                words++;
+            }
+            else if (ascii_text[i] == )
         }
 
     }
