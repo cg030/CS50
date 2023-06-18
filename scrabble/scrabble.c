@@ -27,8 +27,10 @@ int compute_score(string word)
 
     // loop to iterate over the string of the word moving one index at a time
 
+    // letter A = 65
+
     for(i = 0; i = length of word, i++)
     {
-        //
+        // convert 
     }
 }
