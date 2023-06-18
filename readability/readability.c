@@ -6,5 +6,7 @@ int main(void)
     // prompt user
 
     string text = get_string("Start Writing: \n");
-    
+
+    printf(text[0]);
+
 }
