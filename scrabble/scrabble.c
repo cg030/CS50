@@ -27,16 +27,19 @@ int compute_score(string word)
 
     // loop to iterate over the string of the word moving one index at a time
 
-    // letter A = 65
+    int totalpoints = 0;
 
     for(int i = 0; int len = strlen(word); i = len, i++)
     {
-        if
-        // ASCII Numner -> to the respective index of the array POINTS[]
-
-        // A -> 65 -> POINTS[0] --> 65 - 65 = 0
-
-        total_points += POINTS[word[i] - 'A']
+        if( isupper(word[i]) == 1)
+        {
+            total_points += POINTS[word[i] - 'A'] //// ASCII Number -> to the respective index of the array POINTS[]; A -> 65 -> POINTS[0] --> 65 - 65 = 0
+        }
+        else if (islower(word[i]) == 1)
+        {
+            total_points += POINTS[word[i] - 'A']
+        }
+        else
 
 
         int total_points += points;
