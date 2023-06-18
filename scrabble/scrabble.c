@@ -41,7 +41,7 @@ int compute_score(string word)
         }
         else
         {
-            print = 
+            total_points += 0
         }
 
         return total_points;
