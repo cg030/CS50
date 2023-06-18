@@ -25,49 +25,36 @@ cli(string text)
     {
         ascii_letters[i] = 65 + i
     }
-
     for(i = 0; i < 26; i++) // lower case letters
     {
         ascii_letters[i] = 97 + i;
     }
 
+
     int ascii_text[];
-
-
     // create an array that stores the ascii equivalent of the characters in the string
     for (i = 0, i < strlen[text], i++)
     {
         ascii_text[i] = (int)text[i];
     }
 
+
     for(i = 0; i < SIZE, i++)
     {
         for(j = 0; j < SIZE, j++) // nested loop
         {
-            if(ascii_text[i] == ascii_letters[j])
+            if(ascii_text[i] == ascii_letters[j]) // count letters
             {
                 letters++;
             }
-            else if (ascii_text[i] == 32) // 32 is space in ascii
+            else if (ascii_text[i] == 32) // count words; 32 is space in ascii
             {
                 words++;
             }
-            else if (ascii_text[i] == )
-        }
-
-    }
-
-        if ((int)text[i] == ) // count letters
-        {
-            letters++;
-        }
-        else if () // count sentences
-        {
-            words++;
-        }
-        else if (period, question or exclamation) // count words
-        {
-            sentences++;
+            else if (ascii_text[i] == 33 || 46 || 63) // count sentences
+            {
+                sentences++;
+            }
         }
     }
 }
