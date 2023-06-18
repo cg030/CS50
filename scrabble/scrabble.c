@@ -31,9 +31,11 @@ int compute_score(string word)
 
     for(i = 0; i = length of word, i++)
     {
+        // convert lowercase to upercase
         // ASCII Numner -> to the respective index of the array POINTS[]
-        // A -> 65 -> POINTS[0]
         
+        // A -> 65 -> POINTS[0]
+
 
         int total_points += points;
     }
