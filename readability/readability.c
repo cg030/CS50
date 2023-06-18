@@ -60,7 +60,8 @@ cli(string text)
 
     // calculate Index
 
-    L = // L is the average number of letters per 100 words in the text
-    score = index = 0.0588 * L - 0.296 * S - 15.8
+    float L = letters / words * 100; // L is the average number of letters per 100 words in the text
+    float S = sentences / words * 100; // S is the average number of sentences per 100 words in the text
+    float score = index = 0.0588 * L - 0.296 * S - 15.8;
 
 }
