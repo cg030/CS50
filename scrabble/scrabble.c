@@ -48,13 +48,9 @@ int compute_score(string word)
         {
             total_points += POINTS[word[i] - 'A']; //// ASCII Number -> to the respective index of the array POINTS[]; A -> 65 -> POINTS[0] --> 65 - 65 = 0
         }
-        else if (islower(word[i]) == 1)
+        else if (islower(word[i]))
         {
-            total_points += POINTS[word[i] - 'A'];
-        }
-        else
-        {
-            total_points += 0;
+            total_points += POINTS[word[i] - 'a'];
         }
 
         return total_points;
