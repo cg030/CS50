@@ -20,7 +20,18 @@ int main(void)
 
     // TODO: Print the winner
 
-    
+    if(score1 > score2)
+    {
+        printf("Player 1 wins!\n");
+    }
+    else if(score1 < score2)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
 }
 
 int compute_score(string word)
@@ -35,15 +46,15 @@ int compute_score(string word)
     {
         if( isupper(word[i]) == 1)
         {
-            total_points += POINTS[word[i] - 'A'] //// ASCII Number -> to the respective index of the array POINTS[]; A -> 65 -> POINTS[0] --> 65 - 65 = 0
+            total_points += POINTS[word[i] - 'A']; //// ASCII Number -> to the respective index of the array POINTS[]; A -> 65 -> POINTS[0] --> 65 - 65 = 0
         }
         else if (islower(word[i]) == 1)
         {
-            total_points += POINTS[word[i] - 'A']
+            total_points += POINTS[word[i] - 'A'];
         }
         else
         {
-            total_points += 0
+            total_points += 0;
         }
 
         return total_points;
