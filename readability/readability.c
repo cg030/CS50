@@ -14,17 +14,25 @@ int main(void)
 //Calculate Coleman-Liau Index
 cli(string text)
 {
-    int count = 0;
+    int letters = 0;
+    int words = 0;
+    int sentences = 0;
+
+ascii_letters = [65 - 90]
+
     for (i = 0, i < text[\0], i++)
     {
-        if (letters) // count letters
+        if (text[i] == ) // count letters
         {
-
+            letters++;
         }
-        else if (period, question or exclamation) // count sentences
+        else if (space) // count sentences
         {
-
+            words++;
         }
-        else if (space) // count words
+        else if (period, question or exclamation) // count words
+        {
+            sentences++;
+        }
     }
 }
