@@ -15,8 +15,15 @@ int main(void)
 cli(string text)
 {
     int count = 0;
-    for(i = 0, i < text[\0], i++)
+    for (i = 0, i < text[\0], i++)
     {
-        sum
+        if (letters)
+        {
+
+        }
+        else if (period, question or exclamation)
+        {
+            
+        }
     }
 }
