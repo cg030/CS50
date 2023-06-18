@@ -3,44 +3,39 @@
 
 int main(void)
 {
-    //Variable Height
-    int h;
-    //Variable Spaces
-    int s;
-    //Variable Bricks
-    int b;
+    // Get size input
 
+    int height;
     do
     {
-        h = get_int("Height: ");
+        height = get_int("Height: ");
     }
-    while (h < 1 || h > 8);
+    while (height < 1 || height > 8);
 
-// For each row
-    for (int i = 0; i < h; i++)
+    // loop to print pyramid
+
+    for (int i = 1; i <= height; i++)
     {
-        //For loop to print spaces
-        for (s = (h - i); s >= 2; s--)
-        {
-            // Print a space
-            printf(" ");
-        }
-        //For Loop to print left pyramid
-        for (b = 0; b < (i + 1); b++)
-        {
-            printf("#");
-        }
-        //For loop to print gap
-        for (s = 0; s < 2; s++)
+        //for loop to first print spaces
+        for (int k = 1; k <= height - i; k++)
         {
             printf(" ");
         }
-        //For loop to print right pyramid
-        for (b = 0; b < (i + 1); b++)
+
+        // for loop print the number of hashes equivalent to the row; +1 row, +1 hash
+        for (int j = 1; j <= i; j++)
         {
             printf("#");
         }
-        //Move to next row
+
+        printf("  ");
+
+        // identical for loop as above
+        for (int j = 1; j <= i; j++)
+        {
+            printf("#");
+        }
+
         printf("\n");
     }
 }
