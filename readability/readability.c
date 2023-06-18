@@ -37,6 +37,8 @@ int
 
     for (i = 0, i < text[\0], i++)
     {
+        ascii[i] = text[i];
+        
         if (text[i] == ) // count letters
         {
             letters++;
