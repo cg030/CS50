@@ -40,9 +40,13 @@ cli(string text)
         ascii_text[i] = (int)text[i];
     }
 
-    for(i = 0; i < )
+    for(i = 0; i < SIZE, i++)
     {
-        ascii_text[i] =
+        for(j = 0; j < SIZE, j++)
+        {
+            ascii_text[i] == ascii_letters[j];
+        }
+        
     }
 
         if ((int)text[i] == ) // count letters
