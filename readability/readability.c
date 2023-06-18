@@ -40,7 +40,7 @@ cli(string text)
         ascii_text[i] = (int)text[i];
     }
 
-    for(i = 0)
+    for(i = 0; i < )
     {
         ascii_text[i] =
     }
