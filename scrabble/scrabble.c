@@ -20,11 +20,11 @@ int main(void)
 
     // Print the winner
 
-    if(score1 > score2)
+    if (score1 > score2)
     {
         printf("Player 1 wins!\n");
     }
-    else if(score1 < score2)
+    else if (score1 < score2)
     {
         printf("Player 2 wins!\n");
     }
@@ -40,11 +40,12 @@ int compute_score(string word)
     int total_points = 0;
 
     // loop iterates over the string of the word moving one index at a time
-    for(int i = 0, len = strlen(word); i < len; i++)
+    for (int i = 0, len = strlen(word); i < len; i++)
     {
-        if( isupper(word[i]))
-        {// A = 65 (ASCII) = POINTS[0] ; Subtract the number associated with the respective number by 65 or 'A' to receive the
-        //index associated with the amount of points of the letter
+        if (isupper(word[i]))
+        {
+            // A = 65 (ASCII) = POINTS[0] ; Subtract the number associated with the respective number by 65 or 'A' to receive the
+            //index associated with the amount of points of the letter
             total_points += POINTS[word[i] - 'A'];
         }
         else if (islower(word[i]))
