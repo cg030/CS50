@@ -40,9 +40,9 @@ int compute_score(string word)
 
     // loop to iterate over the string of the word moving one index at a time
 
-    int totalpoints = 0;
+    int total_points = 0;
 
-    for(int i = 0; len = strlen(word); i < len, i++)
+    for(int i = 0, len = strlen(word); i < len; i++)
     {
         if( isupper(word[i]) == 1)
         {
