@@ -60,7 +60,7 @@ cli(string text)
 
     // calculate Index
 
-    L = 
+    L = // L is the average number of letters per 100 words in the text
     score = index = 0.0588 * L - 0.296 * S - 15.8
 
 }
