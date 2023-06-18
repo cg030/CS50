@@ -5,8 +5,8 @@ int main(void)
 {
     // prompt user
 
-    string text = get_string("Start Writing: \n");
+    string text = get_string("Start Writing: ");
 
-    printf(text[1]);
+    printf("%c\n", text[0]);
 
 }
