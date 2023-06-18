@@ -41,7 +41,7 @@ int
         {
             letters++;
         }
-        else if (space) // count sentences
+        else if () // count sentences
         {
             words++;
         }
