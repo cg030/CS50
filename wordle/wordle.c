@@ -116,11 +116,11 @@ int main(int argc, string argv[])
 
     if(score == 6)
     {
-        printf("You won!\n")
+        printf("You won!\n");
     }
     else
     {
-        printf("")
+        printf("Wrong! Correct Answer: %s\n", choice);
     }
 
     // that's all folks!
@@ -137,7 +137,7 @@ string get_guess(int wordsize)
     {
         guess = get_string("Input a %i-letter word:", wordsize);
     }
-    while(strlen(guess) != wordsize)
+    while(strlen(guess) != wordsize);
 
     return guess;
 }
@@ -151,7 +151,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     for(int i = 0; i < wordsize; i++)
     {
-        for(j = 0; j < wordsize: j++)
+        for(j = 0; j < wordsize; j++)
         {
             if(guess[i] == choice[j])
             {
@@ -164,7 +164,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     for(int i = 0; i < wordsize; i++)
     {
-        for(int j = i + 1; j < wordsize: j++)
+        for(int j = i + 1; j < wordsize; j++)
         {
             if(guess[i] == choice[j])
             {
@@ -188,7 +188,7 @@ void print_word(string guess, int wordsize, int status[])
     // print word character-for-character with correct color coding, then reset terminal font to normal
     // TODO #6
 
-    for(int i = 0, i < wordsize, i++)
+    for(int i = 0; i < wordsize; i++)
     {
         if (status[i] == 2)
         {
