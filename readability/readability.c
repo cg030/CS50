@@ -61,14 +61,14 @@ int count_letters(string text)
 
 int word_counts(string text)
 {
-    
+    int words = 2;
+
 }
 
 
 //Calculate Coleman-Liau Index
 float cli(string text)
 {
-    int words = 2;
     int sentences = 0;
 
     // create an array of numbers of the respective ascii letters
