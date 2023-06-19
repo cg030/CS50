@@ -12,7 +12,9 @@ int main(void)
 
     int rounded_score = (int)(cli(text) + 0.5);
 
-    printf("Grade %i\n", rounded_score);
+    // printf("Grade %i\n", rounded_score);
+
+    printf("Grade %f\n", cli(text));
 
 }
 
