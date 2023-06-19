@@ -23,31 +23,31 @@ float cli(string text)
     int sentences = 0;
 
     // create an array of numbers of the respective ascii letters
-    int ascii_letters[];
+    int ascii_letters[0];
 
-    for(i = 0; i < 26; i++) // upper case letters
+    for (int i = 0; i < 26; i++) // upper case letters
     {
-        ascii_letters[i] = 65 + i
+        ascii_letters[i] = 65 + i;
     }
-    for(i = 0; i < 26; i++) // lower case letters
+    for (int i = 0; i < 26; i++) // lower case letters
     {
         ascii_letters[i] = 97 + i;
     }
 
 
-    int ascii_text[];
+    int ascii_text[0];
     // create an array that stores the ascii equivalent of the characters in the string
-    for (i = 0, i < strlen[text], i++)
+    for (int i = 0, i < strlen[text], i++)
     {
         ascii_text[i] = (int)text[i];
     }
 
 
-    for(i = 0; i < SIZE, i++)
+    for (int i = 0; i < SIZE, i++)
     {
-        for(j = 0; j < SIZE, j++) // nested loop
+        for (int j = 0; j < SIZE, j++) // nested loop
         {
-            if(ascii_text[i] == ascii_letters[j]) // count letters
+            if (ascii_text[i] == ascii_letters[j]) // count letters
             {
                 letters++;
             }
