@@ -90,9 +90,9 @@ int main(int argc, string argv[])
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
 
-        for(i = 0; i < wordsize; i++)
+        for(j = 0; j < wordsize; j++)
         {
-            status[i] = WRONG;
+            status[j] = WRONG;
         }
 
         // Calculate score for the guess
