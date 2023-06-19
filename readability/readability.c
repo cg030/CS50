@@ -57,7 +57,7 @@ float cli(string text)
             {
                 words++;
             }
-            else if (ascii_text[i] == 33 || 46 || 63) // count sentences
+            else if (ascii_text[i] == 33 | 46 | 63) // count sentences
             {
                 sentences++;
             }
