@@ -10,8 +10,6 @@ int main(void)
 
     string text = get_string("Start Writing: ");
 
-    printf("%c\n", text[0]);
-
     printf("Grade %f\n", cli(text));
 
 }
