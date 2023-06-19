@@ -35,10 +35,11 @@ float cli(string text)
         ascii_letters[i] = 97 + i;
     }
 
+    int text_length = strlen(text);
+    int ascii_text[text_length];
 
-    int ascii_text[0];
     // create an array that stores the ascii equivalent of the characters in the string
-    for (int i = 0; i < strlen[text]; i++)
+    for (int i = 0; i < text_length; i++)
     {
         ascii_text[i] = (int)text[i];
     }
