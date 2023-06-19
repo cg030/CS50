@@ -114,7 +114,14 @@ int main(int argc, string argv[])
     // Print the game's result
     // TODO #7
 
-    if()
+    if(score == 6)
+    {
+        printf("You won!\n")
+    }
+    else
+    {
+        printf("")
+    }
 
     // that's all folks!
     return 0;
