@@ -30,69 +30,45 @@ int count_letters(string text)
 {
     int letters = 0;
 
-    // create an array of numbers of the respective ascii letters
-
-    int ascii_letters[52]; // 26 upper case + 26 lowercase
-
-    for (int i = 0; i < 26; i++) // upper case letters
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        ascii_letters[i] = 65 + i;
-    }
-    for (int i = 0; i < 26; i++) // lower case letters
-    {
-        ascii_letters[i] = 97 + i;
-    }
-
-    int text_length = strlen(text);
-    int ascii_text[text_length];
-
-    // create an array that stores the ascii equivalent of the characters in the string
-    for (int i = 0; i < text_length; i++)
-    {
-        ascii_text[i] = (int)text[i];
-    }
-
-
-    for (int i = 0; i < text_length; i++)
-    {
-        for (int j = 0; j < 52; j++) // nested loop
+        if (text[i] >= 'A' && text[i] <= 'Z' || text[i] >= 'a' && text[i] <= 'z' ) // count letters
         {
-            if (ascii_text[i] == ascii_letters[j]) // count letters
-            {
-                letters++;
-            }
+            letters++;
         }
     }
     return letters;
 }
 
+
 int count_words(string text)
 {
     int words = 2;
 
-         // create an array of numbers of the respective ascii letters
+    // // create an array of numbers of the respective ascii letters
 
-    int ascii_letters[52]; // 26 upper case + 26 lowercase
+    // int ascii_letters[52]; // 26 upper case + 26 lowercase
 
-    for (int i = 0; i < 26; i++) // upper case letters
-    {
-        ascii_letters[i] = 65 + i;
-    }
-    for (int i = 0; i < 26; i++) // lower case letters
-    {
-        ascii_letters[i] = 97 + i;
-    }
+    // for (int i = 0; i < 26; i++) // upper case letters
+    // {
+    //     ascii_letters[i] = 65 + i;
+    // }
+    // for (int i = 0; i < 26; i++) // lower case letters
+    // {
+    //     ascii_letters[i] = 97 + i;
+    // }
 
-    int text_length = strlen(text);
-    int ascii_text[text_length];
+    // int text_length = strlen(text);
+    // int ascii_text[text_length];
 
-    // create an array that stores the ascii equivalent of the characters in the string
-    for (int i = 0; i < text_length; i++)
-    {
-        ascii_text[i] = (int)text[i];
-    }
-    for (int i = 0; i < text_length; i++){
-        if (ascii_text[i] == 32) // count words; 32 is space in ascii
+    // // create an array that stores the ascii equivalent of the characters in the string
+    // for (int i = 0; i < text_length; i++)
+    // {
+    //     ascii_text[i] = (int)text[i];
+    // }
+
+    for (int i = 0, len = strlen(text); i < len; i++){
+        if (text[i] == 32) // count words; 32 is space in ascii
         {
             words++;
         }
@@ -100,36 +76,13 @@ int count_words(string text)
     return words;
 }
 
-
-//Calculate Coleman-Liau Index
 int count_sentences(string text)
 {
     int sentences = 0;
 
-    // create an array of numbers of the respective ascii letters
-
-    int ascii_letters[52]; // 26 upper case + 26 lowercase
-
-    for (int i = 0; i < 26; i++) // upper case letters
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        ascii_letters[i] = 65 + i;
-    }
-    for (int i = 0; i < 26; i++) // lower case letters
-    {
-        ascii_letters[i] = 97 + i;
-    }
-
-    int text_length = strlen(text);
-    int ascii_text[text_length];
-
-    // create an array that stores the ascii equivalent of the characters in the string
-    for (int i = 0; i < text_length; i++)
-    {
-        ascii_text[i] = (int)text[i];
-    }
-    for (int i = 0; i < text_length; i++)
-    {
-        if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
+        if (text[i] == 33 || text[i] == 46 || text[i] == 63) // count sentences
         {
             sentences++;
         }
