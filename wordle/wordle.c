@@ -159,14 +159,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 status[i] = EXACT; // 2 points
                 break;
             }
-            else
-            {
-                if(guess[i] == choice[j+1])
+            else if(guess[i] == choice[j+1])
                 {
                     score = score + CLOSE;
                     status[i] = CLOSE; // 1 point
                 }
-            }
         }
     }
 
