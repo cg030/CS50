@@ -22,17 +22,17 @@ int main(void)
 
     int rounded_score = score + 0.5;
 
-    printf("Letters: %i\n", count_letters(text));
-    printf("Words: %i\n", count_words(text));
-    printf("Sentences: %i\n", count_sentences(text));
-    printf("L: %f\n", L);
-    printf("S: %f\n", S);
+    // printf("Letters: %i\n", count_letters(text));
+    // printf("Words: %i\n", count_words(text));
+    // printf("Sentences: %i\n", count_sentences(text));
 
-    if(rounded_score < 1)
+    // print score
+
+    if (rounded_score < 1)
     {
         printf("Before Grade 1\n");
     }
-    if else(rounded_score < 16)
+    else if(rounded_score < 16)
     {
         printf("Grade %i\n", rounded_score);
     }
@@ -40,9 +40,9 @@ int main(void)
     {
         printf("Grade 16+\n");
     }
-
 }
 
+// function to count the number of letters
 int count_letters(string text)
 {
     int letters = 0;
@@ -57,7 +57,7 @@ int count_letters(string text)
     return letters;
 }
 
-
+//function to count the number of words
 int count_words(string text)
 {
     int words = 1;
@@ -72,13 +72,14 @@ int count_words(string text)
     return words;
 }
 
+// function to count the number of sentences
 int count_sentences(string text)
 {
     int sentences = 0;
 
     for (int i = 0, len = strlen(text); i < len; i++)
     {
-        if (text[i] == 33 || text[i] == 46 || text[i] == 63) // count sentences
+        if (text[i] == 33 || text[i] == 46 || text[i] == 63)
         {
             sentences++;
         }
