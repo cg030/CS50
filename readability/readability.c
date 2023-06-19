@@ -22,6 +22,10 @@ int main(void)
 
     int rounded_score = score + 0.5;
 
+    printf("Letters: %i\n", count_letters(text));
+    printf("Words: %i\n", count_words(text));
+    printf("Sentences: %i\n", count_sentences(text));
+
     printf("Grade %i\n", rounded_score);
 
 }
