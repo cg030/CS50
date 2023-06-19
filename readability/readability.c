@@ -32,7 +32,7 @@ int main(void)
     {
         printf("Before Grade 1\n");
     }
-    else if(rounded_score < 16)
+    else if (rounded_score < 16)
     {
         printf("Grade %i\n", rounded_score);
     }
@@ -87,8 +87,7 @@ int count_sentences(string text)
     return sentences;
 }
 
-// Learned lessons
+// Learned lessons:
+    // Variables defined in a function have their scope limited to that function. The exception is the main function
 
-// Variables defined in a function have their scope limited to that function. The exception is the main function
-
-// I initially tried to convert the string of text to its ASCII equivalent. This is unnessceary as in C, a char type can be used as an integer. For example, 'A' is equal to 65.
+    // I initially tried to convert the string of text to its ASCII equivalent. This is unnessceary as in C, a char type can be used as an integer. For example, 'A' is equal to 65.
