@@ -98,9 +98,8 @@ int count_words(string text)
         {
             words++;
         }
-        return words;
     }
-
+    return words;
 }
 
 
@@ -130,11 +129,12 @@ int count_sentences(string text)
     {
         ascii_text[i] = (int)text[i];
     }
-
-
-    if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
+    for (int i = 0; i < text_length; i++)
+    {
+        if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
         {
             sentences++;
         }
-        return sentences;
+    }
+    return sentences;
 }
