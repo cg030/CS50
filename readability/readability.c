@@ -45,9 +45,9 @@ float cli(string text)
     }
 
 
-    for (int i = 0; i < SIZE; i++)
+    for (int i = 0; i < text_length; i++)
     {
-        for (int j = 0; j < SIZE; j++) // nested loop
+        for (int j = 0; j < 50; j++) // nested loop
         {
             if (ascii_text[i] == ascii_letters[j]) // count letters
             {
