@@ -92,7 +92,7 @@ int main(int argc, string argv[])
 
         for(i = 0; i < wordsize; i++)
         {
-            status[i] == WRONG;
+            status[i] = WRONG;
         }
 
         // Calculate score for the guess
