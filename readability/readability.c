@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -53,7 +54,7 @@ int count_letters(string text)
 {
     int letters = 0;
 
-    
+
 
     for (int i = 0; i < text_length; i++)
     {
