@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int ascii_letter(string text);
-int ascii_text(string text);
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
