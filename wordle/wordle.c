@@ -141,20 +141,26 @@ int check_word(string guess, int wordsize, int status[], string choice)
     // TODO #5
 
     // compare
-    for(i = 0; i < wordsize; i++)
+    for(int i = 0; i < wordsize; i++)
     {
         for(j = 0; j < wordsize: j++)
         {
             if(guess[i] == choice[j])
             {
-                status[i] = EXACT;
+                status[i] = EXACT; // 2 points
                 break;
             }
         }
     }
-    for(i = 0; i < wordsize; i++)
+    for(int i = 0; i < wordsize; i++)
     {
-        for(j = i + 1; j < wordsize: j++)
+        for(int j = i + 1; j < wordsize: j++)
+        {
+            if(guess[i] == choice[j])
+            {
+                status[i] = CLOSE; // 1 point
+            }
+        }
 
     // then update
 
