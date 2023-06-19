@@ -114,7 +114,7 @@ int main(int argc, string argv[])
     // Print the game's result
     // TODO #7
 
-    if(check_word == 6)
+    if(check_word(guess, wor) == 6)
     {
         printf("You won!\n");
     }
