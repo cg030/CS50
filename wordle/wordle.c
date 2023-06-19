@@ -183,18 +183,17 @@ void print_word(string guess, int wordsize, int status[])
     {
         if (status[i] == 2)
         {
-            printf(GREEN"%c\n", guess[i]);
+            printf(GREEN"%c"RESET"\n", guess[i]);
         }
         else if (status[i] == 1)
         {
-            printf(YELLOW"%c\n", guess[i]);
+            printf(YELLOW"%c"RESET"\n", guess[i]);
         }
         else
         {
-            printf(RED"%c\n", guess[i]);
+            printf(RED"%c"RESET"\n", guess[i]);
         }
     }
-
     printf("\n");
     return;
 }
