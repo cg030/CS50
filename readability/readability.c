@@ -32,7 +32,8 @@ int main(void)
     {
         printf("Before Grade 1\n");
     }
-    else if (rounded_score < 16)
+    else if
+    (rounded_score < 16)
     {
         printf("Grade %i\n", rounded_score);
     }
