@@ -45,22 +45,30 @@ float cli(string text)
 
     for (int i = 0; i < text_length; i++)
     {
-        for (int j = 0; j < 50; j++) // nested loop
+    int found = 0;
+    for (int j = 0; j < 52; j++) // nested loop
+    {
+        if (ascii_text[i] == ascii_letters[j]) // count letters
         {
-            if (ascii_text[i] == ascii_letters[j]) // count letters
-            {
-                letters++;
-            }
-            else if (ascii_text[i] == 32) // count words; 32 is space in ascii
-            {
-                words++;
-            }
-            else if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
-            {
-                sentences++;
-            }
+            letters++;
+            found = 1;
+            break;
         }
     }
+
+    if (!found)
+    {
+        if (ascii_text[i] == 32) // count words; 32 is space in ascii
+        {
+            words++;
+        }
+        else if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
+        {
+            sentences++;
+        }
+    }
+}
+
 
     // calculate Index
 
