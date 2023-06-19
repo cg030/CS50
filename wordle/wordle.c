@@ -90,7 +90,7 @@ int main(int argc, string argv[])
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
 
-        for(j = 0; j < wordsize; j++)
+        for(int j = 0; j < wordsize; j++)
         {
             status[j] = WRONG;
         }
@@ -98,7 +98,7 @@ int main(int argc, string argv[])
         // Calculate score for the guess
         int score = check_word(guess, wordsize, status, choice);
 
-        printf("Guess %i: ", i + 1);
+        printf("Guess %i: \n", i + 1);
 
         // Print the guess
         print_word(guess, wordsize, status);
