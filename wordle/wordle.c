@@ -117,9 +117,10 @@ string get_guess(int wordsize)
 {
     string guess = "";
 
-    do 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
+
+    if (wordsize == 5)
 
     return guess;
 }
