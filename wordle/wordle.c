@@ -166,7 +166,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         for(int j = i + 1; j < wordsize; j++)
         {
-            if(guess[i] != choice[j])
+            if(guess[i] == choice[j])
             {
                 score = score + CLOSE;
                 status[i] = CLOSE; // 1 point
