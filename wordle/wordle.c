@@ -119,8 +119,11 @@ string get_guess(int wordsize)
 
     // ensure users actually provide a guess that is the correct length
     // TODO #3
-
-    if (wordsize == 5)
+    do
+    {
+        guess = get_string("Input a %s-letter word:", wordsize);
+    }
+    while(strlen(guess) != wordsize)
 
     return guess;
 }
