@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-int ascii_array(string text);
+int ascii_letter(string text);
+int ascii_text(string text);
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -27,7 +28,7 @@ int main(void)
 
 }
 
-int ascii_array(string text)
+int ascii_letters(string text)
 {
     // create an array of numbers of the respective ascii letters
 
@@ -42,6 +43,12 @@ int ascii_array(string text)
         ascii_letters[i] = 97 + i;
     }
 
+    return ascii_letters;
+}
+
+
+int ascii_text(string text)
+{
     int text_length = strlen(text);
     int ascii_text[text_length];
 
@@ -52,6 +59,7 @@ int ascii_array(string text)
     }
     return ascii_text;
 }
+
 
 int count_letters(string text)
 {
