@@ -24,7 +24,7 @@ float cli(string text)
     int sentences = 0;
 
     // create an array of numbers of the respective ascii letters
-    int ascii_letters[0];
+    int ascii_letters[52]; // 26 upper case + 26 lowercase
 
     for (int i = 0; i < 26; i++) // upper case letters
     {
