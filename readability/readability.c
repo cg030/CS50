@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+int ascii_array(string text);
 int count_letters(string text);
 int count_words(string text);
 int count_sentences(string text);
@@ -13,7 +13,23 @@ int main(void)
 
     string text = get_string("Text: ");
 
-     // create an array of numbers of the respective ascii letters
+    // calculate Index
+
+    float L = count_letters(text) / count_words(text) * 100.0; // L is the average number of letters per 100 words in the text
+    float S = count_sentences(text) / count_words(text) * 100.0; // S is the average number of sentences per 100 words in the text
+    float score = 0.0588 * L - 0.296 * S - 15.8;
+
+    // print score
+
+    int rounded_score = score + 0.5;
+
+    printf("Grade %i\n", rounded_score);
+
+}
+
+int ascii_array(string text)
+{
+    // create an array of numbers of the respective ascii letters
 
     int ascii_letters[52]; // 26 upper case + 26 lowercase
 
@@ -34,21 +50,8 @@ int main(void)
     {
         ascii_text[i] = (int)text[i];
     }
-
-    // calculate Index
-
-    float L = count_letters(text) / count_words(text) * 100.0; // L is the average number of letters per 100 words in the text
-    float S = count_sentences(text) / count_words(text) * 100.0; // S is the average number of sentences per 100 words in the text
-    float score = 0.0588 * L - 0.296 * S - 15.8;
-
-    // print score
-
-    int rounded_score = score + 0.5;
-
-    printf("Grade %i\n", rounded_score);
-
+    return ascii_text;
 }
-
 
 int count_letters(string text)
 {
