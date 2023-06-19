@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+float cli(string text);
+
 int main(void)
 {
     // prompt user
@@ -9,12 +11,12 @@ int main(void)
 
     printf("%c\n", text[0]);
 
-    printf("Grade %f\n", score);
+    printf("Grade %f\n", cli(text));
 
 }
 
 //Calculate Coleman-Liau Index
-cli(string text)
+float cli(string text)
 {
     int letters = 0;
     int words = 0;
