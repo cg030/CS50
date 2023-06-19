@@ -152,6 +152,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
             }
         }
     }
+    for(i = 0; i < wordsize; i++)
+    {
+        for(j = i + 1; j < wordsize: j++)
 
     // then update
 
