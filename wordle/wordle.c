@@ -140,7 +140,19 @@ int check_word(string guess, int wordsize, int status[], string choice)
     // compare guess to choice and score points as appropriate, storing points in status
     // TODO #5
 
-    asdf
+    // compare
+    for(i = 0; i < wordsize; i++)
+    {
+        for(j = 0; j < wordsize: j++)
+        {
+            if(guess[i] == choice[j])
+            {
+                status[i] = 
+            }
+        }
+    }
+
+    // then update
 
 
 
