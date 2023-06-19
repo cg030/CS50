@@ -57,7 +57,7 @@ float cli(string text)
             {
                 words++;
             }
-            else if (ascii_text[i] == 33 | 46 | 63) // count sentences
+            else if (ascii_text[i] == 33 || ascii_text[i] == 46 || ascii_text[i] == 63) // count sentences
             {
                 sentences++;
             }
@@ -68,7 +68,7 @@ float cli(string text)
 
     float L = letters / words * 100; // L is the average number of letters per 100 words in the text
     float S = sentences / words * 100; // S is the average number of sentences per 100 words in the text
-    float score = index = 0.0588 * L - 0.296 * S - 15.8;
+    float score = 0.0588 * L - 0.296 * S - 15.8;
 
     return score;
 
