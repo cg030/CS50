@@ -93,12 +93,14 @@ int count_words(string text)
     {
         ascii_text[i] = (int)text[i];
     }
-
-    if (ascii_text[i] == 32) // count words; 32 is space in ascii
+    for (int i = 0; i < text_length; i++){
+        if (ascii_text[i] == 32) // count words; 32 is space in ascii
         {
             words++;
         }
         return words;
+    }
+
 }
 
 
