@@ -14,8 +14,8 @@ int main(void)
 
     // calculate Index
 
-    float L = count_letters(text) / count_words(text) * 100.0; // L is the average number of letters per 100 words in the text
-    float S = count_sentences(text) / count_words(text) * 100.0; // S is the average number of sentences per 100 words in the text
+    float L = count_letters(text) / count_words(text) * 100; // L is the average number of letters per 100 words in the text
+    float S = count_sentences(text) / count_words(text) * 100; // S is the average number of sentences per 100 words in the text
     float score = 0.0588 * L - 0.296 * S - 15.8;
 
     // print score
