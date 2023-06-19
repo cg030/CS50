@@ -146,7 +146,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
         {
             if(guess[i] == choice[j])
             {
-                score = score + 2;
+                score = score + EXACT;
                 status[i] = EXACT; // 2 points
                 break;
             }
@@ -159,23 +159,12 @@ int check_word(string guess, int wordsize, int status[], string choice)
         {
             if(guess[i] == choice[j])
             {
+                score = score + CLOSE;
                 status[i] = CLOSE; // 1 point
             }
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-    // HINTS
     // iterate over each letter of the guess
         // iterate over each letter of the choice
             // compare the current guess letter to the current choice letter
