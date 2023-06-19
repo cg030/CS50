@@ -18,7 +18,7 @@ int main(void)
 float cli(string text)
 {
     int letters = 0;
-    int words = 0;
+    int words = 1;
     int sentences = 0;
 
     // create an array of numbers of the respective ascii letters
@@ -72,12 +72,9 @@ float cli(string text)
 
     // calculate Index
 
-    // float L = letters / words * 100; // L is the average number of letters per 100 words in the text
-    // float S = sentences / words * 100; // S is the average number of sentences per 100 words in the text
-    // float score = 0.0588 * L - 0.296 * S - 15.8;
+    float L = letters / words * 100; // L is the average number of letters per 100 words in the text
+    float S = sentences / words * 100; // S is the average number of sentences per 100 words in the text
+    float score = 0.0588 * L - 0.296 * S - 15.8;
 
-    // return score;
-
-    return words;
-
+    return score;
 }
