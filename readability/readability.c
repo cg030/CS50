@@ -52,7 +52,8 @@ int main(void)
 int count_letters(string text)
 {
     int letters = 0;
-    int text_length = strlen(text)
+
+    
 
     for (int i = 0; i < text_length; i++)
     {
