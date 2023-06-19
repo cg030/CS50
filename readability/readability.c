@@ -28,8 +28,14 @@ int main(void)
     printf("L: %f\n", L);
     printf("S: %f\n", S);
 
-
-    printf("Grade %i\n", rounded_score);
+    if(rounded_score < 16)
+    {
+        printf("Grade %i\n", rounded_score);
+    }
+    else
+    {
+        printf("Grade 16+");
+    }
 
 }
 
