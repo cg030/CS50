@@ -25,6 +25,9 @@ int main(void)
     printf("Letters: %i\n", count_letters(text));
     printf("Words: %i\n", count_words(text));
     printf("Sentences: %i\n", count_sentences(text));
+    printf("L: %f\n", L);
+    printf("S: %f\n", S);
+
 
     printf("Grade %i\n", rounded_score);
 
