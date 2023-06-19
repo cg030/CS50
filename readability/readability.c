@@ -37,15 +37,15 @@ float cli(string text)
 
     int ascii_text[0];
     // create an array that stores the ascii equivalent of the characters in the string
-    for (int i = 0, i < strlen[text], i++)
+    for (int i = 0; i < strlen[text]; i++)
     {
         ascii_text[i] = (int)text[i];
     }
 
 
-    for (int i = 0; i < SIZE, i++)
+    for (int i = 0; i < SIZE; i++)
     {
-        for (int j = 0; j < SIZE, j++) // nested loop
+        for (int j = 0; j < SIZE; j++) // nested loop
         {
             if (ascii_text[i] == ascii_letters[j]) // count letters
             {
