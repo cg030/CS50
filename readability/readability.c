@@ -10,7 +10,9 @@ int main(void)
 
     string text = get_string("Text: ");
 
-    printf("Grade %f\n", cli(text));
+    int rounded_score = (int)(cli(text) + 0.5);
+
+    printf("Grade %i\n", rounded_score);
 
 }
 
