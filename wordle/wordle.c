@@ -160,7 +160,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 break;
             }
         }
-
+    }
+    for(int i = 0; i < wordsize; i++)
+    {
         // If the letter wasn't found at the exact location, let's check if it exists elsewhere in the word
         if (status[i] != EXACT)
         {
