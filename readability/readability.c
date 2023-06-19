@@ -70,6 +70,6 @@ float cli(string text)
 
     // return score;
 
-    return letters;
+    return words;
 
 }
