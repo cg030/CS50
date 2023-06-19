@@ -59,6 +59,10 @@ int count_letters(string text)
     }
 }
 
+int word_counts(string text)
+{
+    
+}
 
 
 //Calculate Coleman-Liau Index
