@@ -8,7 +8,7 @@ int main(void)
 {
     // prompt user
 
-    string text = get_string("Start Writing: ");
+    string text = get_string("Text: ");
 
     printf("Grade %f\n", cli(text));
 
