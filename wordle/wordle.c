@@ -159,26 +159,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 status[i] = EXACT; // 2 points
                 break;
             }
-            else
+            else if(i != j && guess[i] == choice[j])
             {
+                score = score + CLOSE;
+                status[i] = CLOSE; // 1 point
                 break; // if a letter at index i wasn't exactly matching to index j then there's is no point in further going through the index j of the choice[] so we can break to the first loop
-            }
-        }
-    }
-
-    for(int i = 0; i < wordsize; i++)
-    {
-        // If the letter wasn't found at the exact location, let's check if it exists elsewhere in the word
-        if (status[i] != EXACT)
-        {
-            for(int j = 0; j < wordsize; j++)
-            {
-                if(i != j && guess[i] == choice[j])
-                {
-                    score = score + CLOSE;
-                    status[i] = CLOSE; // 1 point
-                    break;
-                }
             }
         }
     }
