@@ -159,7 +159,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 {
                     score = score + CLOSE;
                     status[i] = CLOSE; // 1 point
-                    break; // if a letter at index i wasn't exactly matching to index j then there's is no point in further going through the index j of the choice[] so we can break to the first loop
+                    break; 
                 }
             }
         }
