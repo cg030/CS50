@@ -159,6 +159,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 status[i] = EXACT; // 2 points
                 break;
             }
+            else
+            {
+                break; // if a letter at index i wasn't exactly matching to index j then 
+            }
         }
     }
     for(int i = 0; i < wordsize; i++)
