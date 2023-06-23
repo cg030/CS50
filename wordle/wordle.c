@@ -148,30 +148,22 @@ int check_word(string guess, int wordsize, int status[], string choice)
     {
         if (guess[i] == choice[i]) // iterate over each letter of the guess and choice
         {
-            score = score + EXACT;
-            status[i] = EXACT; // 2 points
+            score = score + EXACT; // update score
+            status[i] = EXACT; // EXACT = 2 points
         }
         else // if the letters are'nt an exact match use a nested loop to iterate over each letter of the choice for a match
         {
-            for(int j = 0; j < wordsize; j++)
+            for (int j = 0; j < wordsize; j++)
             {
-                if(guess[i] == choice[j])
+                if (guess[i] == choice[j])
                 {
                     score = score + CLOSE;
-                    status[i] = CLOSE; // 1 point
+                    status[i] = CLOSE; // CLOSE = 1 point
                     break;
                 }
             }
         }
     }
-
-
-
-        // iterate over each letter of the choice
-            // compare the current guess letter to the current choice letter
-                // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
-                // if it's in the word, but not the right spot, score CLOSE point (yellow)
-        // keep track of the total score by adding each individual letter's score from above
 
     return score;
 }
@@ -179,7 +171,6 @@ int check_word(string guess, int wordsize, int status[], string choice)
 void print_word(string guess, int wordsize, int status[])
 {
     // print word character-for-character with correct color coding, then reset terminal font to normal
-    // TODO #6
 
     for(int i = 0; i < wordsize; i++)
     {
