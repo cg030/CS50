@@ -161,10 +161,11 @@ int check_word(string guess, int wordsize, int status[], string choice)
             }
             else
             {
-                break; // if a letter at index i wasn't exactly matching to index j then 
+                break; // if a letter at index i wasn't exactly matching to index j then there's is no point in further going through the index j of the choice[]
             }
         }
     }
+    
     for(int i = 0; i < wordsize; i++)
     {
         // If the letter wasn't found at the exact location, let's check if it exists elsewhere in the word
