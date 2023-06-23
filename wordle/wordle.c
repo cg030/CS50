@@ -87,7 +87,6 @@ int main(int argc, string argv[])
         int status[wordsize];
 
         // set all elements of status array initially to 0, aka WRONG
-        // TODO #4
 
         for(int j = 0; j < wordsize; j++)
         {
@@ -111,7 +110,6 @@ int main(int argc, string argv[])
     }
 
     // Print the game's result
-    // TODO #7
 
     if(won == true)
     {
@@ -122,7 +120,6 @@ int main(int argc, string argv[])
         printf("Wrong! Correct Answer: %s\n", choice);
     }
 
-    // that's all folks!
     return 0;
 }
 
@@ -131,12 +128,12 @@ string get_guess(int wordsize)
     string guess = "";
 
     // ensure users actually provide a guess that is the correct length
-    // TODO #3
+
     do
     {
         guess = get_string("Input a %i-letter word: ", wordsize);
     }
-    while(strlen(guess) != wordsize);
+    while (strlen(guess) != wordsize);
 
     return guess;
 }
@@ -146,11 +143,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
     int score = 0;
 
     // compare guess to choice and score points as appropriate, storing points in status
-    // TODO #5
 
-    for(int i = 0; i < wordsize; i++)
+    for (int i = 0; i < wordsize; i++)
     {
-        if(guess[i] == choice[i])
+        if (guess[i] == choice[i]) // iterate over each letter of the guess
         {
             score = score + EXACT;
             status[i] = EXACT; // 2 points
@@ -168,7 +164,9 @@ int check_word(string guess, int wordsize, int status[], string choice)
             }
         }
     }
-    // iterate over each letter of the guess
+
+
+
         // iterate over each letter of the choice
             // compare the current guess letter to the current choice letter
                 // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further
