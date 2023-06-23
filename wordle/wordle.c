@@ -88,7 +88,7 @@ int main(int argc, string argv[])
 
         // set all elements of status array initially to 0, aka WRONG
 
-        for(int j = 0; j < wordsize; j++)
+        for (int j = 0; j < wordsize; j++)
         {
             status[j] = WRONG;
         }
@@ -111,7 +111,7 @@ int main(int argc, string argv[])
 
     // Print the game's result
 
-    if(won == true)
+    if (won == true)
     {
         printf("You won!\n");
     }
@@ -172,7 +172,7 @@ void print_word(string guess, int wordsize, int status[])
 {
     // print word character-for-character with correct color coding, then reset terminal font to normal
 
-    for(int i = 0; i < wordsize; i++)
+    for (int i = 0; i < wordsize; i++)
     {
         if (status[i] == 2)
         {
