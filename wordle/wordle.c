@@ -146,12 +146,12 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     for (int i = 0; i < wordsize; i++)
     {
-        if (guess[i] == choice[i]) // iterate over each letter of the guess
+        if (guess[i] == choice[i]) // iterate over each letter of the guess and choice
         {
             score = score + EXACT;
             status[i] = EXACT; // 2 points
         }
-        else // if the letters are'nt an exact match use a nested loop to iterate over each letter of the choice
+        else // if the letters are'nt an exact match use a nested loop to iterate over each letter of the choice for a match
         {
             for(int j = 0; j < wordsize; j++)
             {
