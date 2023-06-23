@@ -30,7 +30,7 @@ int main(int argc, string argv[])
 
     if (argc != 2)
     {
-        printf("Error: wordsize must be either 5, 6, 7, or 8\n");
+        printf("Usage: ./wordle wordsize\n");
         return 1;
     }
 
