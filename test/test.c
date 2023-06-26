@@ -16,5 +16,10 @@ int main(void)
             }
         }
     }
-    printf("Sorted Array: %i\n", numbers)
+    printf("The elements of the array are: ");
+    for(int i = 0; i < 6; i++)
+    {
+        printf("%d ", numbers[i]);
+    }
+
 }
