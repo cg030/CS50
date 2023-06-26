@@ -11,7 +11,7 @@ How do you know?: TODO
 
 sort2 uses: TODO
 
-    random5000 :    
+    random5000 :    real    0m0.045s
     random50000 :
     reversed5000 :
     reversed50000 :
