@@ -9,7 +9,7 @@ sort1 uses: TODO
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: merge sort
 
     random5000 :    real    0m0.045s
     random50000 :   real    0m0.660s
