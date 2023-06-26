@@ -7,7 +7,7 @@ sort1 uses: bubble sort
     sorted5000 :    real    0m0.032s
     sorted50000 :   real    0m0.851s
 
-How do you know?: TODO
+How do you know?: Omega is much larger than Big O.
 
 sort2 uses: merge sort
 
@@ -18,7 +18,7 @@ sort2 uses: merge sort
     sorted5000 :    real    0m0.038s
     sorted50000 :   real    0m0.896s
 
-How do you know?: TODO
+How do you know?: In each file, with increasing n, the run time increases logarithmically.
 
 sort3 uses: selection sort
 
@@ -29,4 +29,4 @@ sort3 uses: selection sort
     sorted5000 :    real    0m0.063s
     sorted50000 :   real    0m3.311s
 
-How do you know?: TODO
+How do you know?: Upper bound is exponentially larger than the lower bound.
