@@ -12,11 +12,11 @@ int main(void)
         {
             if (numbers[i] > numbers[i + 1 ])
             {
-                numbers[i]++;
+                numbers[i] = numbers[i + 1];
             }
         }
     }
-    printf("The elements of the array are: ");
+    printf("The elements of the array are:\n");
     for(int i = 0; i < 6; i++)
     {
         printf("%d ", numbers[i]);
