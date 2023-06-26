@@ -1,7 +1,6 @@
 sort1 uses: TODO
 
     random5000 :    real    0m0.073s
-    random10000 :   real    0m0.461s
     random50000 :   real    0m7.808s
     reversed5000 :  real    0m0.090s
     reversed50000 : real    0m5.745s
