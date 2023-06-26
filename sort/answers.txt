@@ -27,6 +27,6 @@ sort3 uses: TODO
     reversed5000 :  real    0m0.069s
     reversed50000 : real    0m3.915s
     sorted5000 :    real    0m0.063s
-    sorted50000 :
+    sorted50000 :   real    0m3.311s
 
 How do you know?: TODO
