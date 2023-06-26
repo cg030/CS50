@@ -1,4 +1,4 @@
-sort1 uses: TODO
+sort1 uses: bubble sort
 
     random5000 :    real    0m0.073s
     random50000 :   real    0m7.808s
@@ -20,7 +20,7 @@ sort2 uses: merge sort
 
 How do you know?: TODO
 
-sort3 uses: TODO
+sort3 uses: selection sort
 
     random5000 :    real    0m0.078s
     random50000 :   real    0m3.317s
