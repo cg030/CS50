@@ -15,18 +15,18 @@ sort2 uses: TODO
     random50000 :   real    0m0.660s
     reversed5000 :  real    0m0.027s
     reversed50000 : real    0m0.792s
-    sorted5000 :
-    sorted50000 :
+    sorted5000 :    real    0m0.038s
+    sorted50000 :   real    0m0.896s
 
 How do you know?: TODO
 
 sort3 uses: TODO
 
-    random5000 :
-    random50000 :
-    reversed5000 :
-    reversed50000 :
-    sorted5000 :
+    random5000 :    real    0m0.078s
+    random50000 :   real    0m3.317s
+    reversed5000 :  real    0m0.069s
+    reversed50000 : real    0m3.915s
+    sorted5000 :    real    0m0.063s
     sorted50000 :
 
 How do you know?: TODO
