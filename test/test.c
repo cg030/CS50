@@ -21,7 +21,7 @@ int main(void)
     }
 
     printf("The elements of the array are:\n");
-    for(int i = 0; i < 6; i++)
+    for(int i = 0; i < 7; i++)
     {
         printf("%d ", numbers[i]);
     }
