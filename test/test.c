@@ -5,11 +5,14 @@ int numbers[] = {10,3,5,7,9,1,8};
 
 int main(void)
 {
-    for(int i = 0; i < n-1; i++)
+    for (int j = 0; j < 6; j++)
     {
-        if (numbers[i] > numbers[i + 1 ])
+        for(int i = 0; i < 6; i++)
         {
-            //move i to the right
+            if (numbers[i] > numbers[i + 1 ])
+            {
+                //move i to the right
+            }
         }
     }
 }
