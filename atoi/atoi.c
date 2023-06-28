@@ -34,7 +34,10 @@ int convert(string input)
     // and add the first character converted to an integer
     else
     {
-        return 10 * convert(input + 1) + (*input - '0');
+        // return 10 * convert(input + 1) + (*input - '0');
+
+        
+        return 10 * (*input - '0') + convert(input +1);
     }
 
 }
