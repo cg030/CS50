@@ -36,8 +36,10 @@ int convert(string input)
     {
         // return 10 * convert(input + 1) + (*input - '0');
 
-        
-        return 10 * (*input - '0') + convert(input +1);
+        for(int i = 1; i < ; i = i * 10) // update what we multiply the first digit by)
+        {
+            return i * (*input - '0') + convert(input +1);
+        }
     }
 
 }
