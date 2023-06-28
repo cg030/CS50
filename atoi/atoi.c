@@ -25,6 +25,10 @@ int main(void)
 
 int convert(string input)
 {
+    int callcount = 0;
+    
+    callcount++;
+
     // Base case: if the string is empty, return 0
     if (*input == '\0')
     {
@@ -35,11 +39,12 @@ int convert(string input)
         // Calculate the factor
         int i = 1;
         int length = strlen(input);
-        int callcount = 0;
-        
-        for(int j = 0; j < length; j++)
+        if(callcount > 2)
         {
-            i *= 10;
+            for(int j = 0; j < length; j++)
+            {
+                i *= 10;
+            }
         }
         return convert(input + 1) + i * (*input - '0');
     }
