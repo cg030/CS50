@@ -35,6 +35,8 @@ int convert(string input)
         // Calculate the factor
         int i = 1;
         int length = strlen(input);
+        int callcount = 0;
+        
         for(int j = 0; j < length; j++)
         {
             i *= 10;
