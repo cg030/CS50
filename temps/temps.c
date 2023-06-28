@@ -84,7 +84,7 @@ void sort_cities(void)
             {
                 // use temporary variable
                 avg_temp temporary = temps[j];
-                temps[j - 1] = temps[j];
+                temps[j] = temps[j - 1];
                 temps[j - 1] = temporary;
             }
         }
