@@ -25,11 +25,6 @@ int main(void)
 
 int convert(string input)
 {
-    // Static variables retain their value between function calls
-    static int callCount = 0;
-
-    // Increment call count
-    callCount++;
 
     // Base case: if the string is empty, return 0
     if (*input == '\0')
@@ -40,12 +35,9 @@ int convert(string input)
         // Calculate the factor
         int i = 1;
         int length = strlen(input);
-        if(callCount > 2)
+        for(int j = 1; j < length; j++)
         {
-            for(int j = 0; j < length; j++)
-            {
-                i *= 10;
-            }
+            i *= 10;
         }
-        return convert(input + 1) + i * (*input - '0');
+    return convert(input + 1) + i * (*input - '0');
 }
