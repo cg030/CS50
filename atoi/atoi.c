@@ -31,13 +31,15 @@ int convert(string input)
     {
         return 0;
     }
+    int i = 1;
+    int length = strlen(input);
 
-        // Calculate the factor
-        int i = 1;
-        int length = strlen(input);
-        for(int j = 1; j < length; j++)
-        {
-            i *= 10;
-        }
+    for(int j = 1; j < length; j++)
+    {
+        i *= 10;
+    }
     return convert(input + 1) + i * (*input - '0');
 }
+
+// *input takes the first character of the string input
+// (*input - '0') subtract by '0' converts the character into an integer
