@@ -25,13 +25,16 @@ int main(void)
 
 int convert(string input)
 {
-    if (input == (void *)0)
+    // Base case: if the string is empty, return 0
+    if (*input == '\0')
     {
         return 0;
     }
+    // Recursive case: multiply by 10 the integer representation of the rest of the string
+    // and add the first character converted to an integer
     else
     {
-        output = return (input - '0') + 10 * convert(input + 1);
+        return 10 * convert(input + 1) + (*input - '0');
     }
 
 }
