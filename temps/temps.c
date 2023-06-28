@@ -62,19 +62,19 @@ int main(void)
 // TODO: Sort cities by temperature in descending order using bubble sort
 void sort_cities(void)
 {
-    for(i = 0; i < n; i++)
+    for(i = 0; i < n - 1; i++)
     {
-        for(j = 0; j < n; j++)
+        for(j = 1; j < n; j++)
         {
             if(temps[i].temp > temps[j].temp)
             {
                 // use temporary variable
-                int temporary;
-                temporary = temps[i].temp;
-                temps[i].temp = temps[j].temp;
+                avg_temp temporary = temps[i];
+                temps[i] = temps[j];
                 temps[j] = temporary;
             }
             break;
         }
     }
+    re
 }
