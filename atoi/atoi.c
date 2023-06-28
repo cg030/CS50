@@ -36,8 +36,7 @@ int convert(string input)
     {
         return 0;
     }
-    else
-    {
+
         // Calculate the factor
         int i = 1;
         int length = strlen(input);
@@ -49,5 +48,4 @@ int convert(string input)
             }
         }
         return convert(input + 1) + i * (*input - '0');
-    }
 }
