@@ -72,6 +72,7 @@ void sort_cities(void)
                 avg_temp temporary = temps[i];
                 temps[i] = temps[j];
                 temps[j] = temporary;
+                break;
             }
         }
     }
