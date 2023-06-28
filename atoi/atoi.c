@@ -30,13 +30,8 @@ int convert(string input)
     {
         return 0;
     }
-    // Recursive case: multiply by 10 the integer representation of the rest of the string
-    // and add the first character converted to an integer
-    else
-    {
-        // return 10 * convert(input + 1) + (*input - '0');
 
-            return  * (*input - '0') + convert(input +1);
+    
     }
 
 }
