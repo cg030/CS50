@@ -64,19 +64,15 @@ void sort_cities(void)
 {
     for(int i = 0; i < NUM_CITIES - 1; i++)
     {
-        for(int j = 1; j < NUM_CITIES; j++)
+        for(int j = i + 1; j < NUM_CITIES; j++)
         {
-            if(temps[i].temp > temps[j].temp)
+            if(temps[i].temp < temps[j].temp)
             {
                 // use temporary variable
                 avg_temp temporary = temps[i];
                 temps[i] = temps[j];
                 temps[j] = temporary;
-                break;
             }
-            break;
         }
-        // break  meaning reset i to zero if a digit cant go further anymore
-        // better would be if a number is blocked to then take that larger number and have it bubble up
     }
 }
