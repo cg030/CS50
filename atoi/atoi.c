@@ -34,18 +34,11 @@ int convert(string input)
     {
         // Calculate the factor
         int i = 1;
-        for(int j = 0; j < input.size(); j++)
+        int length = strlen(input);
+        for(int j = 0; j < length; j++)
         {
             i *= 10;
         }
-        return convert(input + 1) + i * (*input - '0')
+        return convert(input + 1) + i * (*input - '0');
     }
-
 }
-
-// need to add 5 + 60 + 300
-
-// convert("") = 0
-//concert(5) = 5
-// convert(65) = 60
-// convert(365) = 300
