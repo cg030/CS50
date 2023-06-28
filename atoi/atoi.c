@@ -32,6 +32,12 @@ int convert(string input)
     }
     else
     {
+        // Calculate the factor
+        int i = 1;
+        for(int j = 0; j < input.size(); j++)
+        {
+            i *= 10;
+        }
         return convert(input + 1) + i * (*input - '0')
     }
 
