@@ -30,8 +30,10 @@ int convert(string input)
     {
         return 0;
     }
-
-    
+    else
+    {
+        return convert(input + 1)
+    }
     }
 
 }
