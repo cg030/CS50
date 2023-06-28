@@ -25,17 +25,13 @@ int main(void)
 
 int convert(string input)
 {
-    if (input[0] == '\0')
+    if (input == (void *)0)
     {
         return 0;
     }
-
-    // int result = convert(input + 1) * 10 + (input[0] - '0');
-
-       int result = convert(input + 1) * 10 + (input[] - '0');
-
-    return result;
-
-
+    else
+    {
+        return (input - '0') + 10 * convert(input + 1);
+    }
 
 }
