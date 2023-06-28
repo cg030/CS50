@@ -31,7 +31,7 @@ int convert(string input)
     }
     else
     {
-        return (input - '0') + 10 * convert(input + 1);
+        output = return (input - '0') + 10 * convert(input + 1);
     }
 
 }
