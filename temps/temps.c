@@ -76,7 +76,7 @@ void sort_cities(void)
     //     }
     // }
 
-    for(int i = NUM_CITIES -1 ; i >= 1; i--)
+    for(int i = NUM_CITIES - 1 ; i >= 1; i--)
     {
         for(int j = i - 1 ; j >= 0; j--)
         {
