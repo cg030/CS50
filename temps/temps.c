@@ -59,7 +59,7 @@ int main(void)
     }
 }
 
-// TODO: Sort cities by temperature in descending order using bubble sort
+// Sort cities by temperature in descending order using bubble sort
 void sort_cities(void)
 {
     for(int i = NUM_CITIES - 1 ; i >= 0; i--)
