@@ -75,6 +75,7 @@ void sort_cities(void)
                 break;
             }
         }
+        // break  meaning reset i to zero if a digit cant go further anymore
     }
     break;
 }
