@@ -76,6 +76,7 @@ void sort_cities(void)
             }
         }
         // break  meaning reset i to zero if a digit cant go further anymore
+        // better would be if a number is blocked to then take that larger number and have it bubble up
     }
     break;
 }
