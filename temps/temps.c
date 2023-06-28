@@ -66,7 +66,14 @@ void sort_cities(void)
     {
         for(j = 0; j < n; j++)
         {
-            
+            if(temps[i] > temps[j])
+            {
+                // use temporary variable
+                int temporary;
+                temporary = temps[i];
+                temps[i] = temps[j];
+                temps[j] = temporary;
+            }
         }
     }
 }
