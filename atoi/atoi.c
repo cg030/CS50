@@ -34,6 +34,8 @@ int convert(string input)
     int i = 1;
     int length = strlen(input);
 
+    // calculate factor i so that i corresponds to the placement of the converted input digit.
+    // If 365 is the input we multiply 1 * 0 (0 is from *input and since the input is convert("") it is 0), 1 * 5, 10 * 6 and 100 * 300.
     for(int j = 1; j < length; j++)
     {
         i *= 10;
