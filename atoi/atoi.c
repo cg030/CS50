@@ -42,4 +42,9 @@ int convert(string input)
 }
 
 // *input takes the first character of the string input
+
 // (*input - '0') subtract by '0' converts the character into an integer
+
+// (input + 1) is string arithmetic it shortens the string by one character every time the function is called.
+//First convert(365) then convert(65) and so on
+
