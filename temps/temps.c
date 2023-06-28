@@ -80,11 +80,11 @@ void sort_cities(void)
     {
         for(int j = NUM_CITIES - 1 ; j >= 0; j--)
         {
-            if(temps[j - 1].temp > temps[j].temp)
+            if(temps[j].temp > temps[j - 1].temp)
             {
                 // use temporary variable
-                avg_temp temporary = temps[j - 1];
-                temps[i] = temps[j];
+                avg_temp temporary = temps[j];
+                temps[j - 1] = temps[j];
                 temps[j - 1] = temporary;
             }
         }
