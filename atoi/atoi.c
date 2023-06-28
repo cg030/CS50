@@ -32,8 +32,7 @@ int convert(string input)
     }
     else
     {
-        return convert(input + 1) 
-    }
+        return convert(input + 1) + i * (*input - '0')
     }
 
 }
