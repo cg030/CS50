@@ -74,9 +74,9 @@ void sort_cities(void)
                 temps[j] = temporary;
                 break;
             }
+            break;
         }
         // break  meaning reset i to zero if a digit cant go further anymore
         // better would be if a number is blocked to then take that larger number and have it bubble up
     }
-    break;
 }
