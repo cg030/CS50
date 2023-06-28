@@ -38,3 +38,10 @@ int convert(string input)
     }
 
 }
+
+// need to add 5 + 60 + 300
+
+// convert("") = 0
+//concert(5) = 5
+// convert(65) = 60
+// convert(365) = 300
