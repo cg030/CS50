@@ -32,7 +32,7 @@ int convert(string input)
 
     // int result = convert(input + 1) * 10 + (input[0] - '0');
 
-       int result = convert(input + 1) * 10 + (input[0] - '0');
+       int result = convert(input + 1) * 10 + (input[] - '0');
 
     return result;
 
