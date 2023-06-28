@@ -76,4 +76,5 @@ void sort_cities(void)
             }
         }
     }
+    break;
 }
