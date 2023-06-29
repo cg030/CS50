@@ -33,6 +33,7 @@ int max(int array[], int n)
     // simply use a condition if number is larger than every other number return that number
 
     bool helper_array[n];
+    bool ismax = 1;
 
     for (int i = 0; i < n - 1 ; i++)
     {
@@ -49,7 +50,10 @@ int max(int array[], int n)
 
     for(int i = 0; i < n; i++)
     {
-        if(i = 1)
+        if(helper_array[i] = 0)
+        {
+            bool
+        }
     }
     return 0;
 }
