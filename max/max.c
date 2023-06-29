@@ -37,7 +37,10 @@ int max(int array[], int n)
             {
                 helper_array[i] = 1;
             }
-            helper_array[i] = 0;
+            else
+            {
+                helper_array[i] = 0;
+            }
         }
 
         for(int k = 0; k < n; k++)
@@ -46,9 +49,9 @@ int max(int array[], int n)
             {
                 return array[k];
             }
-            break;
         }
     }
+    return 0;
 }
 
             // have to check if element i is larger than all other elemtnes before next round of outer loop since it the next round will overwrite the previous round
