@@ -44,17 +44,19 @@ int max(int array[], int n)
                 helper_array[i] = 1;
             }
             helper_array[i] = 0;
-        }
-    }
 
-    for(int i = 0; i < n; i++)
-    {
-        if(helper_array[i] = 0)
+            // have to check if element i is larger than all other elemtnes before next round of outer loop since it the next round will overwrite the previous round
+        }
+        
+        for(int i = 0; i < n; i++)
         {
-            ismax = 0;
-            break;
-        }
+            if(helper_array[i] = 0)
+            {
+                ismax = 0;
+                break;
+            }
 
+    }
     }
 
     return 0;
