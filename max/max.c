@@ -40,9 +40,9 @@ int max(int array[], int n)
         {
             if (array[i] > array[j])
             {
-                helper_array[i] == 1;
+                helper_array[i] = 1;
             }
-            helper_array[i] == 0;
+            helper_array[i] = 0;
             // have to check if element i is larger than all other elemtnes before next round of outer loop since it the next round will overwrite the previous round
         }
 
