@@ -52,8 +52,10 @@ int max(int array[], int n)
         if(helper_array[i] = 0)
         {
             ismax = 0;
+            break;
         }
 
     }
+    
     return 0;
 }
