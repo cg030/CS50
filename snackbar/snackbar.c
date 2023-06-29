@@ -74,7 +74,10 @@ int main(void)
 // Add at least the first four items to the menu array
 void add_items(void)
 {
-    
+    menu_item[0].itemBurger: 9.5
+    Vegan Burger: 11
+    Hot Dog: 5
+    Cheese Dog: 7
     return;
 }
 
