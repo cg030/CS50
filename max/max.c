@@ -33,7 +33,7 @@ int max(int array[], int n)
     {
         for (int j = 0 ; j < n; j++)
         {
-            if (array[i] > array[j])
+            if (array[i] >= array[j])
             {
                 helper_array[i] = 1;
             }
