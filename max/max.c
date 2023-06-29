@@ -30,9 +30,9 @@ int max(int array[], int n)
     // this solution updates the max value
     int max_value = array[0];
 
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(array[i] >= max_value)
+        if (array[i] >= max_value)
         {
             max_value = array[i];
         }
