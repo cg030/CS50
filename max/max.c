@@ -27,7 +27,7 @@ int main(void)
 // TODO: return the max value
 int max(int array[], int n)
 {
-    int helper_array[n];
+    bool helper_array[n];
 
     for (int i = 0; i < n; i++)
     {
@@ -35,21 +35,26 @@ int max(int array[], int n)
         {
             if (array[i] >= array[j])
             {
-                helper_array[i] = 1;
+                helper_array[i] = true;
             }
             else
             {
-                helper_array[i] = 0;
+                helper_array[i] = true;
             }
         }
 
-        for (int k = 0; k < n; k++)
+        if(helper_array == true)
         {
-            if (helper_array[k] == 1)
-            {
-                return array[k];
-            }
+            return array[i];
         }
+
+        // for (int k = 0; k < n; k++)
+        // {
+        //     if (helper_array[k] == 1)
+        //     {
+        //         return array[k];
+        //     }
+        // }
     }
     return 0;
 }
