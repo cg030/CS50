@@ -66,7 +66,11 @@ int max(int array[], int n)
     {
         if(array[i] > max_value)
         {
-            
+            max_value > array[i];
+        }
+        else
+        {
+            break;
         }
     }
 
