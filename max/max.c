@@ -42,19 +42,21 @@ int max(int array[], int n)
                 helper_array[i] = true;
             }
         }
+        bool whole_array = true;
 
-        if(helper_array == true)
+        for (int k = 0; k < n; k++)
+        {
+            if (helper_array[k] == false)
+            {
+                whole_array = false;
+                break;
+            }
+        }
+        
+        if(whole_array == true)
         {
             return array[i];
         }
-
-        // for (int k = 0; k < n; k++)
-        // {
-        //     if (helper_array[k] == 1)
-        //     {
-        //         return array[k];
-        //     }
-        // }
     }
     return 0;
 }
