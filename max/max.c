@@ -32,11 +32,16 @@ int max(int array[], int n)
     // similar to bubble sort but without switching places
     // simply use a condition if number is larger than every other number return that number
 
-    for (int i; i < n -1 ; i++)
+    int helper_array
+    for (int i = 0; i < n - 1 ; i++)
     {
-        for (int j; j < n; j++)
+        for (int j = i + 1 ; j < n; j++)
         {
-            if (j <)
+            if (i > j
+            {
+                // create a new array; if each index in this array is true than we have the largest number
+            }
+            )
         }
     }
     return 0;
