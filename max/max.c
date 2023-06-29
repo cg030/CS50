@@ -35,9 +35,9 @@ int max(int array[], int n)
     bool helper_array[n];
     bool ismax = 1;
 
-    for (int i = 0; i < n - 1 ; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = i + 1 ; j < n; j++)
+        for (int j = 0 ; j < n; j++)
         {
             if (i > j)
             {
@@ -56,6 +56,6 @@ int max(int array[], int n)
         }
 
     }
-    
+
     return 0;
 }
