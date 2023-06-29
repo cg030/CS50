@@ -64,7 +64,7 @@ int max(int array[], int n)
 
     for(i < 0; i < n; i++)
     {
-        if(array[i] > max_value)
+        if(array[i] >= max_value)
         {
             max_value > array[i];
         }
