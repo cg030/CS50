@@ -41,7 +41,6 @@ int max(int array[], int n)
         {
             if (i > j)
             {
-                // create a new array; if each index in this array is true than we have the largest number
                 helper_array[i] = 1;
             }
             helper_array[i] = 0;
@@ -52,8 +51,9 @@ int max(int array[], int n)
     {
         if(helper_array[i] = 0)
         {
-            bool
+            ismax = 0;
         }
+
     }
     return 0;
 }
