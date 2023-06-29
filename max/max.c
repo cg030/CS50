@@ -46,6 +46,7 @@ int max(int array[], int n)
             {
                 return array[k];
             }
+            break;
         }
     }
 }
