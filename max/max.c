@@ -60,18 +60,16 @@ int max(int array[], int n)
     // }
     // return 0;
 
+    // this solution update the max value
     int max_value = array[0];
 
-    for(i < 0; i < n; i++)
+    for(int i = 0; i < n; i++)
     {
         if(array[i] >= max_value)
         {
             max_value = array[i];
         }
-        else
-        {
-            break;
-        }
     }
+    return max_value;
 
 }
