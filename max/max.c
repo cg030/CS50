@@ -52,7 +52,7 @@ int max(int array[], int n)
                 break;
             }
         }
-        
+
         if(whole_array == true)
         {
             return array[i];
@@ -60,5 +60,3 @@ int max(int array[], int n)
     }
     return 0;
 }
-
-            // have to check if element i is larger than all other elemtnes before next round of outer loop since it the next round will overwrite the previous round
