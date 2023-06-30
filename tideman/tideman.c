@@ -166,7 +166,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // calculate the stength of victory of each pair
-    for(int i = 0; i < pair_count; i++)
+    for(int i = 0; i < pair_count - 1; i++)
     {
         int strength_i = preferences[pairs[i].winner][pairs[i].loser];
         int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
