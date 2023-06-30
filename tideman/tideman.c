@@ -170,6 +170,14 @@ void sort_pairs(void)
     {
         int strength_i = preferences[pairs[i].winner][pairs[i].loser];
         int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
+
+        // bubble sort
+        if(strength_i < strength_i_plus_1)
+        {
+            temp = strength_i;
+            strength_i = strength_i_plus_1;
+            
+        }
     }
 }
 
