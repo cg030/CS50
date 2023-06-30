@@ -138,6 +138,12 @@ void record_preferences(int ranks[])
             }
     // ranks[0] (alice) updates preferences[0][0](Alice)+0 [0][1](Bob)+1, [0][2](Charlie)+1
 
+    for(int i = 0 ; i < 3; i++)
+    {
+        // when i = 0 two indexes in the 2d array have to get updated since its the first preference; if i = 1 only one index has to get updated meaning the candidate that came last
+        
+    }
+
 
         // assign an index to a respective candidate/row i.e. Alice is row 0.
         // Instead of using the actual name "Alice" I have to assign a variable to each candidate so it doesn't matter what they are called. This is important since I don't know the names beforehand
