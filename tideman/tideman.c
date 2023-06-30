@@ -103,8 +103,6 @@ int main(int argc, string argv[])
     return 0;
 }
 
-// Update ranks given a new vote
-// Here the ranks array only has three elements not of all voters. The array (of three candidates) is then passed to record_preferences function where the preferences are update
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
@@ -122,14 +120,6 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // if candidate A comes before candidate B update the respective row in the preference 2d array
-
-    // first a for loop that assigns candidates to variables. These variables I can then use in the following for loop so determine the preference 2d array
-
-    // ranks[0] (alice) updates preferences[0][0](Alice)+0 [0][1](Bob)+1, [0][2](Charlie)+1
-
-    // when i = 0 two indexes in the 2d array have to get updated since its the first preference; if i = 1 only one index has to get updated meaning the candidate that came last
-    // if rank[0] = Alice then use this loop
 
     for(int i = 0 ; i < candidate_count; i++)
     {
@@ -138,25 +128,6 @@ void record_preferences(int ranks[])
             preferences[ranks[i]][ranks[j]]++;
         }
     }
-
-        // assign an index to a respective candidate/row i.e. Alice is row 0.
-        // Instead of using the actual name "Alice" I have to assign a variable to each candidate so it doesn't matter what they are called. This is important since I don't know the names beforehand
-
-        }
-        // update preferences two-dimensional array
-        // one row of the two-dimensional array represents one candidate
-        // so we first have to figure out who the voter prefers over who and then update respective row
-        // For the first ballot take each name from the voter ballot and assign it a row: row 1 is Alice, row 2 is Bob
-        // after that I need a way to automatically assign the votes to the correct rows, somehow via the names of the candidates
-
-    //     if(strcmp(ranks[i], candidates[i] == 0))// if Alice come before Bob))
-    //     {
-    //         preference[0][1]++; //add 1 to the respective index
-    //     }
-
-
-    // }
-    // return;
 }
 
 // Record pairs of candidates where one is preferred over the other
