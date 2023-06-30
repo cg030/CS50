@@ -136,6 +136,9 @@ void record_preferences(int ranks[])
             {
                 preference[0][1]++; //add 1 to the respective index
             }
+    // ranks[i] updates preferences
+
+
         // assign an index to a respective candidate/row i.e. Alice is row 0.
         // Instead of using the actual name "Alice" I have to assign a variable to each candidate so it doesn't matter what they are called. This is important since I don't know the names beforehand
 
