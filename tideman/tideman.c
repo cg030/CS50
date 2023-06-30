@@ -128,19 +128,6 @@ void record_preferences(int ranks[])
 
     // first a for loop that assigns candidates to variables. These variables I can then use in the following for loop so determine the preference 2d array
 
-    char a;
-    ch
-    for(int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < candidates_count; j++)
-        {
-            if(strcmp(ranks[i], candidates[j] == 0))// Alice
-            {
-                ranks[i] = a;
-            }
-        }
-    }
-
     for(int i = 0; i < 3; i++)
     {
         for(int j = 0; j < candidates_count; j++)
