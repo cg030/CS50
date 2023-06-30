@@ -137,6 +137,7 @@ void record_preferences(int ranks[])
         {
             preference[0][1]++; //add 1 to the respective index
         }
+        // my a
 
         preferences
     }
