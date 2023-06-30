@@ -142,6 +142,13 @@ void add_pairs(void)
 
 // here Alice is prefered over Peter by a 3-2 margin
 
+    for(int i = 0; i < candidate_count; i++)
+    {
+        for(j)
+        {
+            if()
+        }
+    }
 
 
 pairs[pair[0].winner = preference[]] // preference row index corresponds to index in candidates array index meaning the name of the candidate
