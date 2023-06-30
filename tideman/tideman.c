@@ -125,13 +125,13 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // first a for loop that assigns candidates to variables. These variables I can then use in the following for loop so determine the preference 2d array
-    
+    // if candidate A comes before candiate B 
 
     for(int i = 0; i < 3; i++)
     {
         for(int j = 0; j < candidates_count; j++)
         {
-            if(strcmp(ranks[i], candidates[j] == 0))// if Alice come before Bob))
+            if(strcmp(ranks[i], candidates[j] == 0))// Alice
             {
                 preference[0][1]++; //add 1 to the respective index
             }
