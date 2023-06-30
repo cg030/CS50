@@ -83,15 +83,16 @@ void print_winner(void)
     // TODO
     // Find max value in the array
 
-    max_value = 0;
+    int max_value = 0;
+    string winner;
 
     for(int i = 0; i < candidate_count; i++)
     {
         if(candidates[i].votes > max_value)
         {
             max_value = candidates[i].votes;
+            winner = candiates[i].name;
         }
     }
-
-    return;
+    return winner;
 }
