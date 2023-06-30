@@ -97,6 +97,7 @@ int main(int argc, string argv[])
 }
 
 // Update ranks given a new vote
+// Here the ranks array only has three elements not of all voters. The array (of three candidates) is then passed to record_preferences function where the preferences are update
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
