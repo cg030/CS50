@@ -124,7 +124,9 @@ bool vote(int rank, string name, int ranks[])
 // Update preferences given one voter's ranks
 void record_preferences(int ranks[])
 {
-    // TODO
+    // first a for loop that assigns candidates to variables. These variables I can then use in the following for loop so determine the preference 2d array
+    
+
     for(int i = 0; i < 3; i++)
     {
         for(int j = 0; j < candidates_count; j++)
