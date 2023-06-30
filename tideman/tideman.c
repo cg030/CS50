@@ -133,33 +133,32 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
 
-// Preferences array example
+// Preferences array example to help visualise
 // int preferences[3][3] = {
 //     // A, B, P
 //     {0, 2, 3},  // Alice: 2 voters prefer Alice over Bob, 3 voters prefer Alice over Peter
 //     {3, 0, 3},  // Bob: 3 voters prefer Bob over Alice, 3 voters prefer Bob over Peter
 //     {2, 2, 0}   // Peter: 2 voters prefer Peter over Alice, 2 voters prefer Peter over Bob
-
 // here Alice is prefered over Peter by a 3-2 margin
 
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        for(j = i + 1; j < candidate_count; j++)
+        for (j = i + 1; j < candidate_count; j++)
         {
-            if(preference[i][j] > preference[j][i])
+            if (preference[i][j] > preference[j][i])
             {
-                pair
+                pair[i].winner = candidates[i];
+                pair[i].loser = candidates[j];
+                pair_count++;
+            }
+            else (preference[i][j] <= preference[j][i])
+            {
+                pair[i].loser = candidates[i];
+                pair[i].winner = candidates[j];
+                pair_count++;
             }
         }
     }
-
-
-pairs[pair[0].winner = preference[]] // preference row index corresponds to index in candidates array index meaning the name of the candidate
-
-
-
-// subtract -1 from preference 2d array after a pair has been added
-
     return;
 }
 
