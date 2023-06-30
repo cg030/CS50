@@ -142,6 +142,8 @@ void add_pairs(void)
 
 for(int i = 0; i < )
 
+
+
 pairs[pair[0].winner = preference[]] // preference row index corresponds to index in candidates array index meaning the name of the candidate
 
 
