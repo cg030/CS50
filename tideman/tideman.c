@@ -165,20 +165,27 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    // calculate the stength of victory of each pair
-    for(int i = 0; i < pair_count - 1; i++)
+    // bubble sort
+    bool swapped;
+    do
     {
-        int strength_i = preferences[pairs[i].winner][pairs[i].loser];
-        int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
-
-        // bubble sort
-        if(strength_i < strength_i_plus_1)
+        swapped = false;
+        // calculate the stength of victory of each pair
+        for(int i = 0; i < pair_count - 1; i++)
         {
-            pair temp = pairs[i];
-            pairs[i] = pairs[i+1];
-            pairs[i+1] = temp;
+            int strength_i = preferences[pairs[i].winner][pairs[i].loser];
+            int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
+
+            // bubble sort
+            if(strength_i < strength_i_plus_1)
+            {
+                pair temp = pairs[i];
+                pairs[i] = pairs[i+1];
+                pairs[i+1] = temp;
+                swapped = true;
+            }
         }
-    }
+    }while (swapped);
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
