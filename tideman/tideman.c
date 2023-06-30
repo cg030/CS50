@@ -130,8 +130,11 @@ void record_preferences(int ranks[])
         // update preferences two-dimensional array
         // one row of the two-dimensional array represents one candidate
         // so we first have to figure out who the voter prefers over who and then update respective row
-        preferences[k] = ranks[0];
+        // For the first ballot take each name from the voter ballot and assign it a row: row 1 is Alice, row 2 is Bob
+        // after that I need a way to automatically assign the votes to the correct rows, somehow via the names of the candidates
         
+        preferences[i] = ranks[0];
+
         preferences
     }
     return;
