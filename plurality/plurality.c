@@ -95,6 +95,14 @@ void print_winner(void)
             winner = candidates[i].name;
         }
     }
+
+    for(int i = 0; i < candidate_count; i++)
+    {
+        if(max_value = candidates[i].votes)
+        {
+            printf
+        }
+    }
     printf("%s\n", winner);
     return;
 }
