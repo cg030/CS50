@@ -115,7 +115,7 @@ bool vote(int rank, string name, int ranks[])
         {
             // update rank
             // rank is an int so if rank == 1 then it should go in the ranks[] array in the 0 index
-            ranks[i] = i;
+            ranks[i] = i+1;
         }
     }
     return false;
