@@ -133,7 +133,8 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
     // TODO
-    
+    // What is a pair
+    // countr pairs from the preferences 2d array
     return;
 }
 
