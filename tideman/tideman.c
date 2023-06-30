@@ -132,9 +132,17 @@ void record_preferences(int ranks[])
 // Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-    // TODO
-    // What is a pair
-    // countr pairs from the preferences 2d array
+
+// Preferences array example
+// int preferences[3][3] = {
+//     // A, B, P
+//     {0, 2, 3},  // Alice: 2 voters prefer Alice over Bob, 3 voters prefer Alice over Peter
+//     {3, 0, 3},  // Bob: 3 voters prefer Bob over Alice, 3 voters prefer Bob over Peter
+//     {2, 2, 0}   // Peter: 2 voters prefer Peter over Alice, 2 voters prefer Peter over Bob
+
+
+
+};
     return;
 }
 
