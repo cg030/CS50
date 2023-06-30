@@ -140,6 +140,8 @@ void add_pairs(void)
 //     {3, 0, 3},  // Bob: 3 voters prefer Bob over Alice, 3 voters prefer Bob over Peter
 //     {2, 2, 0}   // Peter: 2 voters prefer Peter over Alice, 2 voters prefer Peter over Bob
 
+for(int i = 0; i < )
+
 pairs[pair[0].winner = preference[]] // preference row index corresponds to index in candidates array index meaning the name of the candidate
 
 
