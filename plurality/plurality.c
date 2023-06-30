@@ -74,6 +74,7 @@ bool vote(string name)
             canditates[i].votes+;
         }
     }
+    
 
     return false;
 }
