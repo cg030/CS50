@@ -140,7 +140,7 @@ void add_pairs(void)
 //     {3, 0, 3},  // Bob: 3 voters prefer Bob over Alice, 3 voters prefer Bob over Peter
 //     {2, 2, 0}   // Peter: 2 voters prefer Peter over Alice, 2 voters prefer Peter over Bob
 
-for(int i = 0; i < )
+// here Alice is prefered over Peter by a 3-2 margin
 
 
 
@@ -150,7 +150,6 @@ pairs[pair[0].winner = preference[]] // preference row index corresponds to inde
 
 // subtract -1 from preference 2d array after a pair has been added
 
-};
     return;
 }
 
