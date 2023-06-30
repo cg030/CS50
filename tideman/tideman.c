@@ -127,6 +127,14 @@ void record_preferences(int ranks[])
     // TODO
     for(int i = 0; i < 3; i++)
     {
+        for(int j = 0; j < candidates_count; j++)
+        {
+            if(strcmp(ranks[i], candidates[j] == 0))// if Alice come before Bob))
+            {
+                preference[0][1]++; //add 1 to the respective index
+            }
+
+        }
         // update preferences two-dimensional array
         // one row of the two-dimensional array represents one candidate
         // so we first have to figure out who the voter prefers over who and then update respective row
@@ -138,7 +146,7 @@ void record_preferences(int ranks[])
             preference[0][1]++; //add 1 to the respective index
         }
 
-        
+
     }
     return;
 }
