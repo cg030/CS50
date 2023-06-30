@@ -174,9 +174,9 @@ void sort_pairs(void)
         // bubble sort
         if(strength_i < strength_i_plus_1)
         {
-            temp = pairs[i];
+            pair temp = pairs[i];
             pairs[i] = pairs[i+1];
-            p
+            pairs[i+1] = temp;
         }
     }
 }
