@@ -110,7 +110,7 @@ bool vote(int rank, string name, int ranks[])
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            ranks[rank-1] = i+1;
+            ranks[rank-1] = i; // each integer in the ranks array corresponds to the index of a candidate in the candidates array
             return true;
         }
     }
