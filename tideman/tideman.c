@@ -141,7 +141,7 @@ void record_preferences(int ranks[])
     for(int i = 0 ; i < 3; i++)
     {
         // when i = 0 two indexes in the 2d array have to get updated since its the first preference; if i = 1 only one index has to get updated meaning the candidate that came last
-        
+        preferences[i][]
     }
 
 
