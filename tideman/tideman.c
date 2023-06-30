@@ -170,7 +170,7 @@ void sort_pairs(void)
     do
     {
         swapped = false;
-        
+
         // calculate the stength of victory of each pair
         for (int i = 0; i < pair_count - 1; i++)
         {
@@ -192,7 +192,7 @@ void sort_pairs(void)
 // Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    for()
+    // we now have a sorted pairs array
     return;
 }
 
