@@ -146,7 +146,7 @@ void add_pairs(void)
     {
         for(j)
         {
-            if()
+            if(preference > )
         }
     }
 
