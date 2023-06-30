@@ -7,7 +7,7 @@
 // preferences[i][j] is number of voters who prefer i over j
 // preferences =
 // [
-//   [0, 100, 200],  // Candidate A
+//   [0(i), 100(j), 200(j)],  // Candidate A
 //   [300, 0, 400],  // Candidate B
 //   [500, 600, 0],  // Candidate C
 // ]
