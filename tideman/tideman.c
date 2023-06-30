@@ -132,7 +132,7 @@ void record_preferences(int ranks[])
         // so we first have to figure out who the voter prefers over who and then update respective row
         // For the first ballot take each name from the voter ballot and assign it a row: row 1 is Alice, row 2 is Bob
         // after that I need a way to automatically assign the votes to the correct rows, somehow via the names of the candidates
-        if( Alice come before Bob)
+        if(strcmp(ranks[i], candiAlice come before Bob))
         {
             preference[0][1]++; //add 1 to the respective index
         }
