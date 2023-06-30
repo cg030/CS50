@@ -176,7 +176,7 @@ void sort_pairs(void)
         {
             temp = strength_i;
             strength_i = strength_i_plus_1;
-            
+            strength_i_plus_1 = temp;
         }
     }
 }
