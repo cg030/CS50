@@ -136,7 +136,7 @@ void record_preferences(int ranks[])
             {
                 preference[0][1]++; //add 1 to the respective index
             }
-    // ranks[i] (alice) updates preferences[i](Alice) [+1](Bob) [+1](Charlie)
+    // ranks[0] (alice) updates preferences[0][0](Alice)+0 [0][1](Bob)+1, [0][2](Charlie)+1
 
 
         // assign an index to a respective candidate/row i.e. Alice is row 0.
