@@ -128,7 +128,10 @@ void record_preferences(int ranks[])
     for(int i = 0; i < 3; i++)
     {
         // update preferences two-dimensional array
+        // one row of the two-dimensional array represents one candidate
+        // so we first have to figure out who the voter prefers over who and then update respective row
         preferences[k] = ranks[0];
+        
         preferences
     }
     return;
