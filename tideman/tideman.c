@@ -135,12 +135,9 @@ void record_preferences(int ranks[])
     {
         for(int j = i + 1; j < candidate_count; j++)
         {
-            preferences[i][j]++;
+            preferences[ranks[i]][ranks[j]]++;
         }
     }
-
-
-
 
         // assign an index to a respective candidate/row i.e. Alice is row 0.
         // Instead of using the actual name "Alice" I have to assign a variable to each candidate so it doesn't matter what they are called. This is important since I don't know the names beforehand
