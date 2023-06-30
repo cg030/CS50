@@ -147,14 +147,14 @@ void add_pairs(void)
         {
             if (preference[i][j] > preference[j][i])
             {
-                pair[i].winner = i;
-                pair[i].loser = j;
+                pairs[i].winner = i;
+                pairs[i].loser = j;
                 pair_count++;
             }
             else (preference[i][j] <= preference[j][i])
             {
-                pair[i].loser = i;
-                pair[i].winner = j;
+                pairs[i].loser = i;
+                pairs[i].winner = j;
                 pair_count++;
             }
         }
@@ -168,7 +168,8 @@ void sort_pairs(void)
     // calculate the stength of victory of each pair
     for(int i = 0; i < pair_count; i++)
     {
-        victor_i = preferences[pair[i].winner][pair[i].loser]
+        int strength_i = preferences[pairs[i].winner][pairs[i].loser];
+        int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
     }
 }
 
