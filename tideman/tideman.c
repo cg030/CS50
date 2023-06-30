@@ -106,6 +106,7 @@ bool vote(int rank, string name, int ranks[])
         if (strcmp(name, candidates[i]) == 0)
         {
             // update rank
+            // rank is an int so if rank == 1 then it should go in the ranks[] array in the 0 index
             ranks[i] = name;
         }
     }
