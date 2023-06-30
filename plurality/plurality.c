@@ -71,7 +71,7 @@ bool vote(string name)
     {
         if(name == candidates[i].name)
         {
-            canditates[i].votes+;
+            candidates[i].votes++;
         }
     }
     return false;
@@ -91,8 +91,8 @@ void print_winner(void)
         if(candidates[i].votes > max_value)
         {
             max_value = candidates[i].votes;
-            winner = candiates[i].name;
+            winner = candidates[i].name;
         }
     }
-    return winner;
+    return;
 }
