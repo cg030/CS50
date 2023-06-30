@@ -126,21 +126,14 @@ void record_preferences(int ranks[])
 
     // first a for loop that assigns candidates to variables. These variables I can then use in the following for loop so determine the preference 2d array
 
-    for(int i = 0; i < 3; i++)
-    {
-        for(int j = 0; j < candidates_count; j++)
-        {
-            if(strcmp(ranks[i], candidates[j] == 0))// Alice
-            {
-                preference[0][1]++; //add 1 to the respective index
-            }
     // ranks[0] (alice) updates preferences[0][0](Alice)+0 [0][1](Bob)+1, [0][2](Charlie)+1
 
     // when i = 0 two indexes in the 2d array have to get updated since its the first preference; if i = 1 only one index has to get updated meaning the candidate that came last
     // if rank[0] = Alice then use this loop
-    for(int i = 0 ; i < 2; i++)
+
+    for(int i = 0 ; i < candidate_count; i++)
     {
-        for(int j = i + 1; j < 3; j++)
+        for(int j = i + 1; j < candidate_count; j++)
         {
             preferences[i][j]++;
         }
