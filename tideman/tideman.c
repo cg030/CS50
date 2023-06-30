@@ -100,6 +100,11 @@ int main(int argc, string argv[])
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+
+    for (int i = 0; i < ;i++)
+    {
+        if (strcmp(name, ) == 0)
+    }
     return false;
 }
 
