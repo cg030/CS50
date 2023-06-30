@@ -142,6 +142,10 @@ void add_pairs(void)
 
 pairs[pair[0].winner = preference[]] // preference row index corresponds to index in candidates array index meaning the name of the candidate
 
+
+
+// subtract -1 from preference 2d array after a pair has been added
+
 };
     return;
 }
