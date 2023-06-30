@@ -133,6 +133,7 @@ void record_preferences(int ranks[])
             {
                 preference[0][1]++; //add 1 to the respective index
             }
+        // assign an index to a respective candidate/row i.e. Alice is row 0
 
         }
         // update preferences two-dimensional array
