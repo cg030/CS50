@@ -1,16 +1,10 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+
 
 // Max number of candidates
 #define MAX 9
-
-// preferences[i][j] is number of voters who prefer i over j
-// preferences =
-// [
-//   [0(i), 100(j), 200(j)],  // Candidate A
-//   [300, 0, 400],  // Candidate B
-//   [500, 600, 0],  // Candidate C
-// ]
 
 int preferences[MAX][MAX];
 
@@ -105,12 +99,11 @@ int main(int argc, string argv[])
 
 bool vote(int rank, string name, int ranks[])
 {
-    // TODO
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            ranks[rank-1] = i; // each integer in the ranks array corresponds to the index of a candidate in the candidates array
+            ranks[rank] = i; // each integer in the ranks array corresponds to the index of a candidate in the candidates array
             return true;
         }
     }
@@ -124,7 +117,8 @@ void record_preferences(int ranks[])
     {
         for(int j = i + 1; j < candidate_count; j++)
         {
-            preferences[ranks[i]][ranks[j]]++;
+            preferences[ranks[i]][ranks[j]]++; // adds 1 to the corresponding field in the preference matrix
+            // (example ranks[i] = 3 (3 corresponds to the index in the candidates array)  ranks[j] = 2 adds 1 to preferences[3][2])
         }
     }
 }
@@ -143,18 +137,19 @@ void add_pairs(void)
 
     for (int i = 0; i < candidate_count; i++)
     {
-        for (j = i + 1; j < candidate_count; j++)
+        for (int j = i + 1; j < candidate_count; j++)
         {
-            if (preference[i][j] > preference[j][i])
+            if (preferences[i][j] > preferences[j][i])  // swith the index i and j; in the matrix (0;1) is the preference of Alice over Bob but (1;0)
+                                                        // is the preference of Bob over Alice
             {
-                pairs[i].winner = i;
-                pairs[i].loser = j;
+                pairs[pair_count].winner = i;
+                pairs[pair_count].loser = j;
                 pair_count++;
             }
-            else (preference[i][j] <= preference[j][i])
+            else if (preferences[i][j] <= preferences[j][i])
             {
-                pairs[i].loser = i;
-                pairs[i].winner = j;
+                pairs[pair_count].loser = i;
+                pairs[pair_count].winner = j;
                 pair_count++;
             }
         }
@@ -174,7 +169,7 @@ void sort_pairs(void)
         // calculate the stength of victory of each pair
         for (int i = 0; i < pair_count - 1; i++)
         {
-            int strength_i = preferences[pairs[i].winner][pairs[i].loser];
+            int strength_i = preferences[pairs[i].winner][pairs[i].loser]; // remember that pairs[i].winner stores a number which corresponds to the index of the candidates array
             int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
 
             // bubble sort
@@ -189,18 +184,47 @@ void sort_pairs(void)
     }while (swapped);
 }
 
-// Lock pairs into the candidate graph in order, without creating cycles
 void lock_pairs(void)
 {
-    // we now have a sorted pairs array with pairs with the highest value first
+// locked array is a 2D boolean array representing the graph. locked[i][j] being true means there's an edge from candidate i to candidate j
 
-    
+    for (int i = 0; i < pair_count; i++)
+    {
+        bool cycle = false;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (locked[j][pairs[i].winner]) // checks if there is an edge from any candidate j to a current winner i.
+                                            // Since i is the index in the outer loop the inner loop check all rows meaning all candidates of the winners column
+            {
+                cycle = true;
+                break;
+            }
+        }
+        if (!cycle)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = true;
+        }
+    }
     return;
 }
 
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
-    return;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        int winner = 0;
+        for (int j = 0; j < candidate_count; j++)
+        {
+            if (!locked[j][i]) // if j has not beaten i
+            {
+                winner++;
+            }
+        }
+        if (winner == candidate_count) // If winner is equal to the candidate_count, it means that no other candidate has beaten candidate i
+        {
+            printf("%s\n", candidates[i]);
+            return;
+        }
+    }
 }
