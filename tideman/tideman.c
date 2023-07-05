@@ -97,20 +97,22 @@ int main(int argc, string argv[])
     return 0;
 }
 
-bool vote(int rank, string name, int ranks[])
+bool vote(int rank, string name, int ranks[])   // Stores the candidates index from the candidates array in the ranks array according to the rank input
+                                                // e.g. "Alice" is stored in the 2nd index in the candidates array. She was voted as the 2nd preference so the index of Alice in the candidates array, lets say 4, is stored as the 2nd element in rank array
 {
     for (int i = 0; i < candidate_count; i++)
     {
         if (strcmp(name, candidates[i]) == 0)
         {
-            ranks[rank] = i; // each integer in the ranks array corresponds to the index of a candidate in the candidates array
+            ranks[rank] = i;
             return true;
         }
     }
     return false;
 }
 
-// Update preferences given one voter's ranks
+// We now have an array ranks[3,2,1] ; we know that 3 corresponds to Alice, 2 for Bob and 1 for Charlie
+// Update preferences given one voter's ranks; populates the 2d preferences array
 void record_preferences(int ranks[])
 {
     for(int i = 0 ; i < candidate_count; i++)
@@ -123,39 +125,29 @@ void record_preferences(int ranks[])
     }
 }
 
-// Record pairs of candidates where one is preferred over the other
 void add_pairs(void)
 {
-
-// Preferences array example to help visualise
-// int preferences[3][3] = {
-//     // A, B, P
-//     {0, 2, 3},  // Alice: 2 voters prefer Alice over Bob, 3 voters prefer Alice over Peter
-//     {3, 0, 3},  // Bob: 3 voters prefer Bob over Alice, 3 voters prefer Bob over Peter
-//     {2, 2, 0}   // Peter: 2 voters prefer Peter over Alice, 2 voters prefer Peter over Bob
-// here Alice is prefered over Peter by a 3-2 margin
-
     for (int i = 0; i < candidate_count; i++)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
-            if (preferences[i][j] > preferences[j][i])  // swith the index i and j; in the matrix (0;1) is the preference of Alice over Bob but (1;0)
-                                                        // is the preference of Bob over Alice
+            if (preferences[i][j] > preferences[j][i])
             {
                 pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count++;
             }
-            else if (preferences[i][j] <= preferences[j][i])
+            else if (preferences[i][j] < preferences[j][i])
             {
-                pairs[pair_count].loser = i;
                 pairs[pair_count].winner = j;
+                pairs[pair_count].loser = i;
                 pair_count++;
             }
         }
     }
     return;
 }
+
 
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
@@ -169,15 +161,15 @@ void sort_pairs(void)
         // calculate the stength of victory of each pair
         for (int i = 0; i < pair_count - 1; i++)
         {
-            int strength_i = preferences[pairs[i].winner][pairs[i].loser]; // remember that pairs[i].winner stores a number which corresponds to the index of the candidates array
-            int strength_i_plus_1 = preferences[pairs[i+1].winner][pairs[i+1].loser];
+            int strength_i = preferences[pairs[i].winner][pairs[i].loser]; // returns the number of times a candidate was voter over another candidate
+            int strength_i_plus_1 = preferences[pairs[i + 1].winner][pairs[i + 1].loser];
 
             // bubble sort
             if (strength_i < strength_i_plus_1)
             {
                 pair temp = pairs[i];
-                pairs[i] = pairs[i+1];
-                pairs[i+1] = temp;
+                pairs[i] = pairs[i + 1];
+                pairs[i + 1] = temp;
                 swapped = true;
             }
         }
@@ -186,27 +178,39 @@ void sort_pairs(void)
 
 void lock_pairs(void)
 {
-// locked array is a 2D boolean array representing the graph. locked[i][j] being true means there's an edge from candidate i to candidate j
+    // Initialize an array to track which candidates are locked
+    bool is_locked[candidate_count];
+    for (int i = 0; i < candidate_count; i++)
+    {
+        is_locked[i] = false;
+    }
 
+    // Iterate through pairs and lock them unless a cycle is detected
     for (int i = 0; i < pair_count; i++)
     {
-        bool cycle = false;
+        locked[pairs[i].winner][pairs[i].loser] = true;
+        is_locked[pairs[i].winner] = true;
+
+        // Check if the locked pair creates a cycle
+        bool creates_cycle = false;
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[j][pairs[i].winner]) // checks if there is an edge from any candidate j to a current winner i.
-                                            // Since i is the index in the outer loop the inner loop check all rows meaning all candidates of the winners column
+            if (is_locked[j] && locked[pairs[i].loser][j])
             {
-                cycle = true;
+                creates_cycle = true;
                 break;
             }
         }
-        if (!cycle)
+
+        // If a cycle is created, unlock the pair
+        if (creates_cycle)
         {
-            locked[pairs[i].winner][pairs[i].loser] = true;
+            locked[pairs[i].winner][pairs[i].loser] = false;
+            is_locked[pairs[i].winner] = false;
         }
     }
-    return;
 }
+
 
 // Print the winner of the election
 void print_winner(void)
