@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
-    // Check for command line args
     if (argc != 2)
     {
         printf("Usage: ./read infile\n");
@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     // Create buffer to read into
     char buffer[7];
 
-    // Create array to store plate numbers
+    // Create array to store pointers to plate numbers
     char *plates[8];
 
     FILE *infile = fopen(argv[1], "r");
@@ -24,13 +24,20 @@ int main(int argc, char *argv[])
         // Replace '\n' with '\0'
         buffer[6] = '\0';
 
-        // Save plate number in array
-        plates[idx] = buffer;
+        // Allocate memory and save plate number
+        plates[idx] = malloc(7 * sizeof(char));
+        
+        for (int i = 0; i < 7; i++)
+        {
+            plates[idx][i] = buffer[i];
+        }
+
         idx++;
     }
 
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
+        free(plates[i]);  // free the memory
     }
 }
