@@ -57,9 +57,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int count = 0;
 
             // use another nested loop to iterate over surrounding pixels
-            for (int k = -1; k == 1; k++)
+            for (int k = -1; k <= 1; k++)
             {
-                for ( int l = -1; l == 1; l++)
+                for ( int l = -1; l <= 1; l++)
                 {
                     int new_i = i + k;
                     int new_j = j + l;
