@@ -11,7 +11,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < end of bitmap; j++)
         {
             // passing by value just changes the copy so I have to alter the pixels using pointers?
-            image[i][j] = (image[i][j].rgbtblue + image[i][j].rgctgreen + image[i][j].blue) / 3
+            average_value = (image[i][j].rgbtBlue + image[i][j].rgctGreen + image[i][j].rgbtRed) / 3;
+
+            image[i][j].rgbtBlue = average_value;
+            image[i][j].rgctGreen = average_value;
+            image[i][j].rgbtRed = average_value;
         }
     }
     return;
