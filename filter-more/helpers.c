@@ -101,8 +101,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int Gx;
-    int Gy;
+    // create kernels
+    int Gx[2][2];
+    int Gy[2][2];
+    
+
+    int Gx_sum;
+    int Gy_sum;
     int Total = Gx^2 + Gy^2;
 
         // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
