@@ -142,12 +142,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // check if pixel is inside map using new_i and new_j
                     if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
-                        blue_sum_Gx += image[new_i][new_j].rgbtBlue * Gx[k][l];
-                        blue_sum_Gy += image[new_i][new_j].rgbtBlue * Gy[k][l];
-                        green_sum_Gx += image[new_i][new_j].rgbtGreen * Gx[k][l];
-                        green_sum_Gy += image[new_i][new_j].rgbtGreen * Gy[k][l];
-                        red_sum_Gx += image[new_i][new_j].rgbtRed * Gx[k][l];
-                        red_sum_Gy += image[new_i][new_j].rgbtRed * Gy[k][l];
+                        blue_sum_Gx += image[new_i][new_j].rgbtBlue * Gx[k + 1][l + 1];
+                        blue_sum_Gy += image[new_i][new_j].rgbtBlue * Gy[k + 1][l + 1];
+                        green_sum_Gx += image[new_i][new_j].rgbtGreen * Gx[k + 1][l + 1];
+                        green_sum_Gy += image[new_i][new_j].rgbtGreen * Gy[k + 1][l + 1];
+                        red_sum_Gx += image[new_i][new_j].rgbtRed * Gx[k + 1][l + 1];
+                        red_sum_Gy += image[new_i][new_j].rgbtRed * Gy[k + 1][l + 1];
                     }
                 }
             }
