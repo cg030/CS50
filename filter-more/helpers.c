@@ -44,6 +44,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
+
     RGBTRIPLE temp_image[height][width];
 
 
@@ -64,7 +66,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int new_i = i + k;
                     int new_j = j + l;
 
-                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)// check if pixel is inside map using i and j
+                    // check if pixel is inside map using new_i and new_j
+                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
                         blue_sum += image[new_i][new_j].rgbtBlue;
                         green_sum += image[new_i][new_j].rgbtGreen;
