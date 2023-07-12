@@ -117,7 +117,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
     int Total = 0;
 
-        // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
+    // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
 
     RGBTRIPLE temp_image[height][width];
 
@@ -154,11 +154,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
 
-            // calculate average
-
-            temp_image[i][j].rgbtBlue = blue_sum / count;
-            temp_image[i][j].rgbtGreen = green_sum / count;
-            temp_image[i][j].rgbtRed = red_sum / count;
+            // calculate total for each color channel
+            temp_image[i][j].rgbtBlue = blue_sum_Gx^2 + blue_sum_Gy^2;
+            temp_image[i][j].rgbtGreen = green_sum_Gx^2 + green_sum_Gy^2;
+            temp_image[i][j].rgbtRed = red_sum_Gx^2 + red_sum_Gy^2;
         }
     }
 
