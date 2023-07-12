@@ -77,7 +77,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             else if (0 < i < height && j == width - 1) // right edge
             {
-                image[i][j].rgbtBlue = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j + 1].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue) / 6;
+                image[i][j].rgbtBlue = (image[i][j].rgbtBlue + image[i - 1][j].rgbtBlue + image[i - 1][j - 1].rgbtBlue + image[i][j - 1].rgbtBlue + image[i + 1][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue) / 6;
 
             }
             else if (i == height && j == 0) // bottom left corner
