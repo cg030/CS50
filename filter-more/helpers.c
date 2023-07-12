@@ -101,5 +101,52 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    int Gx;
+    int Gy;
+    int Total = Gx^2 + Gy^2;
+
+        // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
+
+    RGBTRIPLE temp_image[height][width];
+
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+
+            // use another nested loop to iterate over surrounding pixels
+            for (int k = -1; k <= 1; k++)
+            {
+                for ( int l = -1; l <= 1; l++)
+                {
+                    int new_i = i + k;
+                    int new_j = j + l;
+
+                    // check if pixel is inside map using new_i and new_j
+                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
+                    {
+
+
+                    }
+                }
+            }
+
+            // calculate total
+            Total = Gx^2 + Gy^2;
+
+        }
+    }
+
+    // copy temp_image into original image
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j] = temp_image[i][j];
+        }
+    }
+
     return;
 }
