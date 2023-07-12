@@ -115,8 +115,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {1, 2, 1},
     };
 
-    int Total = 0;
-
     // create a temp image to prevent the blur effect of a pixel affecting the calculation of its neighbors' blur effect.
 
     RGBTRIPLE temp_image[height][width];
