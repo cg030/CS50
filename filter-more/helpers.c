@@ -154,9 +154,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // calculate total for each color channel
-            temp_image[i][j].rgbtBlue = fmin(255, sqrt(pow(blue_sum_Gx, 2) + pow(blue_sum_Gy, 2)));
-            temp_image[i][j].rgbtGreen = fmin(255, sqrt(pow(green_sum_Gx, 2) + pow(green_sum_Gy, 2)));
-            temp_image[i][j].rgbtRed = fmin(255, sqrt(pow(red_sum_Gx, 2) + pow(red_sum_Gy, 2)));
+            temp_image[i][j].rgbtBlue = round(fmin(255, sqrt(pow(blue_sum_Gx, 2) + pow(blue_sum_Gy, 2))));
+            temp_image[i][j].rgbtGreen = round(fmin(255, sqrt(pow(green_sum_Gx, 2) + pow(green_sum_Gy, 2))));
+            temp_image[i][j].rgbtRed = round(fmin(255, sqrt(pow(red_sum_Gx, 2) + pow(red_sum_Gy, 2))));
         }
     }
 
