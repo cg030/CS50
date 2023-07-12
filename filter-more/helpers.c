@@ -3,7 +3,10 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+    // calculate average of RGB values in each pixel
+
+    // iterate of each pixel; a pixel is a struct
+    for(int i = 0; i < end of bitmap; i++)
     return;
 }
 
