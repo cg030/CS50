@@ -142,20 +142,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // check if pixel is inside map using new_i and new_j
                     if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
-                        blue_sum_Gx += image[new_i][new_j].rgbtBlue * Gx[new_i][new_j];
-                        blue_sum_Gy += image[new_i][new_j].rgbtBlue * Gy[new_i][new_j];
-                        green_sum_Gx += image[new_i][new_j].rgbtGreen * Gx[new_i][new_j];
-                        green_sum_Gy += image[new_i][new_j].rgbtGreen * Gy[new_i][new_j];
-                        red_sum_Gx += image[new_i][new_j].rgbtRed * Gx[new_i][new_j];
-                        red_sum_Gy += image[new_i][new_j].rgbtRed * Gy[new_i][new_j];
+                        blue_sum_Gx += image[new_i][new_j].rgbtBlue * Gx[k][l];
+                        blue_sum_Gy += image[new_i][new_j].rgbtBlue * Gy[k][l];
+                        green_sum_Gx += image[new_i][new_j].rgbtGreen * Gx[k][l];
+                        green_sum_Gy += image[new_i][new_j].rgbtGreen * Gy[k][l];
+                        red_sum_Gx += image[new_i][new_j].rgbtRed * Gx[k][l];
+                        red_sum_Gy += image[new_i][new_j].rgbtRed * Gy[k][l];
                     }
                 }
             }
 
             // calculate total for each color channel
-            temp_image[i][j].rgbtBlue = blue_sum_Gx^2 + blue_sum_Gy^2;
-            temp_image[i][j].rgbtGreen = green_sum_Gx^2 + green_sum_Gy^2;
-            temp_image[i][j].rgbtRed = red_sum_Gx^2 + red_sum_Gy^2;
+            temp_image[i][j].rgbtBlue = sqrt(pow(blue_sum_Gx) + pow(blue_sum_Gy^2));
+            temp_image[i][j].rgbtGreen = sqrt(pow(green_sum_Gx) + pow(green_sum_Gy));
+            temp_image[i][j].rgbtRed = sqrt(pow(red_sum_Gx) + pow(red_sum_Gy));
         }
     }
 
