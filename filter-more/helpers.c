@@ -102,9 +102,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
     // create kernels
-    int Gx[2][2];
-    int Gy[2][2];
-    
+    int Gx[3][3] =
+    {
+        {-1, 0, 1},
+        {-2, 0, 2},
+        {-1, 0, 1},
+    };
+    int Gy[3][3] =
+    {
+        {-1, -2, -1},
+        {0, 0, 0},
+        {1, 2, 1},
+    };
+
 
     int Gx_sum;
     int Gy_sum;
