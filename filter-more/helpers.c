@@ -48,6 +48,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            int blue_sum = 0;
+            int green_sum = 0;
+            int red_sum = 0;
+            int count = 0;
 
             // use another nested loop to iterate over surrounding pixels
             for (int k = -1; k == 1; k++)
@@ -58,7 +62,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     new_j = j + l;
                     if ( 0 <= new_i < height && 0 <= new_j < width - 1)// check if pixel is inside map using i and j
                     {
-                        
+                        blue_sum += image[new_i][new_j].rgbtBlue;
+                        green_sum += image[new_i][new_j].rgbtGreen;
+                        red_sum += image[new_i][new_j].rgbtRed;
+
                     }
                 }
             }
