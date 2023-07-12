@@ -64,7 +64,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     int new_i = i + k;
                     int new_j = j + l;
 
-                    if ( 0 <= new_i < height && 0 <= new_j < width - 1)// check if pixel is inside map using i and j
+                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)// check if pixel is inside map using i and j
                     {
                         blue_sum += image[new_i][new_j].rgbtBlue;
                         green_sum += image[new_i][new_j].rgbtGreen;
