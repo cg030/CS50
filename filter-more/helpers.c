@@ -62,13 +62,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             // use another nested loop to iterate over surrounding pixels
             for (int k = -1; k <= 1; k++)
             {
-                for ( int l = -1; l <= 1; l++)
+                for (int l = -1; l <= 1; l++)
                 {
                     int new_i = i + k;
                     int new_j = j + l;
 
                     // check if pixel is inside map using new_i and new_j
-                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
+                    if (0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
                         blue_sum += image[new_i][new_j].rgbtBlue;
                         green_sum += image[new_i][new_j].rgbtGreen;
@@ -135,13 +135,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // use another nested loop to iterate over surrounding pixels
             for (int k = -1; k <= 1; k++)
             {
-                for ( int l = -1; l <= 1; l++)
+                for (int l = -1; l <= 1; l++)
                 {
                     int new_i = i + k;
                     int new_j = j + l;
 
                     // check if pixel is inside map using new_i and new_j
-                    if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
+                    if (0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
                         blue_sum_Gx += image[new_i][new_j].rgbtBlue * Gx[k + 1][l + 1];
                         blue_sum_Gy += image[new_i][new_j].rgbtBlue * Gy[k + 1][l + 1];
