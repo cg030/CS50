@@ -25,6 +25,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    // pixels on the left side of the image should end up on the right, and vice versa
+    // pixel in image[0][2] --> image[0][width-2]
+
+    
     return;
 }
 
