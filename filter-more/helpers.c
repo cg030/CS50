@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include "math.h"
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -153,9 +154,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             // calculate total for each color channel
-            temp_image[i][j].rgbtBlue = sqrt(pow(blue_sum_Gx) + pow(blue_sum_Gy^2));
-            temp_image[i][j].rgbtGreen = sqrt(pow(green_sum_Gx) + pow(green_sum_Gy));
-            temp_image[i][j].rgbtRed = sqrt(pow(red_sum_Gx) + pow(red_sum_Gy));
+            temp_image[i][j].rgbtBlue = fmin(255, sqrt(pow(blue_sum_Gx) + pow(blue_sum_Gy^2)));
+            temp_image[i][j].rgbtGreen = fmin(sqrt(pow(green_sum_Gx) + pow(green_sum_Gy)));
+            temp_image[i][j].rgbtRed = fmin(sqrt(pow(red_sum_Gx) + pow(red_sum_Gy)));
         }
     }
 
