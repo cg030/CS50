@@ -130,7 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // check if pixel is inside map using new_i and new_j
                     if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
-                        blue_sum += image[new_i][new_j].rgbtBlue;
+                        blue_sum = image[new_i][new_j].rgbtBlue * multiply by identical position in the kernel;
                         green_sum += image[new_i][new_j].rgbtGreen;
                         red_sum += image[new_i][new_j].rgbtRed;
                         count++;
