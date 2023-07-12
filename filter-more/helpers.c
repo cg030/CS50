@@ -3,14 +3,14 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    // calculate average of RGB values in each pixel
+    // passing by value just changes the copy so I have to alter the pixels using pointers?
 
     // iterate of each pixel; a pixel is a struct RGBTRIPLE
     for (int i = 0; i < end of bitmap; i++)
     {
         for (int j = 0; j < end of bitmap; j++)
         {
-            // passing by value just changes the copy so I have to alter the pixels using pointers?
+            // calculate average of RGB values in each pixel
             average_value = (image[i][j].rgbtBlue + image[i][j].rgctGreen + image[i][j].rgbtRed) / 3;
 
             image[i][j].rgbtBlue = average_value;
