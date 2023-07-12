@@ -114,6 +114,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            int blue_sum = 0;
+            int green_sum = 0;
+            int red_sum = 0;
+            int count = 0;
 
             // use another nested loop to iterate over surrounding pixels
             for (int k = -1; k <= 1; k++)
@@ -126,15 +130,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // check if pixel is inside map using new_i and new_j
                     if ( 0 <= new_i && new_i < height && 0 <= new_j && new_j < width)
                     {
-
+                        blue_sum += image[new_i][new_j].rgbtBlue;
+                        green_sum += image[new_i][new_j].rgbtGreen;
+                        red_sum += image[new_i][new_j].rgbtRed;
+                        count++;
 
                     }
                 }
             }
 
-            // calculate total
-            Total = Gx^2 + Gy^2;
+            // calculate average
 
+            temp_image[i][j].rgbtBlue = blue_sum / count;
+            temp_image[i][j].rgbtGreen = green_sum / count;
+            temp_image[i][j].rgbtRed = red_sum / count;
         }
     }
 
