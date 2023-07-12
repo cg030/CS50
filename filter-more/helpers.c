@@ -60,15 +60,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     new_i = i + k;
                     new_j = j + l;
+
                     if ( 0 <= new_i < height && 0 <= new_j < width - 1)// check if pixel is inside map using i and j
                     {
                         blue_sum += image[new_i][new_j].rgbtBlue;
                         green_sum += image[new_i][new_j].rgbtGreen;
                         red_sum += image[new_i][new_j].rgbtRed;
+                        count++;
 
                     }
                 }
             }
+
+            // calculate average
+
+            image[i][j].rgbtBlue = blue_sum / count;
 
             // // image[0][0] doesn't have pixels to the left so trying to access these would create a segmentation fault
             // if (i == 0 && j == 0) // top left corner
