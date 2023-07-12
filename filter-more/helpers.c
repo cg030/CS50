@@ -11,7 +11,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < end of bitmap; j++)
         {
             // calculate average of RGB values in each pixel
-            average_value = (image[i][j].rgbtBlue + image[i][j].rgctGreen + image[i][j].rgbtRed) / 3;
+            int average_value = (image[i][j].rgbtBlue + image[i][j].rgctGreen + image[i][j].rgbtRed) / 3;
 
             image[i][j].rgbtBlue = average_value;
             image[i][j].rgctGreen = average_value;
