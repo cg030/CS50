@@ -49,18 +49,45 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // image[0][0] doesn't have pixels to the left so trying to access these would create a segmentation fault
-            if (i == 0 && j == 0)
+            if (i == 0 && j == 0) // top left corner
+            {
+                image[i][j].rgbtBlue = (image[i][j + 1].rgbtBlue + image[i + 1][j + 1].rgbtBlue + image[i + 1][j].rgbtBlue) / 3 ;
+                image[i][j].rgbtGreen = (image[i][j + 1].rgbtGreen + image[i + 1][j + 1].rgbtGreen + image[i + 1][j].rgbtGreen) / 3 ;
+                image[i][j].rgbtRed = (image[i][j + 1].rgbtRed + image[i + 1][j + 1].rgbtRed + image[i + 1][j].rgbtRed) / 3 ;
+
+            }
+            else if (i == 0 && 0 < j < width - 1) // upper edge
+            {
+                image[i][j].rgbtBlue = (image[i][j - 1].rgbtBlue + image[i - 1][j ].rgbtBlue + image[i - 1][j + 1].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j + 1].rgbtBlue) / 9;
+                image[i][j].rgbtGreen = (image[i - 1][j - 1].rgbtGreen + image[i - 1][j ].rgbtGreen + image[i - 1][j + 1].rgbtGreen + image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen + image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) / 9;
+                image[i][j].rgbtRed = (image[i - 1][j - 1].rgbtRed + image[i - 1][j ].rgbtRed + image[i - 1][j + 1].rgbtRed + image[i][j - 1].rgbtRed + image[i][j].rgbtRed + image[i][j + 1].rgbtRed + image[i + 1][j - 1].rgbtRed + image[i + 1][j].rgbtRed + image[i + 1][j + 1].rgbtRed) / 9;
+
+            }
+            else if (0 < i < height - 1 && j == 0) // left edge
             {
 
             }
-            else if (i == 0 && 0 < j < width - 1)
+            else if (i == 0 && j == width - 1) // top right corner
             {
 
             }
-            else if (0 < i < height - 1 && 0 < j < width - 1)
+            else if (0 < i < height && j == width - 1) // right edge
+            {
 
-            // first code the case for a pixel in the middle of the image
-            else if (0 < i < height - 1 && 0 < j < width - 1)
+            }
+            else if (i == height && j == 0) // bottom left corner
+            {
+
+            }
+            else if (i == height && 0 < j < width - 1) // bottom edge
+            {
+
+            }
+            else if (i == height && j == width - 1) // bottom right corner
+            {
+
+            }
+            else if (0 < i < height - 1 && 0 < j < width - 1) //  pixels with other pixels completely surrounding
             {
                 image[i][j].rgbtBlue = (image[i - 1][j - 1].rgbtBlue + image[i - 1][j ].rgbtBlue + image[i - 1][j + 1].rgbtBlue + image[i][j - 1].rgbtBlue + image[i][j].rgbtBlue + image[i][j + 1].rgbtBlue + image[i + 1][j - 1].rgbtBlue + image[i + 1][j].rgbtBlue + image[i + 1][j + 1].rgbtBlue) / 9;
                 image[i][j].rgbtGreen = (image[i - 1][j - 1].rgbtGreen + image[i - 1][j ].rgbtGreen + image[i - 1][j + 1].rgbtGreen + image[i][j - 1].rgbtGreen + image[i][j].rgbtGreen + image[i][j + 1].rgbtGreen + image[i + 1][j - 1].rgbtGreen + image[i + 1][j].rgbtGreen + image[i + 1][j + 1].rgbtGreen) / 9;
