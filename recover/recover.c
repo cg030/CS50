@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
     // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
     // Remember filenames
     char *infile = argv[1];
-    char *outfile = argv[2];
 
     // Open input file
     FILE *inptr = fopen(infile, "r");
@@ -25,7 +24,10 @@ int main(int argc, char *argv[])
         return 2;
     }
 
+    // use a for loop to create as many output files of format .jpg as are found in the input file
     // Open output file
+
+    char *outfile = argv[2];
     FILE *outptr = fopen(outfile, "w");
     if (outptr == NULL)
     {
