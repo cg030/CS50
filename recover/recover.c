@@ -13,15 +13,17 @@ int main(int argc, char *argv[])
 
     // Open input file
     // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
+    // Remember filenames
     char *infile = argv[1];
-    FILE *file = fopen(infile, "r");
+    char *outfile = argv[2];
 
-    if (file == NULL)
+    // Open input file
+    FILE *inptr = fopen(infile, "r");
+    if (inptr == NULL)
     {
         printf("Could not open %s.\n", infile);
         return 2;
     }
-
 
     // Open output file
     FILE *outptr = fopen(outfile, "w");
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
     {
         fclose(inptr);
         printf("Could not create %s.\n", outfile);
-        return 5;
+        return 3;
     }
 
 
