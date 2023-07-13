@@ -3,13 +3,13 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 1)
+    if (argc != 2)
     {
         printf("Improper usage; Only one command line argumment\n");
         return(1);
     }
 
-    
+
     // Your program should accept exactly one command-line argument, the name of a forensic image from which to recover JPEGs.
     // If your program is not executed with exactly one command-line argument, it should remind the user of correct usage, and main should return 1.
 
