@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
         return(1);
     }
 
+    FILE *file = fopen(argv[1], "r");
+    
+
 
     // Your program should accept exactly one command-line argument, the name of a forensic image from which to recover JPEGs.
     // If your program is not executed with exactly one command-line argument, it should remind the user of correct usage, and main should return 1.
