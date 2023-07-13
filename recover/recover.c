@@ -12,12 +12,15 @@ int main(int argc, char *argv[])
     }
 
     // If the forensic image cannot be opened for reading, your program should inform the user as much, and main should return 1.
-    FILE *file = fopen(argv[1], "r");
+    char *infile = argv[1];
+    FILE *file = fopen(infile, "r");
 
     if (file == NULL)
     {
         printf("Could not open %s.\n", infile);
         return 2;
     }
+
+    
 
 }
