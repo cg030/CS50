@@ -24,6 +24,12 @@ int main(int argc, char *argv[])
         return 2;
     }
 
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
+
+
+    }
+
     // use a for loop to create as many output files of format .jpg as are found in the input file
     // Open output file
 
