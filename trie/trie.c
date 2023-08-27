@@ -118,7 +118,7 @@ bool check(char* word)
 
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
         {
-            if (index == root->children[j])
+            if (root->children[j] != NULL)
             {
                 // go to next node;
             }
