@@ -116,7 +116,8 @@ bool check(char* word)
     {
         // compare the index of given letter with index of letter in array and see if it's not NULL
         int index = tolower(word[i]) - 'a';
-        
+
+        for
 
     }
     return false;
