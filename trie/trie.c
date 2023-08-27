@@ -114,11 +114,12 @@ bool check(char* word)
 
     for (int i = 0; i < strlen(word); i++)
     {
+        // compare the index of given letter with index of letter in array and see if it's not NULL
+        int index = tolower(word[i]) - 'a';
         
-    }
+        if
 
-    // check if node in array is not NULL
-    //
+    }
     return false;
 }
 
