@@ -111,7 +111,6 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
-while
     for (int i = 0; i < strlen(word); i++)
     {
         // compare the index of given letter with index of letter in array and see if it's not NULL
@@ -121,16 +120,12 @@ while
         {
             if (index == children[j])
             {
-                //
-            }
-            else
-            {
-                return false;
+                // go to next node; 
             }
         }
 
     }
-    return false;
+    return false; // return false if is_word is not true; return true if is_word is true
 }
 
 // Unload trie from memory
