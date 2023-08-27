@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
             // Go to node which we have just been made
             cursor = cursor->children[index];
         }
+        // All nodes in the array are equal to NULL except the nodes in the array that comprise the word
 
         // if we are at the end of the word, mark it as being a word
         cursor->is_word = true;
