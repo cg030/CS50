@@ -111,6 +111,9 @@ int main(int argc, char *argv[])
 // TODO: Complete the check function, return true if found, false if not found
 bool check(char* word)
 {
+    
+    // check if node in array is not NULL
+    //
     return false;
 }
 
