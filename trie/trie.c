@@ -116,9 +116,12 @@ bool check(char* word)
         // compare the index of given letter with index of letter in array and see if it's not NULL
         int index = tolower(word[i]) - 'a';
 
+        // define a cursor
+        node *cursor = root;
+
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
         {
-            if (root->children[j] != NULL)
+            if (cursor->children[j] != NULL)
             {
                 // go to next node;
             }
