@@ -128,6 +128,7 @@ bool check(char* word)
         if (cursor->children[index] != NULL)
         {
             // go to next node
+            cursor = children[index];
         }
 
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
