@@ -121,7 +121,7 @@ bool check(char* word)
 
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
         {
-            if (cursor->is_bool == TRUE)
+            if (cursor[children]-> == TRUE)
             {
                 return TRUE;
             }
