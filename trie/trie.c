@@ -127,7 +127,15 @@ bool check(char* word)
         {
             return true;
         }
+        else if (cursor->children[index] != NULL)
+        {
+            // go to next node
+            cursor = cursor->children[index];
+        }
         else
+        {
+            return false;
+        }
 
 
 
