@@ -119,48 +119,14 @@ bool check(char* word)
         // retrieve index of the letter in the given word
         int index = tolower(word[i]) - 'a';
 
-        // go to next node; the root can be skipped
-        cursor = cursor->children[index];
-
-        // move along the nodes
-        
-
-
-
-        // check if is_word is true // this is wrong since I first have to be at the end of my word and then check if its a word or not
-        if (cursor->is_word == true)
-        {
-            return true;
-        }
-        else if (cursor->is_word == false && cursor->children[index] != NULL)
-        {
-            // go to next node
-            cursor = cursor->children[index];
-        }
-        else if (cursor->is_word == false && cursor->children[index] == NULL)
+        if (cursor->children[index] == NULL)
         {
             return false;
         }
-
-
-
-    //     // check if is_word is true
-    //     if (cursor->is_word == true)
-    //     {
-    //         return true;
-    //     }
-
-    //     // else go to next node if there is a child node meaning it's not NULL
-    //     if (cursor->children[index] != NULL)
-    //     {
-    //         // go to next node
-    //         cursor = cursor->children[index];
-    //     }
-    //     else if (cursor->children[index] == NULL) //if the index of a provided word is NULL then return false
-    //    {
-    //     return false;
-       }
+        // go to next node; the root can be skipped
+        cursor = cursor->children[index];
     }
+    return true;
 }
 
 // Unload trie from memory
