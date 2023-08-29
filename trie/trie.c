@@ -119,7 +119,7 @@ bool check(char* word)
         // define a cursor
         node *cursor = root;
 
-        if ( cursor->children[i] != NULL)
+        if (cursor->children[index] != NULL)
         {
             // go to next node
         }
