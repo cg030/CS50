@@ -129,7 +129,7 @@ bool check(char* word)
         if(cursor->children[index] != NULL)
         {
             // go to next node
-            cursor = children[index];
+            cursor = cursor->children[index];
         }
     }
     return false; // return false if is_word is not true; return true if is_word is true
