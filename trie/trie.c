@@ -123,13 +123,13 @@ bool check(char* word)
         if (cursor->is_word == true)
         {
             return true;
+        }
 
-            // else go to next node if there is a child node meaning it's not NULL
-            else if(cursor->children[index] != NULL)
-            {
-                // go to next node
-                cursor = children[index];
-            }
+        // else go to next node if there is a child node meaning it's not NULL
+        if(cursor->children[index] != NULL)
+        {
+            // go to next node
+            cursor = children[index];
         }
     }
     return false; // return false if is_word is not true; return true if is_word is true
