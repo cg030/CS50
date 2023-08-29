@@ -121,10 +121,15 @@ bool check(char* word)
 
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
         {
-            if (cursor->children[j] != NULL)
+            if (cursor->is_bool == TRUE)
             {
-                // go to next node;
+                return TRUE;
             }
+
+            // if (root->children[j] != NULL)
+            // {
+            //     // go to next node;
+            // }
         }
 
     }
