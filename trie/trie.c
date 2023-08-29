@@ -126,7 +126,7 @@ bool check(char* word)
         }
 
         // else go to next node if there is a child node meaning it's not NULL
-        else (cursor->children[index] != NULL)
+        else if(cursor->children[index] != NULL)
         {
             // go to next node
             cursor = children[index];
