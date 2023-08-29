@@ -126,7 +126,7 @@ bool check(char* word)
         // go to next node
         cursor = cursor->children[index];
     }
-    return true;
+    return cursor->is_word;
 }
 
 // Unload trie from memory
