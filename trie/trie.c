@@ -119,6 +119,12 @@ bool check(char* word)
         // define a cursor
         node *cursor = root;
 
+        // check if is_word is true
+        if(cursor->is_word == true)
+        {
+            return true;
+        }
+        
         if (cursor->children[index] != NULL)
         {
             // go to next node
