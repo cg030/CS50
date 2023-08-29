@@ -123,7 +123,7 @@ bool check(char* word)
         {
             return false;
         }
-        // go to next node; the root can be skipped
+        // go to next node
         cursor = cursor->children[index];
     }
     return true;
