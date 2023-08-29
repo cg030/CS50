@@ -131,7 +131,7 @@ bool check(char* word)
             // go to next node
             cursor = cursor->children[index];
         }
-    }
+    } //if the index of a provided word is NULL then return false
     return false; // return false if is_word is not true; return true if is_word is true
 }
 
