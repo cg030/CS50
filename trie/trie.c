@@ -119,9 +119,14 @@ bool check(char* word)
         // define a cursor
         node *cursor = root;
 
+        if ( cursor->children[i] != NULL)
+        {
+            // go to next node
+        }
+
         for (int j = 0; j < SIZE_OF_ALPHABET; j++)
         {
-            
+
 
             // if (root->children[j] != NULL)
             // {
