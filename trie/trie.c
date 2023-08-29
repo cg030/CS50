@@ -112,22 +112,21 @@ int main(int argc, char *argv[])
 bool check(char* word)
 {
     // define a cursor
-        node *cursor = root;
+    node *cursor = root;
+
     for (int i = 0; i < strlen(word); i++)
     {
-        // compare the index of given letter with index of letter in array and see if it's not NULL
+        // retrieve index of the letter in the given word
         int index = tolower(word[i]) - 'a';
 
-        // define a cursor
-        node *cursor = root;
-
         // check if is_word is true
-        if(cursor->is_word == true)
+        if (cursor->is_word == true)
         {
             return true;
         }
 
-        if (cursor->children[index] != NULL)
+        // else go to next node if there is a child node meaning it's not NULL
+        else (cursor->children[index] != NULL)
         {
             // go to next node
             cursor = children[index];
