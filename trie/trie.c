@@ -127,12 +127,12 @@ bool check(char* word)
         {
             return true;
         }
-        else if (cursor->children[index] != NULL)
+        else if (cursor->is_word == false && cursor->children[index] != NULL)
         {
             // go to next node
             cursor = cursor->children[index];
         }
-        else
+        else if (cursor->is_word == false && cursor->children[index] == NULL)
         {
             return false;
         }
