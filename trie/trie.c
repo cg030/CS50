@@ -122,7 +122,12 @@ bool check(char* word)
         // go to next node; the root can be skipped
         cursor = cursor->children[index];
 
-        // check if is_word is true
+        // move along the nodes
+        
+
+
+
+        // check if is_word is true // this is wrong since I first have to be at the end of my word and then check if its a word or not
         if (cursor->is_word == true)
         {
             return true;
