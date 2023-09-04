@@ -104,7 +104,7 @@ bool load(const char *dictionary)
             // use hash function
             unsigned int h = hash(temp_word);
 
-
+            
 
             // insert the new node into the hash table
             new_node->next = table[h];
@@ -118,7 +118,7 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    
+
     return 0;
 }
 
