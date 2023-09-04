@@ -2,10 +2,10 @@
 
 #include <ctype.h>
 #include <stdbool.h>
-#include <string.h>
-#include <strings.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -14,8 +14,7 @@ typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 200000;
@@ -37,9 +36,9 @@ bool check(const char *word)
     int bucket = hash(word);
     node *temp_node = table[bucket];
 
-    while(temp_node != NULL)
+    while (temp_node != NULL)
     {
-        if(strcasecmp(word, temp_node->word) == 0)
+        if (strcasecmp(word, temp_node->word) == 0)
         {
             return true;
         }
@@ -101,7 +100,8 @@ bool load(const char *dictionary)
             if (index > LENGTH)
             {
                 // Consume remainder of alphabetical string
-                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
+                while (fread(&c, sizeof(char), 1, file) && isalpha(c))
+                    ;
 
                 // Prepare for new word
                 index = 0;
@@ -112,7 +112,8 @@ bool load(const char *dictionary)
         else if (isdigit(c))
         {
             // Consume remainder of alphanumeric string
-            while (fread(&c, sizeof(char), 1, file) && isalnum(c));
+            while (fread(&c, sizeof(char), 1, file) && isalnum(c))
+                ;
 
             // Prepare for new word
             index = 0;
@@ -131,7 +132,7 @@ bool load(const char *dictionary)
             // allocate memeory
             node *new_node = malloc(sizeof(node));
 
-            if(!new_node)
+            if (!new_node)
             {
                 unload();
                 return false;
@@ -153,7 +154,7 @@ bool load(const char *dictionary)
     }
     fclose(file); // close the file after using it
     dictionary_loaded = true;
-    return true;  // return true at the end if everything goes well
+    return true; // return true at the end if everything goes well
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
