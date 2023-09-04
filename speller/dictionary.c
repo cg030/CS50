@@ -45,7 +45,7 @@ bool load(const char *dictionary)
     }
 
     // read the dictionary
-    int index = 0, word = 0;
+    int index = 0;
     char *c;
     char word(LENGTH + 1);
 
@@ -84,24 +84,6 @@ bool load(const char *dictionary)
         {
             // Terminate current word
             word[index] = '\0';
-
-            // Update counter
-            words++;
-
-            // Check word's spelling
-            getrusage(RUSAGE_SELF, &before);
-            bool misspelled = !check(word);    // Here the function check is called
-            getrusage(RUSAGE_SELF, &after);
-
-            // Update benchmark
-            time_check += calculate(&before, &after);
-
-            // Print word if misspelled
-            if (misspelled)
-            {
-                printf("%s\n", word);
-                misspellings++;
-            }
 
             // Prepare for next word
             index = 0;
