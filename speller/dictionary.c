@@ -19,6 +19,9 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+//
+unsigned int word_count = 0;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -104,11 +107,13 @@ bool load(const char *dictionary)
             // use hash function
             unsigned int h = hash(temp_word);
 
-            
-
             // insert the new node into the hash table
             new_node->next = table[h];
             table[h] = new_node;
+
+            // increment word count
+
+            word_count++;
         }
     }
     fclose(file); // close the file after using it
@@ -119,7 +124,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
 
-    return 0;
+    return word_count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
