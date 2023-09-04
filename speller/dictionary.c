@@ -47,7 +47,7 @@ bool load(const char *dictionary)
     // read the dictionary
     int index = 0;
     char c;
-    node temp;
+    char temp_word[LENGTH + 1];
 
     while (fread(&c, sizeof(char), 1, file))
     {
@@ -55,7 +55,7 @@ bool load(const char *dictionary)
         if (isalpha(c) || (c == '\'' && index > 0))
         {
             // Append character to word
-            temp->word[index] = c;
+            temp_word[index] = c;
             index++;
 
             // Ignore alphabetical strings too long to be words
@@ -87,8 +87,25 @@ bool load(const char *dictionary)
 
             // Prepare for next word
             index = 0;
+
+            // store word in a data structure; we already have nodes
+            // allocate memeory
+            node *new_node = malloc(sizeof(node));
+
+            if(!new_node)
+            {
+                unload();
+                return false;
+            }
+
+            strcpy(new_node->word, word);
+            new_node->next == NULL;
+            
+            // use hash function
+
+
         }
-        // store word in a data structure; we already have nodes
+
 
     }
     fclose(file); // close the file after using it
