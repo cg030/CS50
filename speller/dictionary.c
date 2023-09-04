@@ -33,6 +33,11 @@ bool check(const char *word)
     for (int i = 0; i < N; i++)
     {
         if(word[i] == table[i]->word[i])
+        {
+            //check if the word is identical
+            for (int j = 0; j < length())
+            word[i]
+        }
     }
     // TODO
     return false;
