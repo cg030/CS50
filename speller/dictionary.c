@@ -34,13 +34,12 @@ bool check(const char *word)
     {
         if (table[i] != NULL && word[i] == table[i]->word[i])
         {
+            if (strcmp(word,table[i]->word) == 0)
+            {
+                return true;
+            }
+            // go to the next node in the linked list
             
-        }
-
-
-        if (strcmp(word,table[i]->word) == 0)
-        {
-            return true;
         }
     }
     // TODO
