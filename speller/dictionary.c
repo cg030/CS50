@@ -32,14 +32,15 @@ bool check(const char *word)
 
     // the hash function directly tells us which is the right bucket
     int bucket = hash(word);
-
     node *temp_node = table[bucket];
-    if (temp_node != NULL && strcmp(word, temp_node->word) == 0)
+
+    while(temp_node != NULL)
     {
-        return true
-    }
-    else if(temp_node != NULL && strcmp(word, temp_node->word) == 1)
-    {
+        if(strcmp(word, temp_node->word) == 0)
+        {
+            return true;
+        }
+        // move to next node
         temp_node = temp_node->next;
     }
     return false;
