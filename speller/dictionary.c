@@ -36,8 +36,8 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    FILE *file = fopen(*dictionary, 'r')
-    if (*file == NULL)
+    FILE *file = fopen(dictionary, "r")
+    if (file == NULL)
     {
         printf("Could not open %s.\n", text);
         unload();
@@ -47,7 +47,7 @@ bool load(const char *dictionary)
     // read the dictionary
     int index = 0;
     char *c;
-    char word(LENGTH + 1);
+    char word[LENGTH + 1];
 
     while (fread(&c, sizeof(word), 1, file))
     {
