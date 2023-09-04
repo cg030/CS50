@@ -152,7 +152,6 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    int bucketsfreed = 0;
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
@@ -163,14 +162,6 @@ bool unload(void)
             cursor = cursor->next;
             free(temp);
         }
-        if (cursor == 0)
-        {
-            bucketsfreed++;
-        }
     }
-    if( bucketsfreed == N)
-    {
-        return true;
-    }
-    return false;
+    return true;
 }
