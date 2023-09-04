@@ -155,11 +155,13 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         node *cursor = table[i];
+        // need to store the location of the next node otherwise you lost the linked list by deleting the first node
         while (cursor != NULL)
         {
-            
+            node *temp = cursor;
+            cursor = cursor->next;
+            free(temp);
         }
     }
-    // TODO
-    return false;
+    return true;
 }
