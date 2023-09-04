@@ -22,6 +22,9 @@ node *table[N];
 //
 unsigned int word_count = 0;
 
+// add a global boolean
+bool dictionary_loaded = false;
+
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
@@ -51,6 +54,8 @@ bool load(const char *dictionary)
     int index = 0;
     char c;
     char temp_word[LENGTH + 1];
+
+    // gl
 
     while (fread(&c, sizeof(char), 1, file))
     {
@@ -112,19 +117,22 @@ bool load(const char *dictionary)
             table[h] = new_node;
 
             // increment word count
-
             word_count++;
         }
     }
     fclose(file); // close the file after using it
+    dictionary_loaded = true;
     return true;  // return true at the end if everything goes well
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-
-    return word_count;
+    if (dictionary_loaded == true)
+    {
+        return word_count;
+    }
+    return 0;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
