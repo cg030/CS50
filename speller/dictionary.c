@@ -54,7 +54,7 @@ bool load(const char *dictionary)
         if (isalpha(c) || (c == '\'' && index > 0))
         {
             // Append character to word
-            word[index] = c;
+            node->word[index] = c;
             index++;
 
             // Ignore alphabetical strings too long to be words
