@@ -99,13 +99,13 @@ bool load(const char *dictionary)
             }
 
             strcpy(new_node->word, temp_word);
-            new_node->next == NULL;
+            new_node->next = NULL;
 
             // use hash function
-            unsigned int h = hash(temp_word)
+            unsigned int h = hash(temp_word);
 
             // insert the new node into the hash table
-
+            new_node->next = table[h];
             table[h] = new_node;
         }
     }
