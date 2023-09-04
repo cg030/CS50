@@ -29,7 +29,11 @@ bool dictionary_loaded = false;
 bool check(const char *word)
 {
 
-    
+    // search hash table for the first letter
+    for (int i = 0; i < N; i++)
+    {
+        word[0] == table->word[0]
+    }
     // TODO
     return false;
 }
