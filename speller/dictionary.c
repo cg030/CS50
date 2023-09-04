@@ -89,6 +89,8 @@ bool load(const char *dictionary)
             index = 0;
         }
     }
+    fclose(file); // close the file after using it
+    return true;  // return true at the end if everything goes well
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
