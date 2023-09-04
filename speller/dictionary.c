@@ -46,9 +46,10 @@ bool load(const char *dictionary)
     char *c;
     char word(LENGTH + 1);
 
-    while (fread(&c, ))
-    // TODO
-    return false;
+    while (fread(&c, sizeof(word), 1, file))
+    {
+        
+    }
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
