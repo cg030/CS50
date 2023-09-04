@@ -32,6 +32,7 @@ bool check(const char *word)
     // search hash table for the first letter
     for (int i = 0; i < N; i++)
     {
+        
         if (table[i] != NULL && word[i] == table[i]->word[i])
         {
             if (strcmp(word,table[i]->word) == 0)
@@ -39,7 +40,7 @@ bool check(const char *word)
                 return true;
             }
             // go to the next node in the linked list
-            
+
         }
     }
     // TODO
