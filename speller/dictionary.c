@@ -56,13 +56,18 @@ unsigned int hash(const char *word)
     // return toupper(word[0]) - 'A';
 
     // djb2 hashing algorithm
-    unsigned long hash = 5381;
+    unsigned long hash_value = 5381;
     int c;
+
     while ((c = *word++))
     {
-        hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+        // Convert the character to uppercase before hashing
+        c = toupper(c);
+        hash_value = ((hash_value << 5) + hash_value) + c; /* hash * 33 + c */
     }
-    return hash % N; // Ensure the result fits into your table size
+
+    // Use modulo operation to fit into the size of the table
+    return hash_value % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
