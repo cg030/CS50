@@ -32,7 +32,7 @@ bool check(const char *word)
     // search hash table for the first letter
     for (int i = 0; i < N; i++)
     {
-        word[0] == table->word[0]
+        if(word[i] == table[i]->word[i])
     }
     // TODO
     return false;
