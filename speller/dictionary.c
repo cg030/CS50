@@ -46,10 +46,10 @@ bool load(const char *dictionary)
 
     // read the dictionary
     int index = 0;
-    char *c;
+    char c;
     char word[LENGTH + 1];
 
-    while (fread(&c, sizeof(word), 1, file))
+    while (fread(&c, sizeof(char), 1, file))
     {
         // Allow only alphabetical characters and apostrophes
         if (isalpha(c) || (c == '\'' && index > 0))
