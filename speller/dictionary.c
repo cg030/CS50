@@ -39,8 +39,11 @@ bool check(const char *word)
     {
         return true
     }
-    temp_node = temp_node->next;
-    else
+    else if(temp_node != NULL && strcmp(word, temp_node->word) == 1)
+    {
+        temp_node = temp_node->next;
+    }
+    
     {
 
     }
