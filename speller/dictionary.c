@@ -39,7 +39,9 @@ bool load(const char *dictionary)
     FILE *file = fopen(*dictionary, 'r')
     if (*file == NULL)
     {
-        return false
+        printf("Could not open %s.\n", text);
+        unload();
+        return false;
     }
     // read the dictionary
     int index = 0;
@@ -48,7 +50,7 @@ bool load(const char *dictionary)
 
     while (fread(&c, sizeof(word), 1, file))
     {
-        
+
     }
 }
 
