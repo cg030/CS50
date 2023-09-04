@@ -39,9 +39,10 @@ bool check(const char *word)
     {
         return true
     }
+    temp_node = temp_node->next;
     else
     {
-        
+
     }
 
     // search hash table for the first letter
