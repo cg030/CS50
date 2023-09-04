@@ -152,6 +152,14 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        while (cursor != NULL)
+        {
+            
+        }
+    }
     // TODO
     return false;
 }
