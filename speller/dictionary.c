@@ -31,7 +31,6 @@ bool check(const char *word)
 {
 
     // the hash function directly tells us which is the right bucket
-
     int bucket = hash(word);
 
     node *temp_node = table[bucket];
@@ -43,28 +42,6 @@ bool check(const char *word)
     {
         temp_node = temp_node->next;
     }
-    
-    {
-
-    }
-
-    // search hash table for the first letter
-    for (int i = 0; i < N; i++)
-    {
-
-        if (table[i] != NULL && word[i] == table[i]->word[i])
-        {
-            node *temp_node = table[i];
-
-            if (strcmp(word,temp_node->word) == 0)
-            {
-                return true;
-            }
-            // go to the next node in the linked list
-            temp_node = temp_node->next;
-        }
-    }
-    // TODO
     return false;
 }
 
