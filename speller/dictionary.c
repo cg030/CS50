@@ -43,6 +43,7 @@ bool load(const char *dictionary)
         unload();
         return false;
     }
+    
     // read the dictionary
     int index = 0;
     char *c;
