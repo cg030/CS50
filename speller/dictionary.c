@@ -45,16 +45,66 @@ bool load(const char *dictionary)
     }
 
     // read the dictionary
-    int index = 0;
+    int index = 0, word = 0;
     char *c;
     char word(LENGTH + 1);
 
     while (fread(&c, sizeof(word), 1, file))
     {
-        if(isalpha(c) || (c == '\'' && index > 0))
+        // Allow only alphabetical characters and apostrophes
+        if (isalpha(c) || (c == '\'' && index > 0))
         {
+            // Append character to word
             word[index] = c;
             index++;
+
+            // Ignore alphabetical strings too long to be words
+            if (index > LENGTH)
+            {
+                // Consume remainder of alphabetical string
+                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
+
+                // Prepare for new word
+                index = 0;
+            }
+        }
+
+        // Ignore words with numbers (like MS Word can)
+        else if (isdigit(c))
+        {
+            // Consume remainder of alphanumeric string
+            while (fread(&c, sizeof(char), 1, file) && isalnum(c));
+
+            // Prepare for new word
+            index = 0;
+        }
+
+        // We must have found a whole word
+        else if (index > 0)
+        {
+            // Terminate current word
+            word[index] = '\0';
+
+            // Update counter
+            words++;
+
+            // Check word's spelling
+            getrusage(RUSAGE_SELF, &before);
+            bool misspelled = !check(word);    // Here the function check is called
+            getrusage(RUSAGE_SELF, &after);
+
+            // Update benchmark
+            time_check += calculate(&before, &after);
+
+            // Print word if misspelled
+            if (misspelled)
+            {
+                printf("%s\n", word);
+                misspellings++;
+            }
+
+            // Prepare for next word
+            index = 0;
         }
     }
 }
