@@ -29,6 +29,20 @@ bool dictionary_loaded = false;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
+
+    // the hash function directly tells us which is the right bucket
+
+    int bucket = hash(word);
+
+    if (strcmp(word, table(bucket)->word) == 0)
+    {
+        return true
+    }
+    else
+    {
+        
+    }
+
     // search hash table for the first letter
     for (int i = 0; i < N; i++)
     {
