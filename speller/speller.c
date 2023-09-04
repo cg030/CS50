@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
 
     // Unload dictionary
     getrusage(RUSAGE_SELF, &before);
-    bool unloaded = unload();
+    bool unloaded = unload();     // here the function unload is called
     getrusage(RUSAGE_SELF, &after);
 
     // Abort if dictionary not unloaded
