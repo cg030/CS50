@@ -47,6 +47,7 @@ bool load(const char *dictionary)
     // read the dictionary
     int index = 0;
     char c;
+    node temp;
 
     while (fread(&c, sizeof(char), 1, file))
     {
@@ -54,7 +55,7 @@ bool load(const char *dictionary)
         if (isalpha(c) || (c == '\'' && index > 0))
         {
             // Append character to word
-            node->word[index] = c;
+            temp->word[index] = c;
             index++;
 
             // Ignore alphabetical strings too long to be words
