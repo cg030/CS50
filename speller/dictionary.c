@@ -83,7 +83,7 @@ bool load(const char *dictionary)
         else if (index > 0)
         {
             // Terminate current word
-            word[index] = '\0';
+            temp_word[index] = '\0';
 
             // Prepare for next word
             index = 0;
@@ -98,15 +98,16 @@ bool load(const char *dictionary)
                 return false;
             }
 
-            strcpy(new_node->word, word);
+            strcpy(new_node->word, temp_word);
             new_node->next == NULL;
-            
+
             // use hash function
+            unsigned int h = hash(temp_word)
 
+            // insert the new node into the hash table
 
+            table[h] = new_node;
         }
-
-
     }
     fclose(file); // close the file after using it
     return true;  // return true at the end if everything goes well
