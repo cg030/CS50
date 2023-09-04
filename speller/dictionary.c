@@ -43,7 +43,7 @@ bool load(const char *dictionary)
         unload();
         return false;
     }
-    
+
     // read the dictionary
     int index = 0;
     char *c;
@@ -51,7 +51,11 @@ bool load(const char *dictionary)
 
     while (fread(&c, sizeof(word), 1, file))
     {
-
+        if(isalpha(c) || (c == '\'' && index > 0))
+        {
+            word[index] = c;
+            index++;
+        }
     }
 }
 
