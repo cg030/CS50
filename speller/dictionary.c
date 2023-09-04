@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -28,15 +29,18 @@ bool dictionary_loaded = false;
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-
     // search hash table for the first letter
     for (int i = 0; i < N; i++)
     {
-        if(word[i] == table[i]->word[i])
+        if (table[i] != NULL && word[i] == table[i]->word[i])
         {
-            //check if the word is identical
-            for (int j = 0; j < length())
-            word[i]
+            
+        }
+
+
+        if (strcmp(word,table[i]->word) == 0)
+        {
+            return true;
         }
     }
     // TODO
