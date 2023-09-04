@@ -35,7 +35,7 @@ bool check(const char *word)
     int bucket = hash(word);
 
     node *temp_node = table[bucket];
-    if (strcmp(word, temp_node->word) == 0)
+    if (temp_node != NULL && strcmp(word, temp_node->word) == 0)
     {
         return true
     }
