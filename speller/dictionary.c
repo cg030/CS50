@@ -88,8 +88,8 @@ bool load(const char *dictionary)
             // Prepare for next word
             index = 0;
         }
-        // store word in a data structure
-        
+        // store word in a data structure; we already have nodes
+
     }
     fclose(file); // close the file after using it
     return true;  // return true at the end if everything goes well
