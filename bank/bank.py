@@ -1,9 +1,9 @@
 greeting = input('Greeting: ')
-greeting = greeting.lower().strip()
+# greeting = greeting.lower().strip()
 
-words = greeting.split()
+words = greeting.lower().strip().split()
 
-if len(words) == 'hello' or len(greeting) == 1:
+if words[0] == 'hello':
     print(f'0$')
 elif greeting[0] == 'h':
     print(f'20$')
