@@ -1,4 +1,4 @@
 import cs50 as cs
 
-while greeting 
-greeting = input('Greeting: ')
+while TRUE:
+    greeting = input('Greeting: ')
