@@ -1,6 +1,3 @@
-import cs50 as cs
-
-
 greeting = input('Greeting: ')
 if greeting == 'hello':
     print(f'100$')
