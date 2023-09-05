@@ -1,6 +1,4 @@
 greeting = input('Greeting: ')
-# greeting = greeting.lower().strip()
-
 words = greeting.lower().strip().split()
 
 if words[0] == 'hello':
