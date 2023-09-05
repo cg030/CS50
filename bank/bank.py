@@ -1,4 +1,5 @@
 greeting = input('Greeting: ')
+greeting = greeting.lower
 if greeting == 'hello':
     print(f'100$')
 elif greeting[0] == 'h':
