@@ -1,5 +1,6 @@
 greeting = input('Greeting: ')
-words = greeting.lower().strip().split()
+words = [word.strip(',.!?') for word in greeting.lower().split()]
+
 
 if words[0] == 'hello':
     print(f'0$')
