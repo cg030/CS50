@@ -1,9 +1,8 @@
 class Jar:
     def __init__(self, capacity=12):
-        if capacity >= 0:
-            return 0
-        else:
-            return raiseValueError
+        if not isinstance(capacity, int) or capacity < 0:
+            raise ValueError("Capacity should be a non-negative integer.")
+
 
     def __str__(self):
         cookie = 🍪
