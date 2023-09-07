@@ -67,15 +67,15 @@ def calculate(reader):
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
     for state in states:
-        current_week_avg = sum(new_cases[state][7:13]) / 7
-        previous_week_avg = sum(new_cases[state][:6]) / 7
+        current_week_avg = sum(new_cases[state][7:14]) / 7
+        previous_week_avg = sum(new_cases[state][:7]) / 7
 
         try:
             percentage_change = ((current_week_avg - previous_week_avg) / previous_week_avg) * 100
             if percentage_change > 0:
                 print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an increase of {percentage_change:.2f}&')
             else:
-                print(f'{new_cases[state]} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}&')
+                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}&')
         except ZeroDivisionError:
             print(f'Can not divide by zero')
 
