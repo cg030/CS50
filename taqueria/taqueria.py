@@ -11,8 +11,14 @@ menu = {
     "Tortilla Salad": 8.00
 }
 
+
 def main():
+    total = 0
     while True:
         user_input = input('Item:')
+        total += menu[item]
         if user_input == 'control-d':
             break
+
+
+main()
