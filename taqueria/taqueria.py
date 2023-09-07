@@ -13,4 +13,6 @@ menu = {
 
 def main():
     while True:
-        user_input = input(Order:)
+        user_input = input('Item:')
+        if user_input == 'control-d':
+            break
