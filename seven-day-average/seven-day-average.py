@@ -44,7 +44,7 @@ def calculate(reader):
         cumulative_cases = row['cases']
 
         if state in dict_single:
-            daily_
+            daily_new_cases = cumulative_cases - 
 
     return new_cases
 
