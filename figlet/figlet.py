@@ -1,4 +1,4 @@
-from pyfiglet import Figlet
+from pyfiglet import Figlet as fi
 import random
 import sys
 
