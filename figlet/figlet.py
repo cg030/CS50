@@ -8,7 +8,6 @@ available_fonts = Figlet().getFonts()
 
 random_font = random.choice(available_fonts)
 
-# Use sys.argv instead of argv
 if len(sys.argv) == 1:
     x = figlet_format(user_input, font=random_font)
     print(f'Output: {x}')
