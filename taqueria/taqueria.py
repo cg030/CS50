@@ -24,7 +24,7 @@ def main():
             else:
                 print(f'Item not found')
         except EOFError: # handles the Ctrl-D input
-            print(f'Total: ${total:.2f}') # prints the final total
+            print(f'\nTotal: ${total:.2f}') # prints the final total
             break
 
 
