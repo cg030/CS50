@@ -58,11 +58,10 @@ def calculate(reader):
             dict_single[state].append(daily_new_cases)
 
         # Ensure we stre only the most recent 14 days
-        while len(dict_single[state])
+        while len(dict_single[state]) > 14:
+            dict_single[state].pop(0)
 
-
-
-        dict_single[state] = daily_new_cases
+            
     return new_cases
 
 
