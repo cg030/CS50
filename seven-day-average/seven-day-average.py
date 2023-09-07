@@ -48,6 +48,14 @@ def calculate(reader):
         else:
             daily_new_cases = cumulative_cases
 
+        # Update the cumulative_cases dictionary
+        dict_cumulative[state] = cumulative_cases
+
+        # Update the single_cases dictionary
+        if state not in single_cases
+
+        
+        dict_single[state] = daily_new_cases
     return new_cases
 
 
