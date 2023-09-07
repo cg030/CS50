@@ -39,10 +39,12 @@ def calculate(reader):
         # state : list of most 14 days of new cases
     }
     # create second dictionary
-    state_dict_single = {}
+    new_cases = {}
 
     for state, cases in states.items():
-        state_dict_single[state] = [x - state_dict_single[state][x-1] for x in cases]
+        new_cases[state] = [x - new_cases[state][x-1] for x in cases]
+
+    return new_cases
 
 
 # TODO: Calculate and print out seven day average for given state
