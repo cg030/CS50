@@ -30,7 +30,6 @@ class Jar:
 def main():
     jar = Jar()
     print(str(jar.capacity))
-    jar.withdraw(1)
     print(str(jar))
 
 main()
