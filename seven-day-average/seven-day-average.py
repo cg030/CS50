@@ -69,6 +69,10 @@ def comparative_averages(new_cases, states):
     current_week = new_cases[state][8:15].sum() / 7
     previous_week = new_cases[state][:7].sum() / 7
 
-    percentage_change = (current_week - previous_week) / previous_week
+    try:
+        percentage_change = (current_week - previous_week) / previous_week
+    except ZeroDivisionError:
+        print(f'Can not divide by zero')
+        return 1
 
 main()
