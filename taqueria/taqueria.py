@@ -18,9 +18,14 @@ def main():
             user_input = input('Item: ').title()
             if user_input in menu:
                 total += menu[user_input]
-                print(f'Total: {total:.2f}')
+                print(f'Total: ${total:.2f}')
+            elif user_input == "":
+                continue  # if the user just presses 'Enter', prompt again
             else:
                 print(f'Item not found')
+        except EOFError: # handles the Ctrl-D input
+            print(f'Total: ${total:.2f}') # prints the final total
+            break
 
 
 main()
