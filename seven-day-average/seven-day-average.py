@@ -71,5 +71,4 @@ def comparative_averages(new_cases, states):
 
     percentage_change = (current_week - previous_week) / previous_week
 
-
 main()
