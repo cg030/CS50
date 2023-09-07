@@ -1,6 +1,7 @@
 import figlet as fi
 import random
-from sys import argv
+import sys
+
 
 input = input('Input:')
 
@@ -16,4 +17,4 @@ elif len(argv) == 2 and argv[0] == '-f' or argv[0] == '--font' and argv[1] == # 
     print(f'Output: {y}')
 else
     print(f'Invalid command-line argumment')
-    return(1)
+    sys.exit(1)
