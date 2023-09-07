@@ -3,6 +3,8 @@ class Jar:
         if not isinstance(capacity, int) or capacity < 0:
             raise ValueError("Capacity should be a non-negative integer.")
 
+        self._capacity = capacity
+        self._size = 0
 
     def __str__(self):
         cookie = 🍪
