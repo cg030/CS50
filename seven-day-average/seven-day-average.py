@@ -37,8 +37,9 @@ def calculate(reader):
     # create dictionary
     state_dict = {
         # state_name : list of most 14 days of new cases
-
     }
+     # create second dictionary
+     state_dict_2 = 
 
 
 # TODO: Calculate and print out seven day average for given state
