@@ -73,9 +73,9 @@ def comparative_averages(new_cases, states):
         try:
             percentage_change = ((current_week_avg - previous_week_avg) / previous_week_avg) * 100
             if percentage_change > 0:
-                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an increase of {percentage_change:.2f}&')
+                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an increase of {percentage_change:.2f}%')
             else:
-                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}&')
+                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}%')
         except ZeroDivisionError:
             print(f'Can not divide by zero')
 
