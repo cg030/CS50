@@ -7,19 +7,17 @@ class Jar:
         self._size = 0
 
     def __str__(self):
-        cookie = 🍪
-        for i in range{size}:
-            print(f'cookie')
+        return '🍪' * self._size
 
     def deposit(self, n):
-        size += n
-        if size > capacity:
-            return raiseValueError
+        self._size += n
+        if self._size > capacity:
+            raise ValueError("Capacity reached")
 
     def withdraw(self, n):
-        size -= n
-        if size = -1:
-            return raiseValueError
+        self._size -= n
+        if self._size = -1:
+            raise ValueError ("No more cookies")
 
     @property
     def capacity(self):
