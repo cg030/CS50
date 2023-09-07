@@ -1,4 +1,4 @@
-import figlet as fi
+import pyfiglet as fi
 import random
 import sys
 
