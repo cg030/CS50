@@ -35,9 +35,15 @@ def main():
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
     # create dictionary
-    state_dict_cumulative = {
-        # state : list of most 14 days of new cases
-    }
+
+    # Process the data into a dictionary; cases are cumulative
+    state_dict_cumulative = {}
+    for row in reader:
+        state = row.pop("state")
+        if state not in data:
+            state_dict_cumulative[state] = []
+        state_dict_cumulative[state].append(row)
+
     # create second dictionary
     new_cases = {}
 
