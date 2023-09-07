@@ -11,15 +11,20 @@ class Jar:
             print(f'cookie')
 
     def deposit(self, n):
-        add_cookie =
+        size += n
+        if size > capacity:
+            return raiseValueError
 
     def withdraw(self, n):
-        ...
+        size -= n
+        if size = -1:
+            return raiseValueError
 
     @property
     def capacity(self):
-        ...
+        return c
 
     @property
     def size(self):
-        ...
+        s = 0
+        return s
