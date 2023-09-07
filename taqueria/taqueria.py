@@ -14,12 +14,12 @@ menu = {
 def main():
     total = 0
     while True:
-        user_input = input('Item:').title()
+        user_input = input('Item: ').title()
         if user_input in menu:
             total += menu[user_input]
             print(f'Total: {total:.2f}')
-        elif user_input not in menu: 'control-d':
-            break
+        else:
+            print(f'Item not found')
 
 
 main()
