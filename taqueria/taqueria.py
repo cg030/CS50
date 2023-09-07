@@ -14,12 +14,13 @@ menu = {
 def main():
     total = 0
     while True:
-        user_input = input('Item: ').title()
-        if user_input in menu:
-            total += menu[user_input]
-            print(f'Total: {total:.2f}')
-        else:
-            print(f'Item not found')
+        try:
+            user_input = input('Item: ').title()
+            if user_input in menu:
+                total += menu[user_input]
+                print(f'Total: {total:.2f}')
+            else:
+                print(f'Item not found')
 
 
 main()
