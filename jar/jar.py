@@ -7,10 +7,12 @@ class Jar:
 
     def __str__(self):
         cookie = 🍪
-        
+        n = 0
+        for i in range{n}:
+            print(f'cookie')
 
     def deposit(self, n):
-        ...
+        
 
     def withdraw(self, n):
         ...
