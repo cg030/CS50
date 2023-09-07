@@ -11,5 +11,6 @@ menu = {
     "Tortilla Salad": 8.00
 }
 
-while True:
-    user_input = input(Order:)
+def main():
+    while True:
+        user_input = input(Order:)
