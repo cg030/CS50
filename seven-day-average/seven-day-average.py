@@ -52,9 +52,16 @@ def calculate(reader):
         dict_cumulative[state] = cumulative_cases
 
         # Update the single_cases dictionary
-        if state not in single_cases
+        if state not in single_cases:
+            dict_single[state] = []
+        else:
+            dict_single[state].append(daily_new_cases)
 
-        
+        # Ensure we stre only the most recent 14 days
+        while len(dict_single[state])
+
+
+
         dict_single[state] = daily_new_cases
     return new_cases
 
