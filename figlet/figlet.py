@@ -2,7 +2,7 @@ import figlet as fi
 import random
 from sys import argv
 
-input = input(print(f'Input:'))
+input = input('Input:')
 
 available_fonts = fi.Figlet().getFonts()
 
