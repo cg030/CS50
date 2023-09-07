@@ -37,7 +37,7 @@ def calculate(reader):
     # create two dictionaries, one cumulative, the other single cases
 
     dict_cumulative = {}
-    dict_single = {}
+    new_cases = {}
 
     for row in reader:
         state = row['state']
@@ -52,18 +52,17 @@ def calculate(reader):
         dict_cumulative[state] = cumulative_cases
 
         # Update the single_cases dictionary
-        if state not in single_cases:
-            dict_single[state] = []
+        if state not in new_cases:
+            new_cases[state] = []
         else:
-            dict_single[state].append(daily_new_cases)
+            new_cases[state].append(daily_new_cases)
 
         # Ensure we stre only the most recent 14 days
-        while len(dict_single[state]) > 14:
-            dict_single[state].pop(0)
+        while len(new_cases[state]) > 14:
+            new_cases[state].pop(0)
 
-            
+
     return new_cases
-
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
