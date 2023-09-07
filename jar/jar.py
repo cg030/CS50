@@ -27,4 +27,7 @@ class Jar:
     def size(self):
         return self._size
 
-    
+    def main():
+        jar = Jar()
+
+        print(str(jar.capacity))
