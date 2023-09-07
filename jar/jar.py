@@ -30,3 +30,6 @@ class Jar:
 def main():
     jar = Jar()
     print(str(jar.capacity))
+    print(str(jar))
+
+main()
