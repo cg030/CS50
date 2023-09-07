@@ -34,7 +34,11 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-    ...
+    # create dictionary
+    state_dict = {
+        # state_name : list of most 14 days of new cases
+
+    }
 
 
 # TODO: Calculate and print out seven day average for given state
