@@ -1,8 +1,4 @@
 menu = {
-    'item' : 'price'
-}
-
-menu = {
     "Baja Taco": 4.00,
     "Burrito": 7.50,
     "Bowl": 8.50,
@@ -18,8 +14,8 @@ menu = {
 def main():
     total = 0
     while True:
-        user_input = input('Item:')
-        total += menu[item]
+        user_input = input('Item:').title()
+        total += menu[user_input]
         if user_input == 'control-d':
             break
 
