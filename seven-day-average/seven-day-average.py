@@ -38,9 +38,11 @@ def calculate(reader):
     state_dict_cumulative = {
         # state : list of most 14 days of new cases
     }
-     # create second dictionary
-     state_dict_single = for state, cases in states.items():
-        states
+    # create second dictionary
+    state_dict_single = {}
+
+    for state, cases in states.items():
+        state_dict_single[state] = [x - state_dict_single[state][x-1] for x in cases]
 
 
 # TODO: Calculate and print out seven day average for given state
