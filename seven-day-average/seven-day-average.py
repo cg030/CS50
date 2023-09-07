@@ -48,9 +48,9 @@ def calculate(reader):
     # create second dictionary
     new_cases = {}
     for state, cases in state_dict_cumulative.items():
-        new_cases = [cases[i] - cases[i - 1] for i in range(1, len(cases))]
-        new_cases.insert(0, cases[0])
-        new_cases[state] = 
+        daily_new_cases = [cases[i] - cases[i - 1] for i in range(1, len(cases))]
+        daily_new_cases.insert(0, cases[0])
+        new_cases[state] = daily_new_caes
     return new_cases
 
 
