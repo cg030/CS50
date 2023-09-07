@@ -1,3 +1,6 @@
+menu = {
+    'item' : 'price'
+}
 
 menu = {
     "Baja Taco": 4.00,
