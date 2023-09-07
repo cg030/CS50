@@ -34,24 +34,18 @@ def main():
 
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
-    # create dictionary
+    # create two dictionaries, one cumulative, the other single cases
 
-    # Process the data into a dictionary; cases are cumulative
-    state_dict_cumulative = {}
+    dict_cumulative = {}
+    dict_single = {}
+
     for row in reader:
-        state = row.['state']
-        cases = float(row['cases'])
-        if state not in state_dict_cumulative:
-            state_dict_cumulative[state] = []
-        state_dict_cumulative[state].append(cases)
+        state = row['state']
+        cumulative_cases = row['cases']
 
-    # create second dictionary
-    new_cases = {}
-    for state, cases in state_dict_cumulative.items():
-        daily_new_cases = [cases[i] - cases[i - 1] for i in range(1, len(cases))]
-        daily_new_cases.insert(0, cases[0])
-        new_cases[state] = daily_new_caes
-        
+        if state in dict_single:
+            daily_
+
     return new_cases
 
 
