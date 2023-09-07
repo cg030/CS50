@@ -6,7 +6,7 @@ class Jar:
             return raiseValueError
 
     def __str__(self):
-        ...
+        number_cookies = 
 
     def deposit(self, n):
         ...
