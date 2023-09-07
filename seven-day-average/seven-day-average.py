@@ -40,8 +40,8 @@ def calculate(reader):
     new_cases = {}
 
     for row in reader:
-        state = row['state']
-        cumulative_cases = int(row['cases'])
+        state = row["state"]
+        cumulative_cases = int(row["cases"])
 
         if state in dict_cumulative:
             daily_new_cases = cumulative_cases - dict_cumulative[state]
@@ -61,8 +61,8 @@ def calculate(reader):
         while len(new_cases[state]) > 14:
             new_cases[state].pop(0)
 
-
     return new_cases
+
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
@@ -71,12 +71,19 @@ def comparative_averages(new_cases, states):
         previous_week_avg = sum(new_cases[state][:7]) / 7
 
         try:
-            percentage_change = ((current_week_avg - previous_week_avg) / previous_week_avg) * 100
+            percentage_change = (
+                (current_week_avg - previous_week_avg) / previous_week_avg
+            ) * 100
             if percentage_change > 0:
-                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an increase of {percentage_change:.2f}%')
+                print(
+                    f"{state} had a 7-day average of {previous_week_avg:.2f} and an increase of {percentage_change:.2f}%"
+                )
             else:
-                print(f'{state} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}%')
+                print(
+                    f"{state} had a 7-day average of {previous_week_avg:.2f} and an decrease of {percentage_change:.2f}%"
+                )
         except ZeroDivisionError:
-            print(f'Can not divide by zero')
+            print(f"Can not divide by zero")
+
 
 main()
