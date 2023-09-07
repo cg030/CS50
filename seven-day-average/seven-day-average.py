@@ -39,16 +39,16 @@ def calculate(reader):
     # Process the data into a dictionary; cases are cumulative
     state_dict_cumulative = {}
     for row in reader:
-        state = row.pop("state")
-        if state not in data:
+        state = row.['state']
+        cases = float(row['cases'])
+        if state not in state_dict_cumulative:
             state_dict_cumulative[state] = []
-        state_dict_cumulative[state].append(row)
+        state_dict_cumulative[state].append(cases)
 
     # create second dictionary
     new_cases = {}
-
-    for state, cases in states.items():
-        new_cases[state] = [x - new_cases[state][x-1] for x in cases]
+    for state, cases in state_dict_cumulative.items():
+        new_cases = [cases[i] - cases[i - 1] for i in range(1, len(cases))]
 
     return new_cases
 
