@@ -41,10 +41,12 @@ def calculate(reader):
 
     for row in reader:
         state = row['state']
-        cumulative_cases = row['cases']
+        cumulative_cases = int(row['cases'])
 
-        if state in dict_single:
-            daily_new_cases = cumulative_cases - 
+        if state in dict_cumulative:
+            daily_new_cases = cumulative_cases - dict_cumulative[state]
+        else:
+            daily_new_cases = cumulative_cases
 
     return new_cases
 
