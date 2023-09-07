@@ -1,6 +1,6 @@
 class Jar:
     def __init__(self, capacity=12):
-        if __init__ >= 0:
+        if capacity >= 0:
             return 0
         else:
             return raiseValueError
