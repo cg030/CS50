@@ -16,6 +16,7 @@ def main():
     while True:
         user_input = input('Item:').title()
         total += menu[user_input]
+        print(f'Total: {total:.2f}')
         if user_input == 'control-d':
             break
 
