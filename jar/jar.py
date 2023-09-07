@@ -29,6 +29,8 @@ class Jar:
 
 def main():
     jar = Jar()
+    jar.deposit(14)
+    jar.withdraw(11)
     print(str(jar.capacity))
     print(str(jar))
 
