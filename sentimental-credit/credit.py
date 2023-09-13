@@ -12,7 +12,7 @@ def main():
         else:
             print(f'INVALID')
     else:
-        print(f)
+        print(f'INVALID')
 
 
 def luhn(number):
