@@ -15,8 +15,8 @@ def luhn(number):
         return True
 
 def card_type(number):
-    if (len(number) == 15):
+    if (len(number) == 15 and number[:2] == '34' or number[:2] == '37'):
         return('AMEX')
-    elif
-    elif (len(number) == 16):
+    elif (len(number) == 13 or len(number) == 16 and number[0] == '4')
+    elif (len(number) == 16 and for i in range(5): number[:2] == 55):
         return('MasterCard')
