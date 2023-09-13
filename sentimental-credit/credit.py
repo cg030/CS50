@@ -17,5 +17,6 @@ def luhn(number):
 def card_type(number):
     if (len(number) == 15):
         return('AMEX')
+    elif
     elif (len(number) == 16):
-        return('MasterCard)
+        return('MasterCard')
