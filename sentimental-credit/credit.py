@@ -6,13 +6,13 @@ def main():
         number = input('Number: ')
 
         type = card_type(number)
-        luhn = luhn(number)
+        luhn_valid = luhn(number)
 
-    if (luhn == True and type == 'AMEX'):
+    if (luhn_valid == True and type == 'AMEX'):
         print(f'AMEX')
-    elif (luhn == True and type == 'MASTERCARD'):
+    elif (luhn_valid == True and type == 'MASTERCARD'):
         print(f'MASTERCARD')
-    elif (luhn == True and type == 'VISA'):
+    elif (luhn_valid == True and type == 'VISA'):
         print(f'VISA')
     else:
         print(f'INVALID')
