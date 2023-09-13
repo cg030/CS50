@@ -5,17 +5,14 @@ def main():
     while not number.isnumeric():
         number = input('Number: ')
 
-    type = card_type(number)
-    luhn_valid = luhn(number)
-
-    if (luhn_valid == True and type == 'AMEX'):
-        print(f'AMEX')
-    elif (luhn_valid == True and type == 'MASTERCARD'):
-        print(f'MASTERCARD')
-    elif (luhn_valid == True and type == 'VISA'):
-        print(f'VISA')
+    if luhn(number):
+        card = card_type(number)
+        if card:
+            print(f'{card}')
+        else:
+            print(f'INVALID')
     else:
-        print(f'INVALID')
+        print(f)
 
 
 def luhn(number):
