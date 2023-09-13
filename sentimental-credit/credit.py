@@ -26,7 +26,9 @@ def card_type(number):
 
 def main():
     # get input from user
-    while not number.isnumeric:
+    number = input('Number: ')
+
+    while not number.isnumeric():
         number = input('Number: ')
 
 if (luhn(number) == True and card_type == 'AMEX'):
