@@ -32,7 +32,7 @@ def luhn(number):
             sum += cur_digit
 
         count += 1
-        digit = digit / 10 # remove last digit
+        digit = digit // 10 # remove last digit
 
     return (sum % 10 == 0)
 
