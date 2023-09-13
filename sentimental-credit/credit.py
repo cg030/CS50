@@ -29,7 +29,7 @@ def luhn(number):
         else:
             sum_product += double_digits
 
-    for j in range(len(number), -1, -2):
+    for j in range(len(number) -1, -1, -2):
         sum += int(number[j])
 
     return (sum_product + sum) % 10 == 0
