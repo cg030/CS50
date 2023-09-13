@@ -3,9 +3,6 @@ def main():
     number = input('Number: ')
 
 def luhn(number):
-    count = 0
-    sum = 0
-    while(number > len(number) > 0:
-        number[len(number)] # extract the last digit
-
-        if ()
+    for i in range(number[len(number) - 1], 0, -1):
+        sum_product += i * 2
+        
