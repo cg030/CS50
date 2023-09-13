@@ -21,7 +21,8 @@ def luhn(number):
 
     if ((sum_product + sum) % 10 == 0):
         return True
-        +
+    else:
+        return False
 
 def card_type(number):
     if (len(number) == 15 and number[:2] == '34' or number[:2] == '37'):
@@ -33,8 +34,7 @@ def card_type(number):
           number[:2] == '52' or
           number[:2] == '53' or
           number[:2] == '54' or
-          number[:2] == '55' or
-          ):
+          number[:2] == '55'):
         return('MasterCard')
     else:
         return('InvalidCard')
