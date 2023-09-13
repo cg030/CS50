@@ -22,14 +22,14 @@ def luhn(number):
 
     while (digit > 0):
 
-        digit = digit % 10
+        cur_digit = digit % 10
 
         if (count % 2 != 0): # conditional for calculation according to digit order
-            product = digit * 2
-            sum = sum + product / 10 + product % 10 # if the product is a two-digit number this splits it into two digits; integer division on product by 10. Integer division in C rounds towards zero.
+            product = cur_digit * 2
+            sum += product / 10 + product % 10 # if the product is a two-digit number this splits it into two digits; integer division on product by 10. Integer division in C rounds towards zero.
 
         else:
-            sum = sum + digit
+            sum = sum + cur_digit
 
         count += 1
         digit = digit / 10 # remove last digit
