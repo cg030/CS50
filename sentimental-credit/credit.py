@@ -43,6 +43,6 @@ def card_type(number):
     elif (len(number) == 16 and (number[:2] in ('51', '52', '53', '54', '55'))):
         return('MASTERCARD')
     else:
-        return('InvalidCard')
+        return False
 
 main()
