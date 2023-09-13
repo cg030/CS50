@@ -25,7 +25,7 @@ def luhn(number):
     for i in range(len(number) -2, -1, -2):
         sum_product += int(number[i] * 2
     for j in range(len(number), -1, -2):
-        sum += j
+        sum += int(number[j])
 
     if ((sum_product + sum) % 10 == 0):
         return True
