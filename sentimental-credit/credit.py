@@ -18,5 +18,11 @@ def card_type(number):
     if (len(number) == 15 and number[:2] == '34' or number[:2] == '37'):
         return('AMEX')
     elif (len(number) == 13 or len(number) == 16 and number[0] == '4')
-    elif (len(number) == 16 and for i in range(5): number[:2] == 55):
+    elif (len(number) == 16 and
+          number[:2] == '51' or
+          number[:2] == '52' or
+          number[:2] == '53' or
+          number[:2] == '54' or
+          number[:2] == '55' or
+          ):
         return('MasterCard')
