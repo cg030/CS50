@@ -19,9 +19,12 @@ def main():
 
 
 def luhn(number):
-    for i in range(number[len(number - 1)], 0, -2):
-        sum_product += i * 2
-    for j in range(number[len(number)], 0 , 1):
+    sum_product = 0
+    sum = 0
+
+    for i in range(len(number) -2, -1, -2):
+        sum_product += int(number[i] * 2
+    for j in range(len(number), -1, -2):
         sum += j
 
     if ((sum_product + sum) % 10 == 0):
