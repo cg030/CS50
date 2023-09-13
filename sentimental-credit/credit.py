@@ -19,20 +19,20 @@ def main():
 
 
 def luhn(number):
-    sum_product = 0
     sum = 0
+    count = 0
 
-    for i in range(len(number) -2, <= 0, -2):
-        double_digits = int(number[i]) * 2
-        if (double_digits > 9):
-            sum_product += (double_digits % 10 + double_digits // 10)
-        else:
-            sum_product += double_digits
+    digit = int(number) % 10
 
-    for j in range(len(number) -1, <= 0, -2):
-        sum += int(number[j])
+    if (count % 2 != 0): # conditional for calculation according to digit order
+        product = digit * 2
+        sum = sum + product / 10 + product % 10 # if the product is a two-digit number this splits it into two digits; integer division on product by 10. Integer division in C rounds towards zero.
 
-    return (sum_product + sum) % 10 == 0
+    else:
+        sum = sum + digit;
+
+    count += 1
+    return (sum % 10 == 0)
 
 
 def card_type(number):
