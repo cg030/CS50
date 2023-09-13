@@ -34,12 +34,7 @@ def card_type(number):
         return('AMEX')
     elif (len(number) == 13 or len(number) == 16 and number[0] == '4'):
         return('VISA')
-    elif (len(number) == 16 and
-          number[:2] == '51' or
-          number[:2] == '52' or
-          number[:2] == '53' or
-          number[:2] == '54' or
-          number[:2] == '55'):
+    elif (len(number) == 16 and (number[:2] in ('51', '52', '53' , '54' , '55')):
         return('MasterCard')
     else:
         return('InvalidCard')
