@@ -1,6 +1,6 @@
 def main():
     # get input from user
-    number = int(input('Number: '))
+    number = input('Number: ')
 
 def luhn(number):
     while(number > 0):
