@@ -32,7 +32,8 @@ def luhn(number):
             sum = sum + digit;
 
         count += 1
-        return (sum % 10 == 0)
+        
+    return (sum % 10 == 0)
 
 
 def card_type(number):
