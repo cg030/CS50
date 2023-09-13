@@ -5,8 +5,8 @@ def main():
     while not number.isnumeric():
         number = input('Number: ')
 
-        type = card_type(number)
-        luhn_valid = luhn(number)
+    type = card_type(number)
+    luhn_valid = luhn(number)
 
     if (luhn_valid == True and type == 'AMEX'):
         print(f'AMEX')
