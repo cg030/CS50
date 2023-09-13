@@ -32,10 +32,8 @@ def luhn(number):
     for j in range(len(number), -1, -2):
         sum += int(number[j])
 
-    if ((sum_product + sum) % 10 == 0):
-        return True
-    else:
-        return False
+    return (sum_product + sum) % 10 == 0
+
 
 def card_type(number):
     if (len(number) == 15 and (number[:2] == '34' or number[:2] == '37')):
