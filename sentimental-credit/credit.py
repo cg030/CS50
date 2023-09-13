@@ -22,14 +22,14 @@ def luhn(number):
     sum_product = 0
     sum = 0
 
-    for i in range(len(number) -2, -1, -2):
+    for i in range(len(number) -2, <= 0, -2):
         double_digits = int(number[i]) * 2
         if (double_digits > 9):
             sum_product += (double_digits % 10 + double_digits // 10)
         else:
             sum_product += double_digits
 
-    for j in range(len(number) -1, -1, -2):
+    for j in range(len(number) -1, <= 0, -2):
         sum += int(number[j])
 
     return (sum_product + sum) % 10 == 0
