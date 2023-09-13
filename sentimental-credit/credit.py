@@ -1,18 +1,3 @@
-def main():
-    # get input from user
-    while not number.isnumeric:
-        number = input('Number: ')
-
-if (luhn(number) == True and card_type == 'AMEX'):
-    print(f'AMEX')
-elif (luhn(number) == True and card_type == 'MASTERCARD'):
-    print(f'MASTERCARD')
-elif (luhn(number) == True and card_type == 'VISA'):
-    print(f'VISA')
-else:
-    print(f'INVALID')
-
-
 def luhn(number):
     for i in range(number[len(number - 1)], 0, -2):
         sum_product += i * 2
@@ -38,6 +23,20 @@ def card_type(number):
         return('MasterCard')
     else:
         return('InvalidCard')
+
+def main():
+    # get input from user
+    while not number.isnumeric:
+        number = input('Number: ')
+
+if (luhn(number) == True and card_type == 'AMEX'):
+    print(f'AMEX')
+elif (luhn(number) == True and card_type == 'MASTERCARD'):
+    print(f'MASTERCARD')
+elif (luhn(number) == True and card_type == 'VISA'):
+    print(f'VISA')
+else:
+    print(f'INVALID')
 
 
 main()
