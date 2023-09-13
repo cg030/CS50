@@ -22,7 +22,7 @@ def luhn(number):
 
     while (digit > 0):
 
-        digit = int(number) % 10
+        digit = digit % 10
 
         if (count % 2 != 0): # conditional for calculation according to digit order
             product = digit * 2
