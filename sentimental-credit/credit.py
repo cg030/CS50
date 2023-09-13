@@ -3,5 +3,9 @@ def main():
     number = input('Number: ')
 
 def luhn(number):
-    while(number > 0):
-        digit = number % 10
+    count = 0
+    sum = 0
+    while(number > len(number) > 0:
+        number[len(number)] # extract the last digit
+
+        if ()
