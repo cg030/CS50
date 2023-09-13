@@ -19,7 +19,7 @@ def main():
     with open(sys.argv[1]) as f:
         reader = csv.DictReader(f)
         for row in reader:
-            row['team'] = int(row['team']) # csv.DictReader stores columns as strings by default; convert column to integer type
+            row['rating'] = int(row['rating']) # csv.DictReader stores columns as strings by default; convert column to integer type
             teams.append(row)
 
     counts = {}
@@ -65,7 +65,7 @@ def simulate_tournament(teams):
     while len(w) != 1:
         w = simulate_round(w)
     else:
-        return w
+        return w[0]['team']
 
 
 if __name__ == "__main__":
