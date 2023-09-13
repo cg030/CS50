@@ -21,6 +21,7 @@ def main():
 
     for row in reader:
         row['team'] = int(row['team']) # csv.DictReader stores columns as strings by default; convert column to integer type
+        teams.append(row)
 
     counts = {}
     # TODO: Simulate N tournaments and keep track of win counts
