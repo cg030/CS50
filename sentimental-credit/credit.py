@@ -2,7 +2,8 @@ def main():
     # get input from user
     number = input('Number: ')
 
-    
+    while card_type == 'InvalidCard':
+        number = input('Number: ')
 
 
 
@@ -29,4 +30,4 @@ def card_type(number):
           ):
         return('MasterCard')
     else:
-        return('Invalid Card')
+        return('InvalidCard')
