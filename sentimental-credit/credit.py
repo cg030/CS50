@@ -26,7 +26,7 @@ def luhn(number):
 
         if (count % 2 != 0): # conditional for calculation according to digit order
             product = cur_digit * 2
-            sum += product / 10 + product % 10 # if the product is a two-digit number this splits it into two digits; integer division on product by 10. Integer division in C rounds towards zero.
+            sum += int(product / 10) + product % 10 # if the product is a two-digit number this splits it into two digits; integer division on product by 10. Integer division in C rounds towards zero.
 
         else:
             sum += cur_digit
