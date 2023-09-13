@@ -4,8 +4,8 @@ import csv
 import sys
 import random
 
-# Number of simluations to run
-N = 100
+# Number of simluation to run
+N = 1000
 
 
 def main():
