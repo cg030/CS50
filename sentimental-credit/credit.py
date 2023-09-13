@@ -2,8 +2,8 @@ def main():
     # get input from user
     number = input('Number: ')
 
-    while card_type == 'InvalidCard':
-        number = input('Number: ')
+    while number.isnumeric == 'InvalidCard':
+        number = input('Number: ').
 
 
 
