@@ -5,6 +5,9 @@ def main():
         if 1 <= height <= 8:
             break
 
+    for i in range(height):
+        print('#' * height + '' + )
+
     # loop to print pyramid
     for i in range(1, height, 1):
 
