@@ -23,7 +23,7 @@ def main():
     next(db) # skip the first header row
     for row in db:
         for value in row.values():
-            subsequence = value 
+            str = value
 
 
 
