@@ -24,8 +24,9 @@ def main():
     # for loop that passes a subsequence into the longest_match function
     for strs in headers:
         lm = longest_match(sq, strs)
-
-
+        temp_dict = {
+            'strs' : 'lm'
+        }
 
     lm = longest_match(sq, )
 
