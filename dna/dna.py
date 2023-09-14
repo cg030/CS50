@@ -30,7 +30,9 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    
+    for x in temp_dict:
+        for y in db:
+            if x == y
 
     return
 
