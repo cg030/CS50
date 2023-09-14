@@ -16,9 +16,10 @@ def main():
     sq = csv.reader(sys.argv[2])
 
     # TODO: Find longest match of each STR in DNA sequence
-    
+    lm = longest_match(sq, db)
 
     # TODO: Check database for matching profiles
+    
 
     return
 
