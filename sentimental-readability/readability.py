@@ -10,9 +10,15 @@ def main():
         except ValueError:
             print(f'Invalid Input')
 
+
 def count_letters(user_input):
     letter_count = sum(1 for char in user_input if char.isalpha())
     return letter_count
 
+
 def count_words(user_input):
+    word_count = len(user_input.split())
+    return word_count
+
+def count_sentences(user_input):
     
