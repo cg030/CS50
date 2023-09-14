@@ -4,6 +4,7 @@ def main():
         height = int(input('Height: '))
         if 1 <= height <= 8:
             break
+
     # loop to print pyramid
     for i in range(1, height, 1):
 
@@ -22,3 +23,5 @@ def main():
             print('#')
 
         print()
+
+main()
