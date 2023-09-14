@@ -6,6 +6,6 @@ def main():
             break
 
     for i in range(1, height + 1 , 1):
-        print(' ' * (height - i) + '#' * i + '  ' + '#' * i +  ' ' * (height - i))
+        print(' ' * (height - i) + '#' * i + '  ' + '#' * i)
 
 main()
