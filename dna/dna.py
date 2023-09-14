@@ -19,10 +19,11 @@ def main():
         sq = csv.reader(txt_file)
 
     # TODO: Find longest match of each STR in DNA sequence
+    headers = db.fieldnames
+
     # for loop that passes a subsequence into the longest_match function
-    for row in db:
-        for value in row.values():
-            str = value
+    for strs in headers:
+        longest_match(sq, strs)
 
 
 
