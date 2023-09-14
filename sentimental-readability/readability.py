@@ -38,7 +38,7 @@ def count_words(user_input):
     return words
 
 def count_sentences(user_input):
-    sentences = sum(1 for punc in user_input if char in '.?!')
+    sentences = sum(1 for punc in user_input if punc in '.?!')
     return sentences
 
 main()
