@@ -1,15 +1,16 @@
 def main():
 
-    # Get user input
-    while True:
-        try:
-            user_input = input('Text: ')
-            if user_input.isalpha() or :
-                break
-            else:
-                print(f'Enter text')
-        except ValueError:
-            print(f'Invalid Input')
+    user_input = input('Text: ')
+    # # Get user input
+    # while True:
+    #     try:
+    #         user_input = input('Text: ')
+    #         if user_input.isalpha() or :
+    #             break
+    #         else:
+    #             print(f'Enter text')
+    #     except ValueError:
+    #         print(f'Invalid Input')
 
     # calculate Index
 
