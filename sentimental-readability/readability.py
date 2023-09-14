@@ -1,9 +1,12 @@
 def main():
-
     user_input = input('Text: ')
 
-    L = count_letters(user_input) / count_words(user_input) * 100 # L is the average number of letters per 100 words in the text
-    S = count_sentences(user_input) / count_words(user_input) * 100 # S is the average number of sentences per 100 words in the text
+    L = (
+        count_letters(user_input) / count_words(user_input) * 100
+    )  # L is the average number of letters per 100 words in the text
+    S = (
+        count_sentences(user_input) / count_words(user_input) * 100
+    )  # S is the average number of sentences per 100 words in the text
     score = 0.0588 * L - 0.296 * S - 15.8
     grade = round(score)
 
@@ -25,8 +28,10 @@ def count_words(user_input):
     words = len(user_input.split())
     return words
 
+
 def count_sentences(user_input):
     sentences = sum(1 for punc in user_input if punc in '.?!')
     return sentences
+
 
 main()
