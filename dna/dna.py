@@ -7,7 +7,8 @@ def main():
     # TODO: Check for command-line usage
     while True:
         try:
-            cla = 
+            cla_len = len(sys.argv)
+            
 
     # TODO: Read database file into a variable
 
