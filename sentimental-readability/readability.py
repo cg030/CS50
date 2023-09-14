@@ -4,7 +4,7 @@ def main():
     while True:
         try:
             user_input = input('Text: ')
-            if user_input.isalpha():
+            if user_input.isalpha() or :
                 break
             else:
                 print(f'Enter text')
