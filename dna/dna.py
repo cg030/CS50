@@ -31,13 +31,11 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in db:
-        if db.items() == temp_dict.items():
-            print()
-            break
+        # Use a generator expression to compare values for each key in temp_dict
+        if all(row[key] == temp_dict[key] for key in temp_dict):
+            return row['name']
         else:
             print(f'No match')
-
-    return
 
 
 def longest_match(sequence, subsequence):
