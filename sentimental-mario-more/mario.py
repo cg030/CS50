@@ -10,17 +10,17 @@ def main():
 
         # loop to first print spaces
         for j in range(1, height - i, 1):
-            print(' ')
+            print(' ', end = '')
 
         # loop to print the number of hashes equivalent to the row; +1 row, +1 hash
         for k in range(1, j <=i, 1):
-            print('#')
+            print('#', end = '')
 
-        print(' ')
+        print(' ', end = '')
 
         # identical for loop as above
         for j in range(1, j<=i, 1):
-            print('#')
+            print('#', end = '')
 
         print()
 
