@@ -22,7 +22,11 @@ def main():
     # for loop that passes a subsequence into the longest_match function
     next(db) # skip the first header row
     for row in db:
-        for value in row.values()
+        for value in row.values():
+            subsequence = value 
+
+
+
     lm = longest_match(sq, )
 
     # TODO: Check database for matching profiles
