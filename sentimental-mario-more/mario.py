@@ -6,7 +6,7 @@ def main():
             break
 
     for i in range(height):
-        print('' '#' * height + '' + )
+        print('' * (height - 1) + '#' * i + '' + )
 
     # loop to print pyramid
     for i in range(1, height, 1):
