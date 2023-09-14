@@ -23,7 +23,7 @@ def main():
 
     # for loop that passes a subsequence into the longest_match function
     for strs in headers:
-        longest_match(sq, strs)
+        lm = longest_match(sq, strs)
 
 
 
