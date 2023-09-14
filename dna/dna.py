@@ -8,7 +8,16 @@ def main():
     while True:
         try:
             cla_len = len(sys.argv)
-            
+            if len(sys.argv) != 3:
+                print(f'Enter database and text file names')
+                sys.exit
+            elif not sys.argv[1].endswith('.csv'):
+                print(f'Enter database and text file names')
+                sys.exit
+            elif not sys.argv[2].endswith('.txt'):
+                print(f'Enter database and text file names')
+                sys.exit
+        
 
     # TODO: Read database file into a variable
 
