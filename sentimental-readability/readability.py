@@ -21,4 +21,4 @@ def count_words(user_input):
     return word_count
 
 def count_sentences(user_input):
-    
+    sentence_count = sum(1 for punc in user_input if )
