@@ -30,11 +30,9 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    matching_row = None
-
     for row in db:
         if db.items() == temp_dict.items():
-            matching_row = row
+            print()
             break
         else:
             print(f'No match')
