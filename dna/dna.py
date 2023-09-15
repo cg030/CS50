@@ -15,9 +15,7 @@ def main():
         dict = csv.DictReader(csv_file)
         for row in csv_file:
             name = row['name']
-            strs = {
-                dict.fieldnames
-            }
+            strs = {field : int(row[field]) for field in dict.fieldnames if field != 'name'}
 
 
 
