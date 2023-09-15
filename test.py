@@ -13,7 +13,8 @@ test_dict = {
 
 print(test_dict)
 
+updated_dict = {key + '-san' : value for key, value in test_dict.items()}
 for key in test_dict:
     key + '-san'
 
-print(test_dict)
+print(updated_dict)
