@@ -9,7 +9,6 @@ def main():
         print(f'Enter database and text file names')
         sys.exit
 
-    csv_file = sys.argv[1]
     # TODO: Read database file into a nested dictionary
     with open(sys.argv[1], 'r') as csv_file:
         dict = csv.DictReader(csv_file)
@@ -17,11 +16,6 @@ def main():
             name = row['name']
             strs = {field : int(row[field]) for field in dict.fieldnames if field != 'name'}
             dict['name'] = strs
-
-
-
-    with open(sys.argv[1], 'r') as csv_file:
-        dict = csv.DictReader(csv_file)
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as txt_file:
