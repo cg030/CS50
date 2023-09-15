@@ -7,14 +7,15 @@ def main():
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print(f'Enter database and text file names')
-        sys.exit
+        sys.exit()
 
     # TODO: Read database file into a nested dictionary; this will make searching for identical STRs easier later
+    nested_dict = {}
     with open(sys.argv[1], 'r') as csv_file:
-        nested_dict = csv.DictReader(csv_file)
-        for row in csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
             name = row['name']
-            strs = {field : int(row[field]) for field in nested_dict.fieldnames if field != 'name'}
+            strs = {field : int(row[field]) for field in reader.fieldnames if field != 'name'}
             nested_dict['name'] = strs
 
     # TODO: Read DNA sequence file into a variable
