@@ -16,7 +16,7 @@ def main():
         for row in reader:
             name = row['name']
             strs = {field : int(row[field]) for field in reader.fieldnames if field != 'name'}
-            nested_dict['name'] = strs
+            nested_dict[name] = strs
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as txt_file:
@@ -25,18 +25,15 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     # determine the names of the STRs I have to check. These correspond to the nested keys
     # Get the key (name) at the first index
-    main_dict_key_first_row = list(nested_dict.keys())[1]
-
-    # Access the nested dictionary for that name and get its keys
-    nested_keys_strs = list(nested_dict[main_dict_key_first_row].keys())
+    nested_keys_strs = [field for field in reader.fieldnames if field != 'name']
 
     # create temporary dictionary with the results of the for loop
     temp_dict = {}
 
     # loop over STRs retrieved from the database and pass these into the function to find the longest match of that STR in the sequence from the txt file
-    for str in nested_keys_strs:
-        lm = longest_match(sequence, str)
-        temp_dict[str] = [lm]
+    for str_name in nested_keys_strs:
+        lm = longest_match(sequence, str_name)
+        temp_dict[str_name] = lm
 
     # TODO: Check database for matching profiles
     for name, values in nested_dict.items():
