@@ -36,11 +36,14 @@ def main():
         temp_dict[str_name] = lm
 
     # TODO: Check database for matching profiles
+    match_found = False
     for name, values in nested_dict.items():
         if values == temp_dict:
             print(name)
-        else:
-            print(f'No match')
+            match_found = True
+            break
+    if not match_found:
+        print(f'No match')
 
 
 def longest_match(sequence, subsequence):
