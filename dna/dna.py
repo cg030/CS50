@@ -10,7 +10,17 @@ def main():
         sys.exit
 
     csv_file = sys.argv[1]
-    # TODO: Read database file into a variable
+    # TODO: Read database file into a nested dictionary
+    with open(sys.argv[1], 'r') as csv_file:
+        dict = csv.DictReader(csv_file)
+        for row in csv_file:
+            name = row['name']
+            strs = {
+                dict.fieldnames
+            }
+
+
+
     with open(sys.argv[1], 'r') as csv_file:
         dict = csv.DictReader(csv_file)
 
