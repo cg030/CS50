@@ -11,34 +11,34 @@ def main():
 
     # TODO: Read database file into a nested dictionary; this will make searching for identical STRs easier later
     with open(sys.argv[1], 'r') as csv_file:
-        dict = csv.DictReader(csv_file)
+        nested_dict = csv.DictReader(csv_file)
         for row in csv_file:
             name = row['name']
-            strs = {field : int(row[field]) for field in dict.fieldnames if field != 'name'}
-            dict['name'] = strs
+            strs = {field : int(row[field]) for field in nested_dict.fieldnames if field != 'name'}
+            nested_dict['name'] = strs
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], 'r') as txt_file:
-        sequence = csv.read().strip()
+        sequence = txt_file.read().strip()
 
     # TODO: Find longest match of each STR in DNA sequence
     # determine the names of the STRs I have to check. These correspond to the nested keys
     # Get the key (name) at the first index
-    main_dict_key_first_row = list(dict.keys())[1]
+    main_dict_key_first_row = list(nested_dict.keys())[1]
 
     # Access the nested dictionary for that name and get its keys
-    nested_keys_strs = list(dict[main_dict_key_first_row].keys())
+    nested_keys_strs = list(nested_dict[main_dict_key_first_row].keys())
 
     # create temporary dictionary with the results of the for loop
     temp_dict = {}
 
     # loop over STRs retrieved from the database and pass these into the function to find the longest match of that STR in the sequence from the txt file
-    for str in nested_key_strs:
+    for str in nested_keys_strs:
         lm = longest_match(sequence, str)
         temp_dict[str] = [lm]
 
     # TODO: Check database for matching profiles
-    for name, values in dict.items():
+    for name, values in nested_dict.items():
         if values == temp_dict:
             print(name)
         else:
