@@ -27,9 +27,10 @@ def main():
     main_dict_key_first_row = list(dict.keys())[1]
 
     # Access the nested dictionary for that name and get its keys
-    nested_keys_strs = dict[main_dict_key_first_row].keys()
-    
+    nested_keys_strs = list(dict[main_dict_key_first_row].keys())
 
+    for str in nested_key_strs:
+        longest_match(sequence, str)
 
 
 
