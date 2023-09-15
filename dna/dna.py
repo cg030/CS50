@@ -22,7 +22,7 @@ def main():
         sequence = csv.read().strip()
 
     # TODO: Find longest match of each STR in DNA sequence
-    for 
+    str_names = dict
 
 
 
