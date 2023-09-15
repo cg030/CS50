@@ -29,12 +29,11 @@ def main():
     # Access the nested dictionary for that name and get its keys
     nested_keys_strs = list(dict[main_dict_key_first_row].keys())
 
+    # create temporary dictionary with the results of the for loop
+    temp_dict = {}
     for str in nested_key_strs:
-        longest_match(sequence, str)
-
-
-
-
+        lm = longest_match(sequence, str)
+        temp_dict = {str : lm}
 
 
     headers = dict.fieldnames
