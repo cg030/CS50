@@ -31,20 +31,11 @@ def main():
 
     # create temporary dictionary with the results of the for loop
     temp_dict = {}
+
+    # loop over STRs retrieved from the database and pass these into the function to find the longest match of that STR in the sequence from the txt file
     for str in nested_key_strs:
         lm = longest_match(sequence, str)
-        temp_dict = {str : lm}
-
-
-    headers = dict.fieldnames
-
-    temp_dict = {}
-
-    # for loop that passes a subsequence into the longest_match function
-    for strs in headers:
-        lm = longest_match(sq, strs)
-        temp_dict[strs] = [lm]
-
+        temp_dict[str] = [lm]
 
     # TODO: Check database for matching profiles
     for row in db:
