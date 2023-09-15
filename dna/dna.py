@@ -9,7 +9,7 @@ def main():
         print(f'Enter database and text file names')
         sys.exit
 
-    # TODO: Read database file into a nested dictionary
+    # TODO: Read database file into a nested dictionary; this will make searching for identical STRs easier later
     with open(sys.argv[1], 'r') as csv_file:
         dict = csv.DictReader(csv_file)
         for row in csv_file:
@@ -22,7 +22,13 @@ def main():
         sequence = csv.read().strip()
 
     # TODO: Find longest match of each STR in DNA sequence
-    str_names = dict
+    # determine the names of the STRs I have to check. These correspond to the nested keys
+    # Get the key (name) at the first index
+    main_dict_key_first_row = list(dict.keys())[1]
+
+    # Access the nested dictionary for that name and get its keys
+    nested_keys_strs = dict[main_dict_key_first_row].keys()
+    
 
 
 
