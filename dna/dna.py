@@ -24,7 +24,6 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     # determine the names of the STRs I have to check. These correspond to the nested keys
-    # Get the key (name) at the first index
     nested_keys_strs = [field for field in reader.fieldnames if field != 'name']
 
     # create temporary dictionary with the results of the for loop
