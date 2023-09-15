@@ -16,6 +16,7 @@ def main():
         for row in csv_file:
             name = row['name']
             strs = {field : int(row[field]) for field in dict.fieldnames if field != 'name'}
+            dict['name'] = strs
 
 
 
