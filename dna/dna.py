@@ -38,12 +38,9 @@ def main():
         temp_dict[str] = [lm]
 
     # TODO: Check database for matching profiles
-    
-
-    for row in db:
-        # Use a generator expression to compare values for each key in temp_dict
-        if all(row[key] == temp_dict[key] for key in temp_dict):
-            return row['name']
+    for name, values in dict.items():
+        if values == temp_dict:
+            print(name)
         else:
             print(f'No match')
 
