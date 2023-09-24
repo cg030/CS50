@@ -2,22 +2,22 @@
 -- DROP TABLE houses;
 -- DROP TABLE assignment;
 
-CREATE TABLE houses (
-    id INTEGER,
-    house TEXT,
-    head TEXT,
-    PRIMARY KEY(house)
+CREATE TABLE students (
+    id INTEGER PRIMARY KEY,
+    student_name TEXT NOT NULL
 );
 
-CREATE TABLE assignment (
+
+CREATE TABLE houses (
+    id INTEGER PRIMARY KEY,
+    house_name TEXT NOT NULL,
+    head TEXT NOT NULL
+);
+
+
+CREATE TABLE house_assignments (
     student_id INTEGER,
     house_id INTEGER,
-    FOREIGN KEY(student_id) REFERENCES students(id),
-    FOREIGN KEY(house_id) REFERENCES houses(id)
-);
-
-CREATE TABLE students (
-    id INTEGER,
-    student_name TEXT,
-    PRIMARY KEY(id)
+    FOREIGN KEY (student_id) REFERENCES students (id),
+    FOREIGN KEY (house_id) REFERENCES houses (id)
 );

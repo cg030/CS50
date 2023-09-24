@@ -1,33 +1,33 @@
-from cs50 import SQL
 import csv
+import sqlite3
 
-# open database
-db = SQL("sqlite:///roster.db")
+# Connect to the SQLite3 database
+conn = sqlite3.connect('roster.db')
+cursor = conn.cursor()
 
-with open("students.csv", "r") as file:
-    reader = csv.DictReader(file)
-    house_dict = dict()
-
+# Open the students.csv file
+with open('students.csv', 'r') as file:
+    reader = csv.reader(file)
     for row in reader:
-        # read data from csv file into the students table in roster.db
-        student_id = row["id"]
-        student_name = row["student_name"]
-        db.execute("INSERT INTO students(id,student_name) VALUES (?,?)", student_id,student_name)
+        # Extract student_name, house, and head from each row in the CSV
+        student_name, house, head = row
 
-        # read data from csv file into the houses and assignments table in roster.db
-        house_name = row["house"]
-        house_head = row["head"]
+        # Insert the student_name into the students table
+        cursor.execute('INSERT INTO students (student_name) VALUES (?)', (student_name,))
+        student_id = cursor.lastrowid  # Get the id of the last inserted row
 
-        # check if the house is already in the houses table
-        house_in_db = db.execute("SELECT id, house FROM houses WHERE house = ?", house_name)
-
-        # if the house is not in the database, insert it
-        if not house_in_db:
-            house_id = len(house_dict) + 1
-            db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_id, house_name, house_head)
-            house_dict[house_name] = house_id # store the house_id in house_dict
+        # Check if the house already exists in the houses table, if not, insert it
+        cursor.execute('SELECT id FROM houses WHERE house_name = ?', (house,))
+        house_id = cursor.fetchone()
+        if not house_id:
+            cursor.execute('INSERT INTO houses (house_name, head) VALUES (?, ?)', (house, head))
+            house_id = cursor.lastrowid  # Get the id of the last inserted row
         else:
-            house_id = house_in_db[0]["id"]
+            house_id = house_id[0]
 
-        # get house_id from house_dict and insert into assignment table
-        db.execute("INSERT INTO assignment (student_id, house_id) VALUES (?,?)", student_id, house_id)
+        # Insert the student_id and house_id into the house_assignments table
+        cursor.execute('INSERT INTO house_assignments (student_id, house_id) VALUES (?, ?)', (student_id, house_id))
+
+# Commit the transactions and close the connection
+conn.commit()
+conn.close()
