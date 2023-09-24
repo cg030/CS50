@@ -5,12 +5,16 @@ import csv
 # open database
 db = SQL("sqlite:///roster.db")
 
-db.execute("")
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
+    # read data from csv file into the students table in the roster.db
     for row in reader:
         id = row["id"]
         name = row["student_name"]
         db.execute("INSERT INTO students(id,name) VALUES (?,?)", id,name)
 
+    # read data from the csv file into the houses table in roster.db
+    for row in reader:
+        if row["house"] == "Gryffindor":
+            
