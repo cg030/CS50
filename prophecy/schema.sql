@@ -7,8 +7,8 @@ CREATE TABLE houses (
 
 CREATE TABLE assignment (
     student_id INTEGER,
-    house_id,
-    FOREIGN KEY(student_id)
-    FOREIGN KEY(house_id)
+    house_id INTEGER,
+    FOREIGN KEY(student_id) REFERENCES students(id),
+    FOREIGN KEY(house_id) REFERENCES houses(id)
 );
 
