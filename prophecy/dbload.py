@@ -20,7 +20,7 @@ with open("students.csv", "r") as file:
         house_name = row["house"]
         house_head = row["head"]
 
-        house_dict[row["house"]] =
+        house_dict[row["house"]] = n
         n = 1
 
 
