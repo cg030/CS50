@@ -1,6 +1,6 @@
 -- DROP TABLE students;
 -- DROP TABLE houses;
--- DROP TABLE assignment;
+-- DROP TABLE house_assignments;
 
 CREATE TABLE students (
     id INTEGER PRIMARY KEY,
