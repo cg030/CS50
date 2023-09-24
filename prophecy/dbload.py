@@ -16,5 +16,10 @@ with open("students.csv", "r") as file:
 
     # read data from the csv file into the houses table in roster.db
     for row in reader:
-        if row["house"] == "Gryffindor":
+        # if the house in the csv file already exists in the database skip row
+        if row["house"] == db.execute("SELECT house FROM houses"):
+            next row
+        else:
             
+
+
