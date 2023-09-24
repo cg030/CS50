@@ -23,6 +23,9 @@ with open("students.csv", "r") as file:
         if row["house"] == db.execute("SELECT house FROM houses"):
             db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, )
         else:
+            # populate the dictionary
+            house_dict[row["house"]] = n
+            n += 1
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
 
 
