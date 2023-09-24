@@ -28,4 +28,5 @@ with open("students.csv", "r") as file:
 
     # populate the assignement table
     for row in reader:
+        student_id
         db.execute("INSERT INTO assignment (student_id, house_id) VALUES (?,?)", student_id, )
