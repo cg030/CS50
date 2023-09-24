@@ -5,7 +5,7 @@ import csv
 # open database
 db = SQL("sqlite:///roster.db")
 
-house_dic = dict()
+house_dict = dict()
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
@@ -18,7 +18,9 @@ with open("students.csv", "r") as file:
     # read data from the csv file into the houses table in roster.db
     for row in reader:
         # if the house in the csv file already exists in the database skip row otherwise insert house into table
-        house_id = 1
+        house_dict["id"] = 0
+        house_dict["house_name"] = row["house"]
+        
         house_name = row["house"]
         house_head = row["head"]
         if row["house"] == db.execute("SELECT house FROM houses"):
