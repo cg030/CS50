@@ -29,8 +29,7 @@ with open("students.csv", "r") as file:
             db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
         else:
             # populate the dictionary
-            house_dict[row["house"]] = n
-            db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
+            db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_dict[row["house"]], house_name, house_head)
             n += 1
 
 
