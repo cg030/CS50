@@ -12,3 +12,8 @@ CREATE TABLE assignment (
     FOREIGN KEY(house_id) REFERENCES houses(id)
 );
 
+CREATE TABLE students (
+    id INTEGER,
+    student_name TEXT,
+    PRIMARY KEY(id)
+);
