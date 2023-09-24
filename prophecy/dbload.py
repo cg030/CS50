@@ -22,12 +22,14 @@ with open("students.csv", "r") as file:
         n = 1
 
         if row["house"] == db.execute("SELECT house FROM houses"):
+            # if the house alread exists in the houses table then you don't have to update the houses table
+            # 
             db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, )
         else:
             # populate the dictionary
             house_dict[row["house"]] = n
             n += 1
-            
+
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
 
 
