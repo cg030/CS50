@@ -23,19 +23,13 @@ with open("students.csv", "r") as file:
         # check if the house is already in the houses table
         house_in_db = db.execute("SELECT * FROM houses WHERE house = ?", house_name)
 
+        # if the house is not in the database, insert it
         if not house_in_db:
             house_id = len(house_dict) + 1
             db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_id, house_name, house_head)
-            house_dict[house_name] = house_id
+            house_dict[house_name] = house_id # store the house_id in house_dict
 
-        house_id = house_dict
-
-        if row["house"] == db.execute("SELECT house FROM houses"):
-            # if the house alread exists in the houses table then you don't have to update the houses table
-            # however you still have to update the assignments table connecting the student id with the house id
-            db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
-        else:
-            db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_dict[row["house"]], house_name, house_head)
-            db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
-            n += 1
+        # get house_id from house_dict and insert into assignment table
+        house_id = house_dict[house_name]
+        db.execute("INSERT INTO assignment (student_id, house_id) VALUES (?,?)", student_id, house_id)
 
