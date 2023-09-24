@@ -28,7 +28,7 @@ with open("students.csv", "r") as file:
             db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_id, house_name, house_head)
             house_dict[house_name] = house_id
 
-        house
+        house_id = house_dict
 
         if row["house"] == db.execute("SELECT house FROM houses"):
             # if the house alread exists in the houses table then you don't have to update the houses table
