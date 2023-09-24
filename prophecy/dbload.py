@@ -20,9 +20,11 @@ with open("students.csv", "r") as file:
         # if the house in the csv file already exists in the database skip row otherwise insert house into table
         house_dict["id"] = 0
         house_dict["house_name"] = row["house"]
-        
+
         house_name = row["house"]
         house_head = row["head"]
+
+        
         if row["house"] == db.execute("SELECT house FROM houses"):
             db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, )
             next row
