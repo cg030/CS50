@@ -5,11 +5,11 @@ import csv
 # open database
 db = SQL("sqlite:///roster.db")
 
-house_dict = dict()
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
-
+    house_dict = dict()
+    
     for row in reader:
         # read data from csv file into the students table in roster.db
         student_id = row["id"]
@@ -31,4 +31,3 @@ with open("students.csv", "r") as file:
             db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
             n += 1
 
-            
