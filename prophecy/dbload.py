@@ -24,7 +24,11 @@ with open("students.csv", "r") as file:
         house_in_db = db.execute("SELECT * FROM houses WHERE house = ?", house_name)
 
         if not house_in_db:
-            
+            house_id = len(house_dict) + 1
+            db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_id, house_name, house_head)
+            house_dict[house_name] = house_id
+
+        house
 
         if row["house"] == db.execute("SELECT house FROM houses"):
             # if the house alread exists in the houses table then you don't have to update the houses table
