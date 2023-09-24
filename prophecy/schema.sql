@@ -1,3 +1,7 @@
+-- DROP TABLE students;
+-- DROP TABLE houses;
+-- DROP TABLE assignment;
+
 CREATE TABLE houses (
     id INTEGER,
     house TEXT,
