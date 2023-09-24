@@ -21,7 +21,7 @@ with open("students.csv", "r") as file:
         house_head = row["head"]
 
         if row["house"] == db.execute("SELECT house FROM houses"):
-            db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", student_id, )
+            db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, )
         else:
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
 
@@ -29,7 +29,7 @@ with open("students.csv", "r") as file:
 
         # if the house in the csv file already exists in the database skip row otherwise insert house into table
         n = 1
-        house_dict["id"] = 1
+        house_dict["id"] = n
         house_dict["house_name"] = row["house"]
 
         # if the value in house column in the csv file is equal to a house name in the house_dict, insert the corresponding id of the house in the dictionary into the assignments table
