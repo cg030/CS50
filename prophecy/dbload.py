@@ -19,8 +19,8 @@ with open("students.csv", "r") as file:
         # read data from csv file into the houses table in roster.db
         house_name = row["house"]
         house_head = row["head"]
-        
-        house_dict[row["house"]] = n
+
+        house_dict[row["house"]] =
         n = 1
 
 
@@ -32,7 +32,6 @@ with open("students.csv", "r") as file:
             # populate the dictionary
             house_dict[row["house"]] = n
             n += 1
-
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
 
 
