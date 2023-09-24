@@ -19,7 +19,10 @@ with open("students.csv", "r") as file:
         # read data from csv file into the houses table in roster.db
         house_name = row["house"]
         house_head = row["head"]
+        
+        house_dict[row["house"]] = n
         n = 1
+
 
         if row["house"] == db.execute("SELECT house FROM houses"):
             # if the house alread exists in the houses table then you don't have to update the houses table
