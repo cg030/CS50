@@ -28,7 +28,7 @@ with open("students.csv", "r") as file:
             # however you still have to update the assignments table connecting the student id with the house id
             db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
         else:
-            db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_dict[row["house"]], house_name, house_head)
+            db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_dict[row["house"]], house_name, house_head)
             n += 1
 
 
