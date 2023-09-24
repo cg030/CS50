@@ -15,10 +15,9 @@ with open("students.csv", "r") as file:
         student_name = row["student_name"]
         db.execute("INSERT INTO students(id,name) VALUES (?,?)", student_id,student_name)
 
-    # read data from the csv file into the houses table in roster.db
-    for row in reader:
         # if the house in the csv file already exists in the database skip row otherwise insert house into table
-        house_dict["id"] = 0
+        n = 1
+        house_dict["id"] = 1
         house_dict["house_name"] = row["house"]
 
         house_name = row["house"]
@@ -28,6 +27,11 @@ with open("students.csv", "r") as file:
         if row["house"] == house_dict("house_name"):
             temp_house_id = row["house_name"]
             db.execute("INSERT INTO assignment (student_id, house_id) VALUES (?,?)", student_id, temp_house_id)
+        # if the name doesn't yet exist in the dictionary add the house and id to the dictionary and then insert the id into the assignment table
+        else:
+            house_dict[row["house"]] = n
+            n += 1
+
 
         if row["house"] == db.execute("SELECT house FROM houses"):
 
