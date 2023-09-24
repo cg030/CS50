@@ -25,3 +25,7 @@ with open("students.csv", "r") as file:
         else:
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
             house_id += 1
+
+    # populate the assignement table
+
+    
