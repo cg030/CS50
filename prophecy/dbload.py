@@ -26,9 +26,10 @@ with open("students.csv", "r") as file:
         if row["house"] == db.execute("SELECT house FROM houses"):
             # if the house alread exists in the houses table then you don't have to update the houses table
             # however you still have to update the assignments table connecting the student id with the house id
-            db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
+            db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
         else:
             db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_dict[row["house"]], house_name, house_head)
+            db.execute("INSERT INTO assignment(student_id, house_id) VALUES (?,?)", student_id, house_dict[row["house"]])
             n += 1
 
 
