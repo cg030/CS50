@@ -9,12 +9,12 @@ db = SQL("sqlite:///roster.db")
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
     house_dict = dict()
-    
+
     for row in reader:
         # read data from csv file into the students table in roster.db
         student_id = row["id"]
         student_name = row["student_name"]
-        db.execute("INSERT INTO students(id,name) VALUES (?,?)", student_id,student_name)
+        db.execute("INSERT INTO students(id,student_name) VALUES (?,?)", student_id,student_name)
 
         # read data from csv file into the houses and assignments table in roster.db
         house_name = row["house"]
