@@ -9,6 +9,8 @@ with open("students.csv", "r") as file:
         name = row["student_name"]
         db.execute("INSERT INTO students(id,name) VALUES (?,?)", id,name)
 
+    
+
 # open database
 db = SQL("sqlite:///roster.db")
 
