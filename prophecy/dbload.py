@@ -5,6 +5,7 @@ import csv
 # open database
 db = SQL("sqlite:///roster.db")
 
+house_dic = dict()
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
