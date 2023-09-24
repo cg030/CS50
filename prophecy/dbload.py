@@ -27,5 +27,5 @@ with open("students.csv", "r") as file:
             house_id += 1
 
     # populate the assignement table
-
-    
+    for row in reader:
+        
