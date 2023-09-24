@@ -21,7 +21,7 @@ with open("students.csv", "r") as file:
         house_head = row["head"]
 
         if row["house"] == db.execute("SELECT house FROM houses"):
-            db.execute("INSERT INTO houses(student_id, house_id) VALUES (?,?)", student_id, )
+            db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", student_id, )
         else:
             db.execute("INSERT INTO houses(id, houses, head) VALUES (?,?,?)", house_id, house_name, house_head)
 
