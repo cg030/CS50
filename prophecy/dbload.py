@@ -1,10 +1,8 @@
 from cs50 import SQL
-
 import csv
 
 # open database
 db = SQL("sqlite:///roster.db")
-
 
 with open("students.csv", "r") as file:
     reader = csv.DictReader(file)
@@ -21,15 +19,15 @@ with open("students.csv", "r") as file:
         house_head = row["head"]
 
         # check if the house is already in the houses table
-        house_in_db = db.execute("SELECT * FROM houses WHERE house = ?", house_name)
+        house_in_db = db.execute("SELECT id, house FROM houses WHERE house = ?", house_name)
 
         # if the house is not in the database, insert it
         if not house_in_db:
             house_id = len(house_dict) + 1
             db.execute("INSERT INTO houses(id, house, head) VALUES (?,?,?)", house_id, house_name, house_head)
             house_dict[house_name] = house_id # store the house_id in house_dict
+        else:
+            house_id = house_in_db[0]["id"]
 
         # get house_id from house_dict and insert into assignment table
-        house_id = house_dict[house_name]
         db.execute("INSERT INTO assignment (student_id, house_id) VALUES (?,?)", student_id, house_id)
-
