@@ -19,9 +19,8 @@ with open("students.csv", "r") as file:
         # read data from csv file into the houses table in roster.db
         house_name = row["house"]
         house_head = row["head"]
-
+        n = 1 
         house_dict[row["house"]] = n
-        n = 1
 
 
         if row["house"] == db.execute("SELECT house FROM houses"):
