@@ -2,3 +2,4 @@
 -- Your query should output a table with a single column for the name of each song.
 -- You should not make any assumptions about what Post Malone’s artist_id is.
 
+SELECT name FROM songs 
