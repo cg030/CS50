@@ -2,4 +2,7 @@
 -- Your query should output a table with a single column for the name of each song.
 -- You should not make any assumptions about what Post Malone’s artist_id is.
 
-SELECT name FROM songs 
+SELECT s.name
+FROM songs s
+JOIN artists a ON s.artists_id = a.id
+WHERE a.name = "Post Malone";
