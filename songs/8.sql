@@ -2,3 +2,7 @@
 -- Songs that feature other artists will include “feat.” in the name of the song.
 -- Your query should output a table with a single column for the name of each song.
 
+SELECT s.name
+FROM songs s
+JOIN artists a ON s.artist_id = a.id
+WHERE a.name LIKE '%feat.%';
