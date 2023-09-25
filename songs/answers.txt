@@ -1,0 +1,3 @@
+The problem of lies in using averages. Averages are susceptible to outliers.
+Furthermore, there is no indicator of how many times a song was played.
+For this reason using a weighted average would lead to better represenation of the aura.
