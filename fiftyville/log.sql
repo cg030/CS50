@@ -114,3 +114,9 @@ WHERE flight_id = 36;
 -- | 36        | 8496433585      | 7B   |
 -- +-----------+-----------------+------+
 
+SELECT p.name
+FROM people p
+JOIN bank_accounts b ON p.id = b.person_id
+JOIN passengers pa ON p.passport_number = pa.passport_number
+WHERE pa.flight_id = 36;
+
