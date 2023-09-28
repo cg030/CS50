@@ -41,3 +41,8 @@ AND minute >= 15;
 -- | 266 | 2021 | 7     | 28  | 10   | 23     | exit     | 322W7JE       |
 -- | 267 | 2021 | 7     | 28  | 10   | 23     | exit     | 0NTHK55
 
+SELECT *
+FROM atm_transactions
+WHERE year = 2021
+AND month = 7
+AND day = 28
