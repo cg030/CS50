@@ -120,3 +120,11 @@ JOIN bank_accounts b ON p.id = b.person_id
 JOIN passengers pa ON p.passport_number = pa.passport_number
 WHERE pa.flight_id = 36;
 
+-- +--------+
+-- |  name  |
+-- +--------+
+-- | Bruce  |
+-- | Kenny  |
+-- | Luca   |
+-- | Taylor |
+-- +--------+
