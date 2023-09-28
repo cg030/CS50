@@ -58,4 +58,11 @@ AND transaction_type = 'withdraw';
 -- | 269 | 16153065       | 2021 | 7     | 28  | Leggett Street | withdraw         | 80     |
 -- | 288 | 25506511       | 2021 | 7     | 28  | Leggett Street | withdraw         | 20     |
 -- | 313 | 81061156       | 2021 | 7     | 28  | Leggett Street | withdraw         | 30     |
--- | 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35    
+-- | 336 | 26013199       | 2021 | 7     | 28  | Leggett Street | withdraw         | 35
+
+
+SELECT *
+FROM phone_calls
+WHERE year = 2021
+AND month = 7
+AND day = 28;
