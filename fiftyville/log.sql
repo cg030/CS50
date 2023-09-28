@@ -81,3 +81,10 @@ AND duration < 60;
 -- | 281 | (338) 555-6650 | (704) 555-2131 | 2021 | 7     | 28  | 54
 
 
+SELECT *
+FROM flights f
+JOIN airports a ON f.origin_airport_id = a.id
+WHERE a.city = 'Fiftyville'
+AND year = 2021
+AND month = 7
+AND day = 29;
