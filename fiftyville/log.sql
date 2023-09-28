@@ -84,6 +84,7 @@ AND duration < 60;
 SELECT *
 FROM flights f
 JOIN airports a ON f.origin_airport_id = a.id
+JOIN passengers p ON f.id = p.flight_id
 WHERE a.city = 'Fiftyville'
 AND year = 2021
 AND month = 7
