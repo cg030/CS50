@@ -81,7 +81,7 @@ AND duration < 60;
 -- | 281 | (338) 555-6650 | (704) 555-2131 | 2021 | 7     | 28  | 54
 
 
-SELECT *
+SELECT p.flight_id, p.passport_number, p.seat, a
 FROM flights f
 JOIN airports a ON f.origin_airport_id = a.id
 JOIN passengers p ON f.id = p.flight_id
