@@ -155,6 +155,7 @@ JOIN
     AND hour = 10
     AND minute >= 15
 ) as security_logs
+ON flight_passengers.license_plate = security_logs.license_plate
 JOIN
 (
     SELECT *
