@@ -101,6 +101,8 @@ SELECT *
 FROM passengers
 WHERE flight_id = 36;
 
+-- Table of all the passengers on flight 36, the earliest flight on the 29.07.
+
 -- +-----------+-----------------+------+
 -- | flight_id | passport_number | seat |
 -- +-----------+-----------------+------+
@@ -119,6 +121,8 @@ FROM people p
 JOIN bank_accounts b ON p.id = b.person_id
 JOIN passengers pa ON p.passport_number = pa.passport_number
 WHERE pa.flight_id = 36;
+
+-- Table of 
 
 -- +--------+
 -- |  name  |
