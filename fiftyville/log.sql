@@ -137,16 +137,15 @@ WHERE pa.flight_id = 36;
 -- These people drove away from the bakery parking lot within 10 minutes of the robbery and were on the first flight the next day
 
 SELECT *
-FROM
-(
+FROM (
     SELECT *
     FROM people p
     JOIN bank_accounts b ON p.id = b.person_id
     JOIN passengers pa ON p.passport_number = pa.passport_number
     WHERE pa.flight_id = 36
-) as flight_passengers
-JOIN
-(
+) AS flight_passengers
+
+JOIN (
     SELECT *
     FROM bakery_security_logs
     WHERE year = 2021
@@ -154,19 +153,18 @@ JOIN
     AND day = 28
     AND hour = 10
     AND minute >= 15
-) as security_logs
-ON flight_passengers.license_plate = security_logs.license_plate
-JOIN
-(
+) AS security_logs ON flight_passengers.license_plate = security_logs.license_plate
+
+JOIN (
     SELECT *
-FROM atm_transactions
-WHERE year = 2021
-AND month = 7
-AND day = 28
-AND atm_location = 'Leggett Street'
-AND transaction_type = 'withdraw'
-) as atm_withdraw
-ON flight_passengers.account_number = atm_withdraw.account_number
+    FROM atm_transactions
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND atm_location = 'Leggett Street'
+    AND transaction_type = 'withdraw'
+) AS atm_withdraw ON flight_passengers.account_number = atm_withdraw.account_number;
+
 
 +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
 |   id   |  name  |  phone_number  | passport_number | license_plate | account_number | person_id | creation_year | flight_id | passport_number:1 | seat | id  | year | month | day | hour | minute | activity | license_plate |
