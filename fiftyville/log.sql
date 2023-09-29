@@ -163,7 +163,7 @@ JOIN (
     AND day = 28
     AND atm_location = 'Leggett Street'
     AND transaction_type = 'withdraw'
-) AS atm_withdraw ON flight_passengers.account_number = atm_withdraw.account_number;
+) AS atm_withdraw ON flight_passengers.account_number = atm_withdraw.account_number
 
 JOIN (
     SELECT *
@@ -171,8 +171,8 @@ JOIN (
     WHERE year = 2021
     AND month = 7
     AND day = 28
-    AND duration < 60;
-) AS phone_call ON 
+    AND duration < 60
+) AS phone_call ON flight_passengers.phone_number = phone_call.receiver
 
 -- The people in the following table are left the bakery after the theft within 10 min, were on the earliest flight the next morning, and withdrew money from the atm before the theft.
 
