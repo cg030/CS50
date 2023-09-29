@@ -155,6 +155,16 @@ JOIN
     AND hour = 10
     AND minute >= 15
 ) as security_logs
+JOIN
+(
+    SELECT *
+FROM atm_transactions
+WHERE year = 2021
+AND month = 7
+AND day = 28
+AND atm_location = 'Leggett Street'
+AND transaction_type = 'withdraw';
+) as atm_withdraw
 ON flight_passengers.license_plate = security_logs.license_plate
 
 +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
