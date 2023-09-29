@@ -164,9 +164,9 @@ WHERE year = 2021
 AND month = 7
 AND day = 28
 AND atm_location = 'Leggett Street'
-AND transaction_type = 'withdraw';
+AND transaction_type = 'withdraw'
 ) as atm_withdraw
-ON flight_passengers.license_plate = security_logs.license_plate
+ON flight_passengers.account_number = atm_withdraw.account_number
 
 +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
 |   id   |  name  |  phone_number  | passport_number | license_plate | account_number | person_id | creation_year | flight_id | passport_number:1 | seat | id  | year | month | day | hour | minute | activity | license_plate |
