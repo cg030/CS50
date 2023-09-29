@@ -134,7 +134,34 @@ WHERE pa.flight_id = 36;
 -- +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-----------------+------+
 
 -- Compare the people from this table with the people captured by the security camera by comparing the liscensce plate number
+-- These people drove away from the bakery parking lot within 10 minutes of the robbery and were on the first flight the next day
 
 SELECT *
-FROM people p
-JOIN 
+FROM
+(
+    SELECT *
+    FROM people p
+    JOIN bank_accounts b ON p.id = b.person_id
+    JOIN passengers pa ON p.passport_number = pa.passport_number
+    WHERE pa.flight_id = 36
+) as flight_passengers
+JOIN
+(
+    SELECT *
+    FROM bakery_security_logs
+    WHERE year = 2021
+    AND month = 7
+    AND day = 28
+    AND hour = 10
+    AND minute >= 15
+) as security_logs
+ON flight_passengers.license_plate = security_logs.license_plate
+
++--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
+|   id   |  name  |  phone_number  | passport_number | license_plate | account_number | person_id | creation_year | flight_id | passport_number:1 | seat | id  | year | month | day | hour | minute | activity | license_plate |
++--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
+| 686048 | Bruce  | (367) 555-5533 | 5773159633      | 94KL13X       | 49610011       | 686048    | 2010          | 36        | 5773159633        | 4A   | 261 | 2021 | 7     | 28  | 10   | 18     | exit     | 94KL13X       |
+| 467400 | Luca   | (389) 555-5198 | 8496433585      | 4328GD8       | 28500762       | 467400    | 2014          | 36        | 8496433585        | 7B   | 263 | 2021 | 7     | 28  | 10   | 19     | exit     | 4328GD8       |
+| 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 76054385       | 449774    | 2015          | 36        | 1988161715        | 6D   | 268 | 2021 | 7     | 28  | 10   | 35     | exit     | 1106N58       |
++--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+
+
