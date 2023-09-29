@@ -165,6 +165,8 @@ JOIN (
     AND transaction_type = 'withdraw'
 ) AS atm_withdraw ON flight_passengers.account_number = atm_withdraw.account_number;
 
+-- The people in the following table are left the bakery after the theft within 10 min, were on the earliest flight the next morning, and withdrew money from the atm before the theft.
+
 +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+-----+----------------+------+-------+-----+----------------+------------------+--------+
 |   id   |  name  |  phone_number  | passport_number | license_plate | account_number | person_id | creation_year | flight_id | passport_number:1 | seat | id  | year | month | day | hour | minute | activity | license_plate | id  | account_number | year | month | day |  atm_location  | transaction_type | amount |
 +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-------------------+------+-----+------+-------+-----+------+--------+----------+---------------+-----+----------------+------+-------+-----+----------------+------------------+--------+
