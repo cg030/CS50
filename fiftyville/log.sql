@@ -204,13 +204,13 @@ FROM
 JOIN
     passengers pa ON p.passport_number = pa.passport_number
 JOIN
+    phone_calls pc ON p.phone_number = pc.caller
+JOIN
     flights f ON pa.flight_id = f.id
 JOIN
     airports a ON f.origin_airport_id = a.id
 JOIN
     bakery_security_logs b ON p.license_plate = b.license_plate
-JOIN
-    phone_calls pc ON p.phone_number = pc.caller
 WHERE
     a.city = 'Fiftyville'
     AND f.year = 2021 AND f.month = 7 AND f.day = 29
