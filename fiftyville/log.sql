@@ -128,3 +128,10 @@ WHERE
     AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28
     AND pc.duration < 60;
 
+
+-- connect people table with bank_accounts table
+
+SELECT p.name
+FROM people p
+JOIN bank_accounts b ON p.id = b.person_id;
+
