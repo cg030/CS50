@@ -122,10 +122,22 @@ AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.mo
 
 -- Is this correct to join the list of passengers on the earliest flight with the bank_account table since the person making the purchase isn't on the flight, thus the name we receive from the query is the bank account number of the person who made the purchase not the thief
 -- break down into two different queries
-SELECT p.name, p.id, p.passport_number, b.account_number, p.phone_number, p.license_plate
+-- SELECT p.name, p.id, p.passport_number, b.account_number, p.phone_number, p.license_plate
+-- FROM people p
+-- JOIN passengers pa ON p.passport_number = pa.passport_number
+-- JOIN bank_accounts b ON p.id = b.person_id
+-- JOIN flights f ON pa.flight_id = f.id
+-- JOIN airports a ON f.origin_airport_id = a.id
+-- WHERE a.city = 'Fiftyville'
+-- AND f.year = 2021
+-- AND f.month = 7
+-- AND f.day = 29
+-- AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29);
+
+
+SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
 FROM people p
 JOIN passengers pa ON p.passport_number = pa.passport_number
-JOIN bank_accounts b ON p.id = b.person_id
 JOIN flights f ON pa.flight_id = f.id
 JOIN airports a ON f.origin_airport_id = a.id
 WHERE a.city = 'Fiftyville'
