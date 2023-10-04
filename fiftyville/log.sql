@@ -129,7 +129,7 @@ WHERE
     AND pc.duration < 60;
 
 
--- connect people table with bank_accounts table
+-- people who received a call lasting less than a minute
 
 SELECT p.name, p.phone_number
 FROM people p
@@ -137,3 +137,4 @@ JOIN phone_calls pc ON p.phone_number = pc.receiver
 WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28
 AND pc.duration < 60;
 
+-- Connect the 
