@@ -137,6 +137,11 @@ WHERE
     AND atm.atm_location = 'Leggett Street'
     AND atm.transaction_type = 'withdraw';
 
+-- +-------+--------+-----------------+----------------+---------------+
+-- | name  |   id   | passport_number |  phone_number  | license_plate |
+-- +-------+--------+-----------------+----------------+---------------+
+-- | Bruce | 686048 | 5773159633      | (367) 555-5533 | 94KL13X       |
+-- +-------+--------+-----------------+----------------+---------------+
 
 -- people who received a call lasting less than a minute
 
