@@ -222,7 +222,7 @@ AND pc.day = 28
 AND pc.duration < 60;
 
 
-(SELECT (SELECT pc.receiver, pc.caller, FROM phone_calls pc WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60)
+(SELECT p. (SELECT pc.receiver, pc.caller, FROM phone_calls pc WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60)
 
 
 -- Compare the people from this table with the people captured by the security camera by comparing the liscensce plate number
