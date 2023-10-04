@@ -94,8 +94,8 @@ AND duration < 60;
 -- +-----+----------------+----------------+
 
 
-
-SELECT p.passport_number, f.hour
+-- passport numbers of passengers on the earliest flight out of Fiftyville the day after the theft
+SELECT p.passport_number
 FROM passengers p
 JOIN flights f ON p.flight_id = f.id
 JOIN airports a ON f.origin_airport_id = a.id
@@ -104,44 +104,19 @@ AND f.year = 2021
 AND f.month = 7
 AND f.day = 29
 AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29);
--- ORDER BY f.hour ASC;
 
--- -- Determining the earliest flight ID out of Fiftyville the morning after the theft
--- SELECT f.id, f.origin_airport_id, f.destination_airport_id
--- FROM flights f
--- JOIN airports a ON f.origin_airport_id = a.id
--- WHERE a.city = 'Fiftyville'
--- AND year = 2021
--- AND month = 7
--- AND day = 29
--- ORDER BY f.hour ASC
--- LIMIT 1;
-
--- -- +----+-------------------+------------------------+
--- -- | id | origin_airport_id | destination_airport_id |
--- -- +----+-------------------+------------------------+
--- -- | 36 | 8                 | 4                      |
--- -- +----+-------------------+------------------------+
-
-
--- -- Passport numbers of all the passengers on flight 36, the earliest flight on the 29.07.
--- SELECT passport_number
--- FROM passengers
--- WHERE flight_id = 36;
-
--- -- +-----------------+
--- -- | passport_number |
--- -- +-----------------+
--- -- | 7214083635      |
--- -- | 1695452385      |
--- -- | 5773159633      |
--- -- | 1540955065      |
--- -- | 8294398571      |
--- -- | 1988161715      |
--- -- | 9878712108      |
--- -- | 8496433585      |
--- -- +-----------------+
-
+-- +-----------------+
+-- | passport_number |
+-- +-----------------+
+-- | 7214083635      |
+-- | 1695452385      |
+-- | 5773159633      |
+-- | 1540955065      |
+-- | 8294398571      |
+-- | 1988161715      |
+-- | 9878712108      |
+-- | 8496433585      |
+-- +-----------------+
 
 
 SELECT *
