@@ -114,6 +114,10 @@ JOIN
     phone_calls pc ON p.phone_number = pc.caller
 JOIN
     bakery_security_logs b ON p.license_plate = b.license_plate
+JOIN
+    bank_accounts ba ON p.id = ba.person_id
+JOIN
+    atm_transactions atm ON atm.account_number = ba.account_number
 WHERE
     a.city = 'Fiftyville'
     AND f.year = 2021 AND f.month = 7 AND f.day = 29
@@ -126,9 +130,12 @@ WHERE
 
     -- Checking conditions for phone calls
     AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28
-    AND pc.duration < 60;
+    AND pc.duration < 60
+
     -- Checking conditions for atm_withdrawal
-    
+    AND  atm.year = 2021 AND atm.month = 7 AND atm.day = 28
+    AND atm.atm_location = 'Leggett Street'
+    AND atm.transaction_type = 'withdraw';
 
 
 -- people who received a call lasting less than a minute
