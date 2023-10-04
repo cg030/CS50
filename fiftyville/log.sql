@@ -144,16 +144,16 @@ AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.mo
 -- +--------+--------+-----------------+----------------+----------------+---------------+
 
 
-SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
-FROM people p
-JOIN passengers pa ON p.passport_number = pa.passport_number
-JOIN flights f ON pa.flight_id = f.id
-JOIN airports a ON f.origin_airport_id = a.id
-WHERE a.city = 'Fiftyville'
-AND f.year = 2021
-AND f.month = 7
-AND f.day = 29
-AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29);
+-- SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
+-- FROM people p
+-- JOIN passengers pa ON p.passport_number = pa.passport_number
+-- JOIN flights f ON pa.flight_id = f.id
+-- JOIN airports a ON f.origin_airport_id = a.id
+-- WHERE a.city = 'Fiftyville'
+-- AND f.year = 2021
+-- AND f.month = 7
+-- AND f.day = 29
+-- AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29);
 
 -- +--------+--------+-----------------+----------------+---------------+
 -- |  name  |   id   | passport_number |  phone_number  | license_plate |
@@ -165,6 +165,34 @@ AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.mo
 -- | Kelsey | 560886 | 8294398571      | (499) 555-9472 | 0NTHK55       |
 -- | Taylor | 449774 | 1988161715      | (286) 555-6063 | 1106N58       |
 -- | Kenny  | 395717 | 9878712108      | (826) 555-1652 | 30G67EN       |
+-- | Luca   | 467400 | 8496433585      | (389) 555-5198 | 4328GD8       |
+-- +--------+--------+-----------------+----------------+---------------+
+
+-- Persons leaving the first flight out of Fiftyville the day after the theft, matched with the people leaving the bakery 10 min after the theft by comparing the license plate number
+SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
+FROM people p
+JOIN passengers pa ON p.passport_number = pa.passport_number
+JOIN flights f ON pa.flight_id = f.id
+JOIN airports a ON f.origin_airport_id = a.id
+JOIN bakery_security_logs b ON p.license_plate = b.license_plate
+WHERE a.city = 'Fiftyville'
+AND f.year = 2021
+AND f.month = 7
+AND f.day = 29
+AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29)
+AND b.year = 2021
+AND b.month = 7
+AND b.day = 28
+AND b.hour = 10
+AND b.minute >= 15
+AND b.minute <=25;
+
+-- +--------+--------+-----------------+----------------+---------------+
+-- |  name  |   id   | passport_number |  phone_number  | license_plate |
+-- +--------+--------+-----------------+----------------+---------------+
+-- | Sofia  | 398010 | 1695452385      | (130) 555-0289 | G412CB7       |
+-- | Bruce  | 686048 | 5773159633      | (367) 555-5533 | 94KL13X       |
+-- | Kelsey | 560886 | 8294398571      | (499) 555-9472 | 0NTHK55       |
 -- | Luca   | 467400 | 8496433585      | (389) 555-5198 | 4328GD8       |
 -- +--------+--------+-----------------+----------------+---------------+
 
