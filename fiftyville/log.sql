@@ -222,6 +222,9 @@ AND pc.day = 28
 AND pc.duration < 60;
 
 
+(SELECT (SELECT pc.receiver, pc.caller, FROM phone_calls pc WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28 AND pc.duration < 60)
+
+
 -- Compare the people from this table with the people captured by the security camera by comparing the liscensce plate number
 -- These people drove away from the bakery parking lot within 10 minutes of the robbery and were on the first flight the next day
 
