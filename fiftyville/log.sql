@@ -93,7 +93,8 @@ AND duration < 60;
 -- | 281 | (338) 555-6650 | (704) 555-2131 |
 -- +-----+----------------+----------------+
 
--- Determining the earliest flight out of Fiftyville the morning after the theft
+
+-- Determining the earliest flight ID out of Fiftyville the morning after the theft
 SELECT f.id, f.origin_airport_id, f.destination_airport_id
 FROM flights f
 JOIN airports a ON f.origin_airport_id = a.id
@@ -104,30 +105,30 @@ AND day = 29
 ORDER BY f.hour ASC
 LIMIT 1;
 
--- +----+-------------------+------------------------+------+-------+-----+------+--------+----+--------------+-----------------------------+------------+
--- | id | origin_airport_id | destination_airport_id | year | month | day | hour | minute | id | abbreviation |          full_name          |    city    |
--- +----+-------------------+------------------------+------+-------+-----+------+--------+----+--------------+-----------------------------+------------+
--- | 36 | 8                 | 4                      | 2021 | 7     | 29  | 8    | 20     | 8  | CSF          | Fiftyville Regional Airport | Fiftyville |
--- +----+-------------------+------------------------+------+-------+-----+------+--------+----+--------------+-----------------------------+------------+
+-- +----+-------------------+------------------------+
+-- | id | origin_airport_id | destination_airport_id |
+-- +----+-------------------+------------------------+
+-- | 36 | 8                 | 4                      |
+-- +----+-------------------+------------------------+
 
-SELECT *
+
+-- Passport numbers of all the passengers on flight 36, the earliest flight on the 29.07.
+SELECT passport_number
 FROM passengers
 WHERE flight_id = 36;
 
--- Table of all the passengers on flight 36, the earliest flight on the 29.07.
-
--- +-----------+-----------------+------+
--- | flight_id | passport_number | seat |
--- +-----------+-----------------+------+
--- | 36        | 7214083635      | 2A   |
--- | 36        | 1695452385      | 3B   |
--- | 36        | 5773159633      | 4A   |
--- | 36        | 1540955065      | 5C   |
--- | 36        | 8294398571      | 6C   |
--- | 36        | 1988161715      | 6D   |
--- | 36        | 9878712108      | 7A   |
--- | 36        | 8496433585      | 7B   |
--- +-----------+-----------------+------+
+-- +-----------------+
+-- | passport_number |
+-- +-----------------+
+-- | 7214083635      |
+-- | 1695452385      |
+-- | 5773159633      |
+-- | 1540955065      |
+-- | 8294398571      |
+-- | 1988161715      |
+-- | 9878712108      |
+-- | 8496433585      |
+-- +-----------------+
 
 SELECT *
 FROM people p
