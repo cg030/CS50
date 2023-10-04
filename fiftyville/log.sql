@@ -122,7 +122,7 @@ SELECT p.id, p.passport_number, b.account_number, p.phone_number, p.license_plat
 FROM people p
 JOIN passengers pa ON p.passport_number = pa.passport_number
 JOIN bank_accounts b ON p.id = b.person_id
-JOIN flights f ON p.flight_id = f.id
+JOIN flights f ON pa.flight_id = f.id
 JOIN airports a ON f.origin_airport_id = a.id
 WHERE a.city = 'Fiftyville'
 AND f.year = 2021
