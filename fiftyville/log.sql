@@ -103,7 +103,7 @@ WHERE a.city = 'Fiftyville'
 AND f.year = 2021
 AND f.month = 7
 AND f.day = 29
-AND f.hour = MIN(f.hour);
+AND f.hour = (SELECT MIN(f.hour) FROM flights);
 -- ORDER BY f.hour ASC;
 
 -- -- Determining the earliest flight ID out of Fiftyville the morning after the theft
