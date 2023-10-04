@@ -197,6 +197,39 @@ AND b.minute <=25;
 -- +--------+--------+-----------------+----------------+---------------+
 
 
+-- Persons leaving the first flight out of Fiftyville the day after the theft, matched with the people leaving the bakery 10 min after the theft by comparing the license plate number
+SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
+FROM people p
+JOIN passengers pa ON p.passport_number = pa.passport_number
+JOIN flights f ON pa.flight_id = f.id
+JOIN airports a ON f.origin_airport_id = a.id
+JOIN bakery_security_logs b ON p.license_plate = b.license_plate
+JOIN phone_calls pc ON p.phone_number = pc.caller
+WHERE a.city = 'Fiftyville'
+AND f.year = 2021
+AND f.month = 7
+AND f.day = 29
+AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29)
+AND b.year = 2021
+AND b.month = 7
+AND b.day = 28
+AND b.hour = 10
+AND b.minute >= 15
+AND b.minute <=25
+AND pc.year = 2021
+AND pc.month = 7
+AND pc.day = 28
+AND pc.duration < 60;
+
+
+-- -- Persons making a call on the day of the theft for a duration of less than a minute
+-- SELECT id, caller, receiver
+-- FROM phone_calls
+-- WHERE year = 2021
+-- AND month = 7
+-- AND day = 28
+-- AND duration < 60;
+
 -- Compare the people from this table with the people captured by the security camera by comparing the liscensce plate number
 -- These people drove away from the bakery parking lot within 10 minutes of the robbery and were on the first flight the next day
 
