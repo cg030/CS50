@@ -131,7 +131,10 @@ WHERE
 
 -- connect people table with bank_accounts table
 
-SELECT p.name
+SELECT p.name, b.account_number, p.phone_number
 FROM people p
-JOIN bank_accounts b ON p.id = b.person_id;
+JOIN bank_accounts b ON p.id = b.person_id
+JOIN phone_calls pc ON p.phone_number = pc.receiver
+WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28
+AND pc.duration < 60;
 
