@@ -100,10 +100,11 @@ FROM passengers p
 JOIN flights f ON p.flight_id = f.id
 JOIN airports a ON f.origin_airport_id = a.id
 WHERE a.city = 'Fiftyville'
-AND year = 2021
-AND month = 7
-AND day = 29
-ORDER BY f.hour ASC;
+AND f.year = 2021
+AND f.month = 7
+AND f.day = 29
+AND f.hour = MIN(f.hour);
+-- ORDER BY f.hour ASC;
 
 -- -- Determining the earliest flight ID out of Fiftyville the morning after the theft
 -- SELECT f.id, f.origin_airport_id, f.destination_airport_id
