@@ -24,7 +24,6 @@ WHERE transcript LIKE '%bakery%';
 
 
 
--- Persons leaving the first flight out of Fiftyville the day after the theft, matched with the people leaving the bakery 10 min after the theft by comparing the license plate number. Also includes the subset of persons making a call on the day of the theft for a duration of less than a minute
 SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate, f.destination_airport_id
 FROM
     people p
@@ -43,20 +42,21 @@ JOIN
 JOIN
     atm_transactions atm ON atm.account_number = ba.account_number
 WHERE
+    -- First flight the day after the theft from Fiftyville
     a.city = 'Fiftyville'
     AND f.year = 2021 AND f.month = 7 AND f.day = 29
     AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29)
 
-    -- Checking conditions for bakery logs
+    -- left the bakery within 10 minutes of the theft
     AND b.year = 2021 AND b.month = 7 AND b.day = 28
     AND b.hour = 10
     AND b.minute BETWEEN 15 AND 25
 
-    -- Checking conditions for phone calls
+    -- phone calls lasting less than a minute
     AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28
     AND pc.duration < 60
 
-    -- Checking conditions for atm_withdrawal
+    -- Withdrew money from an ATM on Leggett Street
     AND  atm.year = 2021 AND atm.month = 7 AND atm.day = 28
     AND atm.atm_location = 'Leggett Street'
     AND atm.transaction_type = 'withdraw';
@@ -67,7 +67,7 @@ WHERE
 -- | Bruce | 686048 | 5773159633      | (367) 555-5533 | 94KL13X       |
 -- +-------+--------+-----------------+----------------+---------------+
 
--- people who received a call lasting less than a minute
+-- people who received a call lasting less than a minute from Bruce
 
 SELECT p.name, p.phone_number
 FROM people p
@@ -86,3 +86,9 @@ AND pc.caller = '(367) 555-5533';
 SELECT city
 FROM airports
 WHERE id = 4;
+
+-- +---------------+
+-- |     city      |
+-- +---------------+
+-- | New York City |
+-- +---------------+
