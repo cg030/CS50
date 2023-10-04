@@ -118,9 +118,10 @@ AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.mo
 -- | 8496433585      |
 -- +-----------------+
 
-SELECT p.passport_number
-FROM passengers p
-JOIN passengers p ON 
+SELECT p.id, p.passport_number, b.account_number, p.phone_number, p.license_plate
+FROM people p
+JOIN passengers pa ON p.passport_number = pa.passport_number
+JOIN bank_accounts b ON p.id = b.person_id
 JOIN flights f ON p.flight_id = f.id
 JOIN airports a ON f.origin_airport_id = a.id
 WHERE a.city = 'Fiftyville'
