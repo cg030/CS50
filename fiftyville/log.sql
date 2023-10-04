@@ -127,7 +127,6 @@ WHERE
     -- Checking conditions for phone calls
     AND pc.year = 2021 AND pc.month = 7 AND pc.day = 28
     AND pc.duration < 60;
-    AND 
 
 
 -- people who received a call lasting less than a minute
