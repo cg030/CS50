@@ -118,6 +118,7 @@ AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.mo
 -- | 8496433585      |
 -- +-----------------+
 
+-- name, people_id number, passport number, license plate number, phone number bank account number of passengers on the earliest flight out of Fiftyville the day after the theft
 SELECT p.name, p.id, p.passport_number, b.account_number, p.phone_number, p.license_plate
 FROM people p
 JOIN passengers pa ON p.passport_number = pa.passport_number
@@ -130,24 +131,15 @@ AND f.month = 7
 AND f.day = 29
 AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29);
 
+-- +--------+--------+-----------------+----------------+----------------+---------------+
+-- |  name  |   id   | passport_number | account_number |  phone_number  | license_plate |
+-- +--------+--------+-----------------+----------------+----------------+---------------+
+-- | Bruce  | 686048 | 5773159633      | 49610011       | (367) 555-5533 | 94KL13X       |
+-- | Taylor | 449774 | 1988161715      | 76054385       | (286) 555-6063 | 1106N58       |
+-- | Kenny  | 395717 | 9878712108      | 28296815       | (826) 555-1652 | 30G67EN       |
+-- | Luca   | 467400 | 8496433585      | 28500762       | (389) 555-5198 | 4328GD8       |
+-- +--------+--------+-----------------+----------------+----------------+---------------+
 
-
-SELECT *
-FROM people p
-JOIN bank_accounts b ON p.id = b.person_id
-JOIN passengers pa ON p.passport_number = pa.passport_number
-WHERE pa.flight_id = 36;
-
--- Inner join of passengers on the flight (id=36) and people in the people table
-
--- +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-----------------+------+
--- |   id   |  name  |  phone_number  | passport_number | license_plate | account_number | person_id | creation_year | flight_id | passport_number | seat |
--- +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-----------------+------+
--- | 686048 | Bruce  | (367) 555-5533 | 5773159633      | 94KL13X       | 49610011       | 686048    | 2010          | 36        | 5773159633      | 4A   |
--- | 395717 | Kenny  | (826) 555-1652 | 9878712108      | 30G67EN       | 28296815       | 395717    | 2014          | 36        | 9878712108      | 7A   |
--- | 467400 | Luca   | (389) 555-5198 | 8496433585      | 4328GD8       | 28500762       | 467400    | 2014          | 36        | 8496433585      | 7B   |
--- | 449774 | Taylor | (286) 555-6063 | 1988161715      | 1106N58       | 76054385       | 449774    | 2015          | 36        | 1988161715      | 6D   |
--- +--------+--------+----------------+-----------------+---------------+----------------+-----------+---------------+-----------+-----------------+------+
 
 -- Compare the people from this table with the people captured by the security camera by comparing the liscensce plate number
 -- These people drove away from the bakery parking lot within 10 minutes of the robbery and were on the first flight the next day
