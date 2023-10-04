@@ -94,6 +94,14 @@ AND duration < 60;
 -- +-----+----------------+----------------+
 
 
+
+SELECT passport_number
+FROM passengers p
+JOIN flights f ON p.flight_id = f.id
+JOIN airports a ON f.origin_airport_id = a.id
+W
+
+
 -- Determining the earliest flight ID out of Fiftyville the morning after the theft
 SELECT f.id, f.origin_airport_id, f.destination_airport_id
 FROM flights f
@@ -129,6 +137,8 @@ WHERE flight_id = 36;
 -- | 9878712108      |
 -- | 8496433585      |
 -- +-----------------+
+
+
 
 SELECT *
 FROM people p
