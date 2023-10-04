@@ -24,84 +24,8 @@ WHERE transcript LIKE '%bakery%';
 
 
 
--- Persons leaving the parking lot of the nearby bakery with a car within 10 minutes of the theft
-SELECT id, license_plate
-FROM bakery_security_logs
-WHERE year = 2021
-AND month = 7
-AND day = 28
-AND hour = 10
-AND minute >= 15
-AND minute <=25;
-
--- +-----+---------------+
--- | id  | license_plate |
--- +-----+---------------+
--- | 260 | 5P2BI95       |
--- | 261 | 94KL13X       |
--- | 262 | 6P58WS2       |
--- | 263 | 4328GD8       |
--- | 264 | G412CB7       |
--- | 265 | L93JTIZ       |
--- | 266 | 322W7JE       |
--- | 267 | 0NTHK55       |
--- +-----+---------------+
-
-
--- Persons withdrawing money the morning of the theft
-SELECT id, account_number
-FROM atm_transactions
-WHERE year = 2021
-AND month = 7
-AND day = 28
-AND atm_location = 'Leggett Street'
-AND transaction_type = 'withdraw';
-
--- +-----+----------------+
--- | id  | account_number |
--- +-----+----------------+
--- | 246 | 28500762       |
--- | 264 | 28296815       |
--- | 266 | 76054385       |
--- | 267 | 49610011       |
--- | 269 | 16153065       |
--- | 288 | 25506511       |
--- | 313 | 81061156       |
--- | 336 | 26013199       |
--- +-----+----------------+
-
-
--- Persons leaving the first flight out of Fiftyville the day after the theft, matched with the people leaving the bakery 10 min after the theft by comparing the license plate number
-SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
-FROM people p
-JOIN passengers pa ON p.passport_number = pa.passport_number
-JOIN flights f ON pa.flight_id = f.id
-JOIN airports a ON f.origin_airport_id = a.id
-JOIN bakery_security_logs b ON p.license_plate = b.license_plate
-WHERE a.city = 'Fiftyville'
-AND f.year = 2021
-AND f.month = 7
-AND f.day = 29
-AND f.hour = (SELECT MIN(f2.hour) FROM flights f2 WHERE f2.year = 2021 AND f2.month = 7 AND f2.day = 29)
-AND b.year = 2021
-AND b.month = 7
-AND b.day = 28
-AND b.hour = 10
-AND b.minute >= 15
-AND b.minute <=25;
-
--- +--------+--------+-----------------+----------------+---------------+
--- |  name  |   id   | passport_number |  phone_number  | license_plate |
--- +--------+--------+-----------------+----------------+---------------+
--- | Sofia  | 398010 | 1695452385      | (130) 555-0289 | G412CB7       |
--- | Bruce  | 686048 | 5773159633      | (367) 555-5533 | 94KL13X       |
--- | Kelsey | 560886 | 8294398571      | (499) 555-9472 | 0NTHK55       |
--- | Luca   | 467400 | 8496433585      | (389) 555-5198 | 4328GD8       |
--- +--------+--------+-----------------+----------------+---------------+
-
-
 -- Persons leaving the first flight out of Fiftyville the day after the theft, matched with the people leaving the bakery 10 min after the theft by comparing the license plate number. Also includes the subset of persons making a call on the day of the theft for a duration of less than a minute
-SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate
+SELECT p.name, p.id, p.passport_number, p.phone_number, p.license_plate, 
 FROM
     people p
 JOIN
@@ -149,6 +73,11 @@ SELECT p.name, p.phone_number
 FROM people p
 JOIN phone_calls pc ON p.phone_number = pc.receiver
 WHERE pc.year = 2021 AND pc.month = 7 AND pc.day = 28
-AND pc.duration < 60;
+AND pc.duration < 60
+AND pc.caller = '(367) 555-5533';
 
--- Connect the
+-- +-------+----------------+
+-- | name  |  phone_number  |
+-- +-------+----------------+
+-- | Robin | (375) 555-8161 |
+-- +-------+----------------+
