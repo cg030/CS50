@@ -1,3 +1,6 @@
-SELECT english_title, artist
+SELECT english_title, artist, brightness
 FROM views
-WHERE (SELECT MAX(brightness) from views);
+WHERE brightness = (SELECT MAX(brightness) from views);
+
+SELECT MAX(brightness)
+FROM views;
