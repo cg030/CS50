@@ -1,3 +1,4 @@
-SELECT first_name , last_name
+SELECT first_name , last_name, height
 FROM players
-WHERE 
+WHERE height > (SELECT AVG(height) FROM players)
+ORDER BY height DESC, first_name ASC, last_name ASC;
