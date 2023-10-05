@@ -1,3 +1,4 @@
 SELECT COUNT(id)
 FROM views
-WHERE english_title LIKE '%Fuji%';
+WHERE artist = 'Hokusai'
+AND english_title LIKE '%Fuji%';
