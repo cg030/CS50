@@ -1,0 +1,3 @@
+SELECT COUNT(id)
+FROM episodes
+WHERE air_date BETWEEN '2001-12-31' AND '2008-01-01';
