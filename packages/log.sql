@@ -18,6 +18,24 @@ WHERE p.contents LIKE '%duck%'
 AND (p.from_address_id IS NULL OR a_from.address IS NULL);
 
 
+SELECT id, type
+FROM addresses
+WHERE id = (
+    SELECT id
+    FROM packages
+    
+)
+
+
+
+SELECT contents
+FROM packages
+WHERE from_address_id = (
+    SELECT id, type
+    FROM addresses
+    WHERE address IS NULL
+)
+
 -- *** The Forgotten Gift ***
 
 SELECT p.contents , d.name
