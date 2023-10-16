@@ -17,6 +17,7 @@ WHERE p.contents LIKE '%duck%'
 AND p.from_address_id IS NULL;
 
 SELECT * FROM packages WHERE from_address_id IS NULL;
+SELECT * FROM addresses WHERE id = 50;
 
 -- *** The Forgotten Gift ***
 
