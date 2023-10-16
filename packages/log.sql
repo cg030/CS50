@@ -16,8 +16,12 @@ JOIN addresses a ON p.to_address_id = a.id
 WHERE p.contents LIKE '%duck%'
 AND p.from_address_id IS NULL;
 
-SELECT * FROM packages WHERE from_address_id IS NULL;
-SELECT * FROM addresses WHERE id = 50;
+SELECT *
+FROM packages p
+JOIN addresses a ON p.to_address_id = a.id
+WHERE a.type = "Police Station"
+AND p.contents LIKE "%duck%";
+
 
 -- *** The Forgotten Gift ***
 
