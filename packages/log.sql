@@ -10,13 +10,12 @@ WHERE a.address = "900 Somerville Avenue"
 AND a2.address LIKE "2%Finn%gan% Street";
 
 -- *** The Devious Delivery ***
--- text
-SELECT a.type, p.contents
+SELECT a_to.type, p.contents
 FROM packages p
-JOIN addresses a ON p.to_address_id = a.id
-JOIN 
+JOIN addresses a_to ON p.to_address_id = a_to.id
+LEFT JOIN addresses a_from ON p.from_address_id = a_from.id
 WHERE p.contents LIKE '%duck%'
-AND p.from_address_id IS NULL;
+AND a_from.address IS NULL;
 
 
 -- *** The Forgotten Gift ***
