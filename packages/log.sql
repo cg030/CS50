@@ -14,6 +14,7 @@ AND a2.address LIKE "2%Finn%gan% Street";
 SELECT a.type, p.contents
 FROM packages p
 JOIN addresses a ON p.to_address_id = a.id
+JOIN 
 WHERE p.contents LIKE '%duck%'
 AND p.from_address_id IS NULL;
 
