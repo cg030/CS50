@@ -22,7 +22,7 @@ AND (p.from_address_id IS NULL OR a_from.address IS NULL);
 SELECT id, contents
 FROM packages
 WHERE from_address_id = (
-    SELECT id, type
+    SELECT id
     FROM addresses
     WHERE address IS NULL
 );
