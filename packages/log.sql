@@ -10,22 +10,16 @@ WHERE a.address = "900 Somerville Avenue"
 AND a2.address LIKE "2%Finn%gan% Street";
 
 -- *** The Devious Delivery ***
-SELECT a_to.type, p.contents
-FROM packages p
-JOIN addresses a_to ON p.to_address_id = a_to.id
-LEFT JOIN addresses a_from ON p.from_address_id = a_from.id
-WHERE p.contents LIKE '%duck%'
-AND (p.from_address_id IS NULL OR a_from.address IS NULL);
+-- SELECT a_to.type, p.contents
+-- FROM packages p
+-- JOIN addresses a_to ON p.to_address_id = a_to.id
+-- LEFT JOIN addresses a_from ON p.from_address_id = a_from.id
+-- WHERE p.contents LIKE '%duck%'
+-- AND (p.from_address_id IS NULL OR a_from.address IS NULL);
 
-
-
-SELECT id, contents
-FROM packages
-WHERE from_address_id = (
-    SELECT id
-    FROM addresses
-    WHERE address IS NULL
-);
+SELECT id
+FROM addresses
+WHERE address IS NULL;
 
 -- *** The Forgotten Gift ***
 
