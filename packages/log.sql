@@ -1,7 +1,5 @@
 
 -- *** The Lost Letter ***
-
--- two joins : packages on from_address_id and packages on to_address_id
 SELECT a2.address, a2.type
 FROM packages p
 JOIN addresses a ON p.from_address_id = a.id
@@ -10,21 +8,14 @@ WHERE a.address = "900 Somerville Avenue"
 AND a2.address LIKE "2%Finn%gan% Street";
 
 -- *** The Devious Delivery ***
--- SELECT a.type, p.contents
--- FROM packages p
--- JOIN addresses a ON p.to_address_id = a.id
--- WHERE p.contents LIKE '%duck%'
--- AND p.from_address_id IS NULL;
-
-SELECT *
+SELECT a.type, p.contents
 FROM packages p
 JOIN addresses a ON p.to_address_id = a.id
-WHERE a.type = "Police Station"
-AND p.contents LIKE "%duck%";
+WHERE p.contents LIKE '%duck%'
+AND p.from_address_id IS NULL;
 
 
 -- *** The Forgotten Gift ***
-
 SELECT p.contents , d.name
 FROM packages p
 JOIN addresses a ON p.from_address_id = a.id
