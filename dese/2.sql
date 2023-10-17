@@ -1,0 +1,1 @@
+SELECT DISTINCT type FROM districts LIMIT 10;
