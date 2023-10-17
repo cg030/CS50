@@ -1,8 +1,8 @@
 CREATE TABLE passengers (
     id,
-    first_name,
-    last_name,
-    age,
+    first_name TEXT,
+    last_name TEXT,
+    age INTEGER,
     PRIMARY KEY(id)
 )
 
