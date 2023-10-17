@@ -1,3 +1,8 @@
+DROP TABLE passengers;
+DROP TABLE check_ins;
+DROP TABLE airlines;
+DROP TABLE flights;
+
 CREATE TABLE passengers (
     id INTEGER,
     first_name TEXT,
@@ -32,7 +37,5 @@ CREATE TABLE flights (
     FOREIGN KEY(airline_id) REFERENCES airlines(id)
 );
 
--- DROP TABLE passengers;
--- DROP TABLE check_ins;
--- DROP TABLE airlines;
--- DROP TABLE flights;
+INSERT INTO passengers (first_name, last_name, age)
+VALUES ('Amelia', 'Earhart', 39);
