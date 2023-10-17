@@ -8,6 +8,8 @@ CREATE TABLE passengers (
 
 CREATE TABLE check_ins (
     date_time TEXT,
+    passenger_id INTEGER,
+    flight_id INTEGER,
     FOREIGN KEY(passenger_id) REFERENCES passengers(id),
     FOREIGN KEY(flight_id) REFERENCES flights(id)
 );
@@ -22,6 +24,7 @@ CREATE TABLE airlines (
 CREATE TABLE flights (
     id INTEGER,
     flight_number INTEGER,
+    airline_id INTEGER,
     airport_dep TEXT,
     airport_arr TEXT,
     dep_date TEXT,
