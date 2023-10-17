@@ -34,8 +34,18 @@ CREATE TABLE flights (
     airport_arr TEXT,
     dep_date TEXT,
     arr_date TEXT,
+    PRIMARY KEY(id)
     FOREIGN KEY(airline_id) REFERENCES airlines(id)
 );
 
 INSERT INTO passengers (first_name, last_name, age)
 VALUES ('Amelia', 'Earhart', 39);
+
+INSERT INTO airlines (name,concourse)
+VALUES ('Delta','A');
+
+INSERT INTO flights (flight_number, airport_dep, airport_arr, dep_date, arr_date)
+VALUES (300, "ATL", "BOS", "2023-08-03 18:46:00", "2023-08-03 19:09:00");
+
+INSERT INTO check_ins (passenger_id, flight_id, date_time)
+VALUES (1, 1, "2023-08-03 15:03:00");
