@@ -22,7 +22,10 @@ CREATE TABLE "airlines" (
 CREATE TABLE "flights" (
     id,
     flight_number,
-    
+    airport_dep,
+    airport_arr,
+    dep_date DATE,
+    arr_date DATE,
     FOREIGN KEY(airline_id) REFERENCES airlines(id)
 )
 
