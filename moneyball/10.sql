@@ -1,0 +1,1 @@
+SELECT p.first_name, p.last_name, s.salary, per.HR, 
