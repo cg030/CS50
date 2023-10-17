@@ -15,7 +15,7 @@ CREATE TABLE check_ins (
 CREATE TABLE "airlines" (
     id INTEGER,
     name TEXT,
-    concourse TEXT CHECK IN("A","B","C","D","E","F","T")
+    concourse TEXT CHECK (concourse IN "A","B","C","D","E","F","T")
     PRIMARY KEY(id)
 );
 
