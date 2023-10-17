@@ -1,9 +1,9 @@
 CREATE TABLE "passengers" (
-    "id",
-    "first_name",
+    id,
+    first_name,
     "last_name",
     "age",
-    PRIMARY KEY("id")
+    PRIMARY KEY(id)
 )
 
 CREATE TABLE "check_ins" (
