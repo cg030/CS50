@@ -1,1 +1,3 @@
-SELECT DISTINCT type FROM districts LIMIT 10;
+SELECT name
+FROM districts
+WHERE name LIKE '%non-op%';
