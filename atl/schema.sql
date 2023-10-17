@@ -12,14 +12,14 @@ CREATE TABLE check_ins (
     FOREIGN KEY(flight_id) REFERENCES flights(id)
 );
 
-CREATE TABLE "airlines" (
+CREATE TABLE airlines (
     id INTEGER,
     name TEXT,
-    concourse TEXT CHECK (concourse IN ("A","B","C","D","E","F","T"))
+    concourse TEXT CHECK (concourse IN ("A","B","C","D","E","F","T")),
     PRIMARY KEY(id)
 );
 
-CREATE TABLE "flights" (
+CREATE TABLE flights (
     id INTEGER,
     flight_number INTEGER,
     airport_dep TEXT,
@@ -29,3 +29,7 @@ CREATE TABLE "flights" (
     FOREIGN KEY(airline_id) REFERENCES airlines(id)
 );
 
+-- DROP TABLE passengers;
+-- DROP TABLE check_ins;
+-- DROP TABLE airlines;
+-- DROP TABLE flights;
