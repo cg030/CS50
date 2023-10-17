@@ -4,20 +4,20 @@ CREATE TABLE passengers (
     last_name TEXT,
     age INTEGER,
     PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE check_ins (
     date_time TEXT,
     FOREIGN KEY(passenger_id) REFERENCES passengers(id),
     FOREIGN KEY(flight_id) REFERENCES flights(id)
-)
+);
 
 CREATE TABLE "airlines" (
     id INTEGER,
     name TEXT,
-    concourse TEXT CHECK(A,B,C,D,E,F,T)
+    concourse TEXT CHECK("A","B","C","D","E","F","T")
     PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE "flights" (
     id INTEGER,
@@ -27,5 +27,5 @@ CREATE TABLE "flights" (
     dep_date TEXT,
     arr_date TEXT,
     FOREIGN KEY(airline_id) REFERENCES airlines(id)
-)
+);
 
