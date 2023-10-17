@@ -1,1 +1,4 @@
-SELECT * FROM districts LIMIT 10;
+SELECT name, city
+FROM districts
+WHERE state = 'MA'
+AND type LIKE '%public%';
