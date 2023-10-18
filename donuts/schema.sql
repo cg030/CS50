@@ -48,6 +48,9 @@ CREATE TABLE order_details (
 CREATE TABLE supply_purchasing (
     id INTEGER,
     ingredient_id INTEGER,
-    _quantity INTEGER,
+    purchased_quantity INTEGER,
     price_per_unit REAL,
+    purchasing_date TEXT,
+    PRIMARY KEY(id),
+    FOREIGN KEY(ingredient_id) REFERENCES ingredients(id)
 )
