@@ -53,4 +53,4 @@ CREATE TABLE supply_purchasing (
     purchasing_date TEXT,
     PRIMARY KEY(id),
     FOREIGN KEY(ingredient_id) REFERENCES ingredients(id)
-)
+);
