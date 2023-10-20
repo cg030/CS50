@@ -1,4 +1,4 @@
-DROP TABLE meteorites;
+-- DROP TABLE meteorites;
 
 CREATE TABLE meteorites (
     name TEXT,
