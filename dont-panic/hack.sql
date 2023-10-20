@@ -1,6 +1,6 @@
 -- First change the password to oops in the users table, which will create a log
 UPDATE users
-SET password = 'oops!'
+SET password = '982c0381c279d139fd221fce974916e7'
 WHERE id = 1;
 
 -- update this log to appear as if the password was change to emily's password
