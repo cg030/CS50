@@ -17,9 +17,9 @@ CREATE TEMP TABLE temp_table AS
 SELECT id, name, class, amss, discovery, year, lat, long
 FROM meteorites;
 
+DROP TABLE meteorites;
 
-
-ALTER TABLE meteorites DROP
+ALTER TABLE temp_table RENAME TO meteorites;
 
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
