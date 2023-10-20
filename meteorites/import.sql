@@ -35,8 +35,7 @@ WHERE nametype = 'Relict';
 -- sort rows
 -- backup the data in a temporary table
 CREATE TEMP TABLE temp_table AS
-SELECT * FROM meteorites
-ORDER BY year ASC, name ASC;
+SELECT * FROM meteorites;
 
 -- drop original table
 DROP TABLE meteorites;
