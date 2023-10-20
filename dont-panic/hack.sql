@@ -14,3 +14,4 @@ UPDATE users
 SET password = (SELECT password FROM users WHERE username = 'emily33')
 WHERE id = 1;
 
+-- 
