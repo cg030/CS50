@@ -12,8 +12,14 @@ CREATE TABLE meteorites (
     long REAL
 );
 
--- DROP columns
-ALTER TABLE meteorites DROP 
+-- DROP columns; no direct way in sqlite3 so you have to create temporary tables
+CREATE TEMP TABLE temp_table AS
+SELECT id, name, class, amss, discovery, year, lat, long
+FROM meteorites;
+
+
+
+ALTER TABLE meteorites DROP
 
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
