@@ -1,4 +1,4 @@
--- DROP TABLE meteorites;
+DROP TABLE meteorites;
 
 
 CREATE TABLE meteorites_import (
@@ -28,6 +28,7 @@ CREATE TABLE meteorites (
 SELECT * FROM meteorites_import WHERE mass IS NULL;
 SELECT * FROM meteorites_import WHERE lat IS NULL;
 SELECT * FROM meteorites_import WHERE long IS NULL;
+SELECT * FROM meteorites_import;
 -- .import automatically converts empty values to NULL
 
 
