@@ -31,20 +31,11 @@ DELETE FROM meteorites
 WHERE nametype = 'Relict';
 
 -- sort rows
-CREATE TABLE temp (
-    name TEXT,
-    id INTEGER,
-    nametype TEXT,
-    class TEXT,
-    mass REAL,
-    discovery TEXT,
-    year INTEGER,
-    lat REAL,
-    long REAL
-);
+CREATE TEMP TABLE temp_table AS
+SELECT * FROM meteorites;
 
 SELECT *
-FROM meteorites
+FROM temp_table
 ORDER BY year ASC, name ASC;
 
 INSERT INTO temp ()
