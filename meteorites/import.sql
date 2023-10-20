@@ -61,7 +61,14 @@ DROP TABLE meteorites;
 -- recreat the original table with the sorted temporary table
 CREATE TABLE meteorites AS
 SELECT
-    ROW_NUMBER() OVER(ORDER BY year ASC, name ASC) AS id, *
+    ROW_NUMBER() OVER(ORDER BY year ASC, name ASC) AS id,
+    name,
+    class,
+    mass,
+    discovery,
+    year,
+    lat,
+    long
 FROM temp_table;
 
 -- drop temporary table
