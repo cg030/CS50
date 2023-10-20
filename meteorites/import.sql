@@ -14,4 +14,8 @@
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
 
-SELECT  mass FROM meteorites WHERE mass IS NULL;
+SELECT * FROM meteorites WHERE mass IS NULL;
+
+SELECT * FROM meteorites WHERE lat IS NULL;
+
+SELECT * FROM meteorites WHERE long IS NULL;
