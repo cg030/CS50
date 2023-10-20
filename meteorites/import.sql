@@ -47,3 +47,5 @@ SELECT * FROM temp_table;
 
 -- drop temporary table
 DROP TABLE temp_table;
+
+
