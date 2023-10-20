@@ -12,6 +12,9 @@ CREATE TABLE meteorites (
     long REAL
 );
 
+-- DROP columns
+ALTER TABLE meteorites DROP 
+
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
 SELECT * FROM meteorites WHERE mass IS NULL;
