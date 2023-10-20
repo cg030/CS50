@@ -1,4 +1,4 @@
--- DROP TABLE meteorites;
+DROP TABLE meteorites;
 
 CREATE TABLE meteorites (
     name TEXT,
@@ -14,7 +14,7 @@ CREATE TABLE meteorites (
 
 -- DROP columns; no direct way in sqlite3 so you have to create temporary tables
 CREATE TEMP TABLE temp_table AS
-SELECT id, name, class, amss, discovery, year, lat, long
+SELECT id, name, class, mass, discovery, year, lat, long
 FROM meteorites;
 
 DROP TABLE meteorites;
