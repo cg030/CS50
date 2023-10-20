@@ -32,14 +32,14 @@ SELECT * FROM meteorites_import WHERE long IS NULL;
 
 
 -- Update decimal values
-UPDATE meteorites
+UPDATE meteorites_import
 SET mass = ROUND(mass, 2),
     lat = ROUND(lat, 2),
     long = ROUND(long, 2);
 
 
 -- Delete rows
-DELETE FROM meteorites
+DELETE FROM meteorites_import
 WHERE nametype = 'Relict';
 
 -- DROP columns; no direct way in sqlite3 so you have to create temporary tables
