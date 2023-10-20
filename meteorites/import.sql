@@ -43,9 +43,8 @@ DELETE FROM meteorites_import
 WHERE nametype = 'Relict';
 
 -- DROP columns; no direct way in sqlite3 so you have to create temporary tables
-CREATE TEMP TABLE temp_table AS
 SELECT id, name, class, mass, discovery, year, lat, long
-FROM meteorites;
+FROM meteorites_import;
 
 DROP TABLE meteorites;
 
