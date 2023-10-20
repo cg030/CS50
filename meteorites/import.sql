@@ -1,6 +1,7 @@
 -- DROP TABLE meteorites;
 
-CREATE TABLE meteorites (
+
+CREATE TABLE meteorites_import (
     name TEXT,
     id INTEGER,
     nametype TEXT,
