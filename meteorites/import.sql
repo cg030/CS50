@@ -1,4 +1,4 @@
--- DROP TABLE meteorites;
+DROP TABLE meteorites;
 
 
 CREATE TABLE meteorites_import (
@@ -47,9 +47,7 @@ INSERT INTO meteorites (id, name, class, mass, discovery, year, lat, long)
 SELECT id, name, class, mass, discovery, year, lat, long
 FROM meteorites_import;
 
-DROP TABLE meteorites;
-
-ALTER TABLE temp_table RENAME TO meteorites;
+DROP TABLE meteorites_import;
 
 
 -- sort rows
