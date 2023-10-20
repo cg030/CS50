@@ -15,7 +15,8 @@ SET password = (SELECT password FROM users WHERE username = 'emily33')
 WHERE id = 1;
 
 -- if I now try to upate the password of the admin to oops this will execute the trigger again
-
+-- I want a new row to appear in the user_logs table where it looks like the password was changed to emily's
+-- this will happen if I update the users table
 UPDATE user_logs
-SET 
+SET
 
