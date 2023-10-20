@@ -20,7 +20,13 @@ SELECT * FROM meteorites WHERE long IS NULL;
 
 -- .import automatically converts empty values to NULL
 
+-- Update decimal values
 UPDATE meteorites
 SET mass = ROUND(mass, 2),
     lat = ROUND(lat, 2),
-    long = ROUND(long, 2)
+    long = ROUND(long, 2);
+
+-- Delete rows
+DELETE FROM meteorites
+WHERE nametype = 'Relict';
+
