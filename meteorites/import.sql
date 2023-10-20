@@ -30,3 +30,23 @@ SET mass = ROUND(mass, 2),
 DELETE FROM meteorites
 WHERE nametype = 'Relict';
 
+-- sort rows
+CREATE TABLE temp (
+    name TEXT,
+    id INTEGER,
+    nametype TEXT,
+    class TEXT,
+    mass REAL,
+    discovery TEXT,
+    year INTEGER,
+    lat REAL,
+    long REAL
+);
+
+SELECT *
+FROM meteorites
+ORDER BY year ASC, name ASC;
+
+INSERT INTO temp ()
+
+UPDATE *
