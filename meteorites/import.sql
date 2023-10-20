@@ -12,15 +12,6 @@ CREATE TABLE meteorites (
     long REAL
 );
 
--- DROP columns; no direct way in sqlite3 so you have to create temporary tables
-CREATE TEMP TABLE temp_table AS
-SELECT id, name, class, mass, discovery, year, lat, long
-FROM meteorites;
-
-DROP TABLE meteorites;
-
-ALTER TABLE temp_table RENAME TO meteorites;
-
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
 SELECT * FROM meteorites WHERE mass IS NULL;
@@ -39,6 +30,15 @@ SET mass = ROUND(mass, 2),
 -- Delete rows
 DELETE FROM meteorites
 WHERE nametype = 'Relict';
+
+-- DROP columns; no direct way in sqlite3 so you have to create temporary tables
+CREATE TEMP TABLE temp_table AS
+SELECT id, name, class, mass, discovery, year, lat, long
+FROM meteorites;
+
+DROP TABLE meteorites;
+
+ALTER TABLE temp_table RENAME TO meteorites;
 
 
 -- sort rows
