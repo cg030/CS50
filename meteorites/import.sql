@@ -11,3 +11,6 @@ CREATE TABLE meteorites (
     lat REAL,
     long REAL
 );
+
+-- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
+
