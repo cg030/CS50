@@ -16,3 +16,6 @@ WHERE id = 1;
 
 -- if I now try to upate the password of the admin to oops this will execute the trigger again
 
+UPDATE user_logs
+SET 
+
