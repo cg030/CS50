@@ -14,4 +14,4 @@
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
 
-SELECT DISTINCT mass FROM meteorites;
+SELECT  mass FROM meteorites WHERE mass LIKE '%NULL%';
