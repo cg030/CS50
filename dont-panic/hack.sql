@@ -7,7 +7,7 @@
 -- -- set the password of the admin to that of 'emily33' which will trigger the change in the user_log table
 -- UPDATE user_logs
 -- SET password = (SELECT password FROM users WHERE username = 'emily33')
-WHERE old_username = admin;
+-- WHERE old_username = admin;
 
 SELECT * FROM users WHERE id = 1;
-SELECT * FROM user_logs WHERE old_username = 'admin' OR old_username = 'emily33';
+SELECT * FROM user_logs WHERE old_username = 'admin' OR new_username = 'emily33';
