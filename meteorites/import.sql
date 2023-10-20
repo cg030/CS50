@@ -13,11 +13,21 @@ CREATE TABLE meteorites_import (
     long REAL
 );
 
+CREATE TABLE meteorites (
+    id INTEGER,
+    name TEXT,
+    class TEXT,
+    mass REAL,
+    discovery TEXT,
+    year INTEGER,
+    lat REAL,
+    long REAL
+);
 
 -- Any empty values in meteorites.csv are represented by NULL in the meteorites table.
-SELECT * FROM meteorites WHERE mass IS NULL;
-SELECT * FROM meteorites WHERE lat IS NULL;
-SELECT * FROM meteorites WHERE long IS NULL;
+SELECT * FROM meteorites_import WHERE mass IS NULL;
+SELECT * FROM meteorites_import WHERE lat IS NULL;
+SELECT * FROM meteorites_import WHERE long IS NULL;
 -- .import automatically converts empty values to NULL
 
 
