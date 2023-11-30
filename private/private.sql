@@ -1,3 +1,5 @@
+DROP VIEW message;
+
 CREATE VIEW message AS
 SELECT SUBSTR(sentence, 98, 4) AS phrase
 FROM sentences
@@ -41,6 +43,6 @@ WHERE id = 2346
 
 UNION
 
-SELECT SUBSTR(sentence, 14, 10)
+SELECT SUBSTR(sentence, 14, 5)
 FROM sentences
 WHERE id = 3041;
