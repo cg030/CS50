@@ -1,5 +1,7 @@
+DROP TABLE substrings;
+
 CREATE TABLE substrings AS
-SELECT SUBSTR(sentence, 98, 4)
+SELECT SUBSTR(sentence, 98, 4) AS strings
 FROM sentences
 WHERE id = 14
 
