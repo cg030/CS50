@@ -8,5 +8,3 @@ SELECT
     SUM(female)
 FROM census
 GROUP BY locality;
-
-SELECT SUM(households) FROM total;
