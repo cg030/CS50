@@ -9,4 +9,4 @@ SELECT
 FROM census
 GROUP BY locality;
 
-SELECT * FROM total;
+SELECT SUM(households) FROM total;
