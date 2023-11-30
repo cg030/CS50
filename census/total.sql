@@ -5,5 +5,4 @@ SELECT
     SUM(population) AS population,
     SUM(male),
     SUM(female)
-FROM census
-GROUP BY locality;
+FROM census;
