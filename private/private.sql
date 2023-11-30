@@ -1,7 +1,7 @@
 DROP TABLE substrings;
 
-CREATE TABLE substrings AS
-SELECT SUBSTR(sentence, 98, 4) AS strings
+CREATE VIEW message AS
+SELECT SUBSTR(sentence, 98, 4) AS phrase
 FROM sentences
 WHERE id = 14
 
