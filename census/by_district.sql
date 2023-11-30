@@ -9,4 +9,8 @@ SELECT
 FROM census
 GROUP BY district;
 
-SELECT 
+SELECT district, families
+FROM by_district
+ORDER BY families ASC
+LIMIT 1
+OFFSET 1;
