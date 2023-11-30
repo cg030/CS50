@@ -8,3 +8,5 @@ SELECT
     SUM(female)
 FROM census
 GROUP BY district;
+
+SELECT 
