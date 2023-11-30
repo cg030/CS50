@@ -1,5 +1,3 @@
-DROP VIEW rural;
-
 CREATE VIEW rural AS
 SELECT *
 FROM census

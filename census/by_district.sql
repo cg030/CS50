@@ -1,5 +1,3 @@
-DROP VIEW by_district;
-
 CREATE VIEW by_district AS
 SELECT
     district,

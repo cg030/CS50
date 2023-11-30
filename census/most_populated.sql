@@ -1,5 +1,3 @@
-DROP VIEW most_populated;
-
 CREATE VIEW most_populated AS
 SELECT
     district,
@@ -9,7 +7,8 @@ SELECT
     SUM(male),
     SUM(female)
 FROM census
-GROUP BY district
-ORDER BY SUM(population) DESC;
+GROUP BY district;
 
-SELECT * FROM by_district;
+SELECT *
+FROM by_district
+ORDER BY population DESC;
