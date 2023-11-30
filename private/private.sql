@@ -1,2 +1,4 @@
 CREATE VIEW message AS
-SELECT 
+SELECT SUBSTR(sentence, 98, 4)
+FROM sentences
+WHERE id = 14;
