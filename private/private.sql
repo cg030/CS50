@@ -1,5 +1,3 @@
-DROP VIEW message;
-
 CREATE VIEW message AS
 SELECT SUBSTR(sentence, 98, 4) AS phrase
 FROM sentences
