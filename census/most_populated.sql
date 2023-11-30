@@ -7,6 +7,5 @@ SELECT
     SUM(male),
     SUM(female)
 FROM census
-GROUP BY district;
-
-SELECT * FROM most_populated ORDER BY population DESC;
+GROUP BY district
+ORDER BY population DESC;
